@@ -56,8 +56,7 @@ eqx-index-project/
 ├── requirements.txt
 └── README.md                           # Project documentation (for GitHub)
 
----
----
+```
 
 ## 🏗️ Architecture
 
@@ -104,7 +103,8 @@ eqx-index-project/
       │ (Pytest + Custom Logs)        │
       └───────────────────────────────┘
 
----
+```
+
 ---
 
 ## 🧩 Project Modules
