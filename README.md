@@ -12,7 +12,7 @@ This project builds a **equal-weighted stock index** of the top 100 US stocks by
 - ⚡️ **Fast Data Ingestion**: Historical stock and SPY price fetching via `yfinance`, with retry and fallback logic.
 - 🧠 **Advanced Metrics**: Computes Sharpe Ratio, Volatility, Drawdown, CAGR, Sortino, VaR, streaks, and more.
 - 📊 **Optimized SQL Backend**: Built on **DuckDB** for blazing-fast local analytical queries.
-- 🔮 **Robust Validations**: Identifies missing, null, or extreme values before corrupting metrics.
+- 🔮 **Robust Validations**: Identifies missing, null, or extreme values.
 - 📈 **Streamlit Dashboards**:
     - Index vs SPY time-series
     - Rolling returns, drawdowns
