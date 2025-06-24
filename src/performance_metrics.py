@@ -22,15 +22,16 @@ Dependencies:
 -------------
 - pandas, numpy, duckdb, scipy.stats
 - src.config.Config
-- src.logger.setup_logging
+- src.logger.setup_logger
 
 Author: Shaily
 """
 
-import logging
 from pathlib import Path
 
 import duckdb
+import logging
+
 import pandas as pd
 import numpy as np
 from scipy.stats import skew, kurtosis
@@ -38,8 +39,8 @@ from scipy.stats import skew, kurtosis
 from src.config import Config
 from src.logger import setup_logging
 
-# Initialize logging
-setup_logging(Config.METRICS_LOG_FILE)
+# Initialize logger
+logger = setup_logging(Config.METRICS_LOG_FILE, logger_name="eqx.performance_metrics")
 
 
 def max_consecutive_streak(series: pd.Series, positive: bool = True) -> int:
@@ -56,10 +57,10 @@ def max_consecutive_streak(series: pd.Series, positive: bool = True) -> int:
 
 def compute_metrics() -> None:
     """Compute and store index performance metrics and summary stats."""
-    logging.info("Starting performance metrics computation.")
+    logger.info("Starting performance metrics computation.")
 
     if not Config.DUCKDB_FILE or not Path(Config.DUCKDB_FILE).exists():
-        logging.error(f"DuckDB file not found at {Config.DUCKDB_FILE}")
+        logger.error(f"DuckDB file not found at {Config.DUCKDB_FILE}")
         return
 
     conn = duckdb.connect(str(Config.DUCKDB_FILE))
@@ -76,7 +77,7 @@ def compute_metrics() -> None:
 
         df = index_df.merge(spy_df, on="date", how="inner")
         df.drop_duplicates(subset=["date"], keep="last", inplace=True)
-        logging.info(f"Merged dataset has {len(df)} rows.")
+        logger.info(f"Merged dataset has {len(df)} rows.")
 
         # --- Daily returns and cumulative ---
         df['daily_return'] = df['index_value'].pct_change().fillna(0)
@@ -229,15 +230,15 @@ def compute_metrics() -> None:
         conn.unregister("summary_df")
 
         conn.execute("COMMIT")
-        logging.info("Metrics successfully stored in DuckDB.")
+        logger.info("Metrics successfully stored in DuckDB.")
 
     except Exception as e:
         try:
             conn.execute("ROLLBACK")
         except Exception:
-            logging.warning("No active transaction to rollback.")
-        logging.error(f"Error computing metrics: {e}")
+            logger.warning("No active transaction to rollback.")
+        logger.error(f"Error computing metrics: {e}")
 
     finally:
         conn.close()
-        logging.info("Performance metrics computation complete.")
+        logger.info("Performance metrics computation complete.")

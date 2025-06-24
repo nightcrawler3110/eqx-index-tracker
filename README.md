@@ -1,8 +1,8 @@
-# 📈 EQX Index Builder & Analytics Platform
+# 📈 Equal Weighted Index Builder & Analytics Platform
 
 ## Overview
 
-This project builds a **custom equal-weighted stock index** of the top 100 US stocks by market capitalization, benchmarked against the SPY ETF. It performs automated data ingestion, index construction, performance metric computation, and provides interactive visualizations via Streamlit.
+This project builds a **equal-weighted stock index** of the top 100 US stocks by market capitalization, benchmarked against the SPY ETF. It performs automated data ingestion, index construction, performance metric computation, and provides interactive visualizations via Streamlit.
 
 ---
 
@@ -194,7 +194,7 @@ This will:
 
 ### 🔍 Analytics Dashboard
 ```bash
-streamlit run visualize_analytics_report.py
+streamlit run src/visualize_analytics_report.py
 ```
 Includes:
 - EQX Index vs SPY chart
@@ -206,7 +206,7 @@ Includes:
 
 ### ⚠️ Validation Dashboard
 ```bash
-streamlit run visualize_validation_alerts.py
+streamlit run src/visualize_validation_alerts.py
 ```
 Includes:
 - Missing/null/negative values

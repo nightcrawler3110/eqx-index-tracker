@@ -26,7 +26,7 @@ Dependencies:
 - src.config.Config
 - src.logger.setup_logging
 
-Logging:
+logger:
 --------
 Logs steps and errors to the configured INDEX_BUILDER_LOG_FILE.
 """
@@ -40,8 +40,8 @@ from typing import Optional
 from src.config import Config
 from src.logger import setup_logging
 
-# --- Initialize Logging ---
-setup_logging(Config.INDEX_BUILDER_LOG_FILE)
+# --- Initialize logger ---
+logger = setup_logging(Config.INDEX_BUILDER_LOG_FILE, logger_name="eqx.index_builder")
 
 
 def fetch_top_100_by_market_cap(conn: duckdb.DuckDBPyConnection, date: str) -> Optional[pd.DataFrame]:
@@ -56,11 +56,11 @@ def fetch_top_100_by_market_cap(conn: duckdb.DuckDBPyConnection, date: str) -> O
         """).fetch_df()
 
         if len(df) < 100:
-            logging.warning(f"[{date}] Less than 100 stocks available. Skipping.")
+            logger.warning(f"[{date}] Less than 100 stocks available. Skipping.")
             return None
         return df
     except Exception as e:
-        logging.error(f"[{date}] Failed to fetch top 100: {e}")
+        logger.error(f"[{date}] Failed to fetch top 100: {e}")
         return None
 
 
@@ -70,28 +70,28 @@ def fetch_spy_value(conn: duckdb.DuckDBPyConnection, date: str) -> Optional[floa
         df = conn.execute(f"SELECT spy_close FROM market_index WHERE date = '{date}'").fetch_df()
         return round(df['spy_close'].iloc[0], 4) if not df.empty else None
     except Exception as e:
-        logging.warning(f"[{date}] Failed to fetch SPY value: {e}")
+        logger.warning(f"[{date}] Failed to fetch SPY value: {e}")
         return None
 
 
 def build_index() -> None:
     """Builds and appends index values to DuckDB based on top 100 market cap stocks per day."""
-    logging.info("Starting index build process.")
+    logger.info("Starting index build process.")
 
     if not Path(Config.DUCKDB_FILE).exists():
-        logging.error(f"DuckDB file not found: {Config.DUCKDB_FILE}")
+        logger.error(f"DuckDB file not found: {Config.DUCKDB_FILE}")
         return
 
     conn = duckdb.connect(Config.DUCKDB_FILE)
     try:
         stock_df = conn.execute("SELECT * FROM stock_prices").fetch_df()
         if stock_df.empty:
-            logging.warning("No data in `stock_prices`. Aborting index build.")
+            logger.warning("No data in `stock_prices`. Aborting index build.")
             return
-        logging.info(f"Loaded {len(stock_df)} rows from stock_prices.")
+        logger.info(f"Loaded {len(stock_df)} rows from stock_prices.")
 
         dates_df = conn.execute("SELECT DISTINCT date FROM stock_prices ORDER BY date").fetch_df()
-        logging.info(f"{len(dates_df)} distinct dates found.")
+        logger.info(f"{len(dates_df)} distinct dates found.")
 
         index_data = []
 
@@ -112,7 +112,7 @@ def build_index() -> None:
 
         df_index = pd.DataFrame(index_data)
         if df_index.empty:
-            logging.error("No index values calculated. Aborting.")
+            logger.error("No index values calculated. Aborting.")
             return
 
         conn.execute("BEGIN TRANSACTION")
@@ -130,10 +130,10 @@ def build_index() -> None:
         conn.unregister("df_index")
         conn.execute("COMMIT")
 
-        logging.info(f"index_values appended with {len(df_index)} new rows.")
+        logger.info(f"index_values appended with {len(df_index)} new rows.")
     except Exception as e:
         conn.execute("ROLLBACK")
-        logging.error(f"Index build failed: {e}")
+        logger.error(f"Index build failed: {e}")
     finally:
         conn.close()
-        logging.info("Index build process completed.")
+        logger.info("Index build process completed.")

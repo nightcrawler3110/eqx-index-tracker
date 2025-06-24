@@ -1,7 +1,6 @@
 import pytest
 import pandas as pd
 from unittest.mock import MagicMock, patch
-from pathlib import Path
 
 from src.index_builder import build_index, fetch_top_100_by_market_cap, fetch_spy_value
 
@@ -12,7 +11,6 @@ from src.index_builder import build_index, fetch_top_100_by_market_cap, fetch_sp
 
 @pytest.fixture
 def mock_conn():
-    """Returns a mock DuckDB connection."""
     return MagicMock()
 
 
@@ -32,7 +30,7 @@ def sample_dates_df():
 
 
 # -------------------------
-# Unit Tests for Helpers
+# Unit Tests for Helper Functions
 # -------------------------
 
 def test_fetch_top_100_by_market_cap_success(mock_conn, sample_top_100_df):
@@ -73,7 +71,7 @@ def test_fetch_spy_value_exception(mock_conn):
 
 
 # -------------------------
-# Integration-style Test for build_index
+# Integration-style Tests for build_index
 # -------------------------
 
 @patch("src.index_builder.fetch_top_100_by_market_cap")
@@ -85,19 +83,16 @@ def test_build_index_happy_path(mock_connect, mock_exists, mock_fetch_spy, mock_
     mock_conn = MagicMock()
     mock_connect.return_value = mock_conn
 
-    # Simulate stock_prices table with dummy data
+    # Simulate execute calls: stock_prices, dates, BEGIN, CREATE TABLE, INSERT, COMMIT
     mock_conn.execute.side_effect = [
         MagicMock(fetch_df=MagicMock(return_value=pd.DataFrame({'dummy': [1]}))),  # stock_prices
-        MagicMock(fetch_df=MagicMock(return_value=pd.DataFrame({'date': ['2024-01-01']}))),  # distinct dates
+        MagicMock(fetch_df=MagicMock(return_value=pd.DataFrame({'date': ['2024-01-01']}))),  # dates
         None,  # BEGIN
         None,  # CREATE TABLE
-        None,  # CREATE INDEX
-        None,  # DELETE
         None,  # INSERT
         None,  # COMMIT
     ]
 
-    # Mock fetchers
     mock_fetch_top.return_value = pd.DataFrame({
         'ticker': [f'T{i}' for i in range(100)],
         'close': [1.0 for _ in range(100)]
@@ -108,20 +103,21 @@ def test_build_index_happy_path(mock_connect, mock_exists, mock_fetch_spy, mock_
 
     assert mock_fetch_top.called
     assert mock_fetch_spy.called
-    assert mock_conn.execute.call_count >= 7
+    assert mock_conn.execute.call_count >= 6
 
 
+@patch("src.index_builder.logger")
 @patch("src.index_builder.Path.exists", return_value=False)
-@patch("src.index_builder.logging")
-def test_build_index_duckdb_missing(mock_log, _):
+def test_build_index_duckdb_missing(_, mock_log):
+    from src.config import Config
     build_index()
-    mock_log.error.assert_called_once()
+    mock_log.error.assert_called_once_with(f"DuckDB file not found: {Config.DUCKDB_FILE}")
 
 
-@patch("src.index_builder.Path.exists", return_value=True)
+@patch("src.index_builder.logger")
 @patch("src.index_builder.duckdb.connect")
-@patch("src.index_builder.logging")
-def test_build_index_empty_stock_data(mock_log, mock_connect, _):
+@patch("src.index_builder.Path.exists", return_value=True)
+def test_build_index_empty_stock_data(_, mock_connect, mock_log):
     mock_conn = MagicMock()
     mock_connect.return_value = mock_conn
     mock_conn.execute.return_value.fetch_df.return_value = pd.DataFrame()
@@ -131,13 +127,14 @@ def test_build_index_empty_stock_data(mock_log, mock_connect, _):
     mock_log.warning.assert_any_call("No data in `stock_prices`. Aborting index build.")
 
 
-@patch("src.index_builder.Path.exists", return_value=True)
-@patch("src.index_builder.duckdb.connect")
-@patch("src.index_builder.logging")
+@patch("src.index_builder.logger")
 @patch("src.index_builder.fetch_top_100_by_market_cap", return_value=None)
-def test_build_index_no_valid_top_100(mock_fetch_top, mock_log, mock_connect, _):
+@patch("src.index_builder.duckdb.connect")
+@patch("src.index_builder.Path.exists", return_value=True)
+def test_build_index_no_valid_top_100(_, mock_connect, mock_fetch_top, mock_log):
     mock_conn = MagicMock()
     mock_connect.return_value = mock_conn
+
     mock_conn.execute.side_effect = [
         MagicMock(fetch_df=MagicMock(return_value=pd.DataFrame({'ticker': ['A'], 'close': [100]}))),  # stock_prices
         MagicMock(fetch_df=MagicMock(return_value=pd.DataFrame({'date': ['2024-01-01']}))),  # dates
@@ -145,4 +142,3 @@ def test_build_index_no_valid_top_100(mock_fetch_top, mock_log, mock_connect, _)
 
     build_index()
     mock_log.error.assert_called_with("No index values calculated. Aborting.")
-

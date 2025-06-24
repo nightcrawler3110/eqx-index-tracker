@@ -29,7 +29,7 @@ Types:
 ------
 - ValidationRecord: Tuple[str, str, str, int, str] representing (table, issue, column, count, path).
 
-Logging:
+logger:
 --------
 All steps, warnings, and validation issues are logged using the configured logger.
 
@@ -50,8 +50,8 @@ import numpy as np
 from src.config import Config
 from src.logger import setup_logging
 
-# --- Initialize Logging ---
-setup_logging(Config.VALIDATION_LOG_FILE)
+# --- Initialize logger ---
+logger = setup_logging(Config.VALIDATION_LOG_FILE, logger_name="eqx.data_validation")
 
 ValidationRecord = Tuple[str, str, str, int, str]
 
@@ -118,26 +118,25 @@ def run_for_table(
     report: List[ValidationRecord],
 ) -> None:
     try:
-        logging.info(f"Validating table: {table_name}")
+        logger.info(f"Validating table: {table_name}")
         tables = conn.execute("SHOW TABLES").fetchall()
         if table_name not in [t[0] for t in tables]:
-            logging.warning(f"Table `{table_name}` not found in the database.")
+            logger.warning(f"Table `{table_name}` not found in the database.")
             return
         df = conn.execute(query).fetch_df()
-        logging.info(f"Loaded `{table_name}` — {len(df)} rows")
+        logger.info(f"Loaded `{table_name}` — {len(df)} rows")
         for validate_func in validations:
             result = validate_func(df, table_name)
             if result:
-                logging.info(f"Issues found in {table_name}: {len(result)}")
+                logger.info(f"Issues found in {table_name}: {len(result)}")
                 report.extend(result)
     except Exception as e:
-        logging.error(f"Error validating {table_name}: {e}")
+        logger.error(f"Error validating {table_name}: {e}")
 
 
 def run_validations() -> None:
     """Run essential data validation checks on DuckDB tables."""
-    setup_logging()
-    logging.info("Validation script started.")
+    logger.info("Validation script started.")
     conn = duckdb.connect(str(Config.DUCKDB_FILE))
     report: List[ValidationRecord] = []
 
@@ -197,10 +196,10 @@ def run_validations() -> None:
             report, columns=["table", "issue", "column", "count", "details_file"]
         )
         df_report.to_csv(Config.VALIDATION_LOG, index=False)
-        logging.warning(
+        logger.warning(
             f"Validation issues found. Report saved to: {Config.VALIDATION_LOG}"
         )
     else:
-        logging.info("All data passed validation checks. No issues found.")
+        logger.info("All data passed validation checks. No issues found.")
 
     conn.close()

@@ -21,7 +21,7 @@ Functions:
 - write_excel(): Writes all dataframes to Excel with separate sheets.
 - export_to_excel(): Main orchestrator function with safe file handling.
 
-Logging:
+logger:
 --------
 All steps and issues are logged using the configured logger.
 
@@ -44,8 +44,8 @@ import numpy as np
 from src.config import Config
 from src.logger import setup_logging
 
-# --- Initialize Logging ---
-setup_logging(Config.EXCEL_EXPORT_LOG_FILE)
+# --- Initialize logger ---
+logger = setup_logging(Config.EXCEL_EXPORT_LOG_FILE, logger_name="eqx.excel_exporter")
 
 
 def safe_split(x: Any) -> List[str]:
@@ -58,7 +58,7 @@ def safe_split(x: Any) -> List[str]:
             return [item.strip() for item in x.split(",") if item.strip()]
         return []
     except Exception as e:
-        logging.warning(f"safe_split failed for input: {x} | Error: {e}")
+        logger.warning(f"safe_split failed for input: {x} | Error: {e}")
         return []
 
 
@@ -78,7 +78,7 @@ def load_data_from_duckdb() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
 
         summary_df = conn.execute("SELECT * FROM summary_metrics").fetch_df()
 
-        logging.info("Data loaded from DuckDB.")
+        logger.info("Data loaded from DuckDB.")
         return performance_df, composition_df, summary_df
     finally:
         conn.close()
@@ -132,18 +132,18 @@ def write_excel(
 
 def export_to_excel() -> None:
     """Main function to export index data to Excel."""
-    logging.info("Starting Excel export process...")
+    logger.info("Starting Excel export process...")
 
     # Delete old export if exists
     try:
         if Path(Config.EXCEL_OUTPUT_FILE).exists():
             os.remove(Config.EXCEL_OUTPUT_FILE)
-            logging.info(f"Deleted old Excel file: {Config.EXCEL_OUTPUT_FILE}")
+            logger.info(f"Deleted old Excel file: {Config.EXCEL_OUTPUT_FILE}")
     except Exception as e:
-        logging.warning(f"Failed to delete old Excel file: {e}")
+        logger.warning(f"Failed to delete old Excel file: {e}")
 
     if not Path(Config.DUCKDB_FILE).exists():
-        logging.error(f"DuckDB file not found at {Config.DUCKDB_FILE}")
+        logger.error(f"DuckDB file not found at {Config.DUCKDB_FILE}")
         return
 
     try:
@@ -152,6 +152,6 @@ def export_to_excel() -> None:
         changes_df = compute_composition_changes(composition_df)
         write_excel(performance_df, composition_final, changes_df, summary_df)
 
-        logging.info(f"Excel export successful: {Config.EXCEL_OUTPUT_FILE}")
+        logger.info(f"Excel export successful: {Config.EXCEL_OUTPUT_FILE}")
     except Exception as e:
-        logging.error(f"Export failed: {e}")
+        logger.error(f"Export failed: {e}")

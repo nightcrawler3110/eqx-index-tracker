@@ -14,7 +14,7 @@ Design:
 - Resilient HTTP session with retry logic.
 - Data integrity enforced via per-ticker transactions and explicit column type casting.
 - Graceful handling of bad tickers, missing data, and API errors.
-- Logging and CSV tracking of failed ticker ingestions.
+- logger and CSV tracking of failed ticker ingestions.
 
 Main Functions:
 ---------------
@@ -35,7 +35,7 @@ Dependencies:
 - requests
 - bs4 (BeautifulSoup)
 - src.config.Config (project-specific configuration module)
-- src.logger.setup_logging (project-specific logging setup)
+- src.logger.setup_logger (project-specific logger setup)
 
 Tables Created:
 ---------------
@@ -59,7 +59,6 @@ Notes:
 - Failed tickers are logged and saved to a CSV defined in `Config.FAILED_TICKERS_FILE`.
 """
 
-
 import logging
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -75,8 +74,8 @@ from requests.adapters import HTTPAdapter, Retry
 from src.config import Config
 from src.logger import setup_logging
 
-# --- Initialize Logging ---
-setup_logging(Config.INGESTION_LOG_FILE)
+# --- Initialize logger ---
+logger = setup_logging(Config.INGESTION_LOG_FILE, logger_name="eqx.ingestion")
 
 # --- HTTP session with retry ---
 def create_requests_session() -> requests.Session:
@@ -97,7 +96,7 @@ session = create_requests_session()
 # --- Fetch tickers from Finnhub ---
 def get_finnhub_tickers() -> List[str]:
     if not Config.FINNHUB_API_KEY:
-        logging.error("Finnhub API key missing! Set FINNHUB_API_KEY.")
+        logger.error("Finnhub API key missing! Set FINNHUB_API_KEY.")
         return []
 
     url = f"https://finnhub.io/api/v1/stock/symbol?exchange=US&token={Config.FINNHUB_API_KEY}"
@@ -111,10 +110,10 @@ def get_finnhub_tickers() -> List[str]:
             if item.get('type') == 'Common Stock' and item.get('isEnabled', False)
             and item.get('status', 'active').lower() == 'active'
         ]
-        logging.info(f"Fetched {len(tickers)} live tickers from Finnhub.")
+        logger.info(f"Fetched {len(tickers)} live tickers from Finnhub.")
         return tickers
     except Exception as e:
-        logging.error(f"Failed to fetch tickers from Finnhub: {e}")
+        logger.error(f"Failed to fetch tickers from Finnhub: {e}")
         return []
 
 # --- Wikipedia fallback for S&P 500 ---
@@ -128,10 +127,10 @@ def get_sp500_tickers() -> List[str]:
             row.find_all("td")[0].text.strip().replace(".", "-")
             for row in table.find_all("tr")[1:]
         ]
-        logging.info(f"Fetched {len(tickers)} tickers from Wikipedia S&P 500 list.")
+        logger.info(f"Fetched {len(tickers)} tickers from Wikipedia S&P 500 list.")
         return tickers
     except Exception as e:
-        logging.error(f"Failed to fetch S&P 500 tickers: {e}")
+        logger.error(f"Failed to fetch S&P 500 tickers: {e}")
         return []
 
 # --- Schema creation ---
@@ -150,7 +149,7 @@ def create_tables(conn: duckdb.DuckDBPyConnection) -> None:
             spy_close DOUBLE
         )
     """)
-    logging.info("Tables created.")
+    logger.info("Tables created.")
 
 # --- Stock data fetch ---
 def fetch_and_prepare_stock_data(ticker: str, start_date: str, end_date: str) -> Optional[pd.DataFrame]:
@@ -186,7 +185,7 @@ def fetch_and_prepare_stock_data(ticker: str, start_date: str, end_date: str) ->
 
         return df.dropna()
     except Exception as e:
-        logging.warning(f"[{ticker}] Fetch error: {e}")
+        logger.warning(f"[{ticker}] Fetch error: {e}")
         return None
 
 # --- Parallel ingestion with type-safe casting ---
@@ -206,7 +205,7 @@ def fetch_all_stocks_parallel(tickers: List[str], conn: duckdb.DuckDBPyConnectio
             try:
                 df = future.result()
             except Exception as e:
-                logging.warning(f"[{ticker}] Future failed: {e}")
+                logger.warning(f"[{ticker}] Future failed: {e}")
                 failed_tickers.append(ticker)
                 continue
 
@@ -226,22 +225,22 @@ def fetch_all_stocks_parallel(tickers: List[str], conn: duckdb.DuckDBPyConnectio
                     conn.unregister("temp_df")
                     conn.execute("COMMIT")
                     success_rows += len(df)
-                    logging.info(f"[{ticker}] Inserted {len(df)} rows.")
+                    logger.info(f"[{ticker}] Inserted {len(df)} rows.")
                 except Exception as insert_err:
                     try:
                         conn.execute("ROLLBACK")
                     except Exception as rollback_err:
-                        logging.error(f"[{ticker}] Rollback also failed: {rollback_err}")
-                    logging.warning(f"[{ticker}] Insertion failed: {insert_err}")
+                        logger.error(f"[{ticker}] Rollback also failed: {rollback_err}")
+                    logger.warning(f"[{ticker}] Insertion failed: {insert_err}")
                     failed_tickers.append(ticker)
             else:
                 failed_tickers.append(ticker)
 
     if failed_tickers:
         pd.DataFrame({'failed_ticker': failed_tickers}).to_csv(Config.FAILED_TICKERS_FILE, index=False)
-        logging.warning(f"Failed tickers saved to {Config.FAILED_TICKERS_FILE}")
+        logger.warning(f"Failed tickers saved to {Config.FAILED_TICKERS_FILE}")
 
-    logging.info(f"Total rows inserted: {success_rows}")
+    logger.info(f"Total rows inserted: {success_rows}")
 
 # --- SPY index data fetch (append-only) ---
 def fetch_spy_data(conn: duckdb.DuckDBPyConnection, start_date: str, end_date: str) -> None:
@@ -265,14 +264,14 @@ def fetch_spy_data(conn: duckdb.DuckDBPyConnection, start_date: str, end_date: s
         conn.unregister("temp_index_df")
         conn.execute("COMMIT")
 
-        logging.info("SPY index data inserted successfully.")
+        logger.info("SPY index data inserted successfully.")
     except Exception as e:
-        logging.warning(f"Failed to fetch SPY data: {e}")
+        logger.warning(f"Failed to fetch SPY data: {e}")
 
 # --- Main Entry Point ---
 def run_ingestion() -> None:
     if not Config.FINNHUB_API_KEY:
-        logging.error("Cannot proceed without FINNHUB_API_KEY.")
+        logger.error("Cannot proceed without FINNHUB_API_KEY.")
         return
 
     conn = duckdb.connect(Config.DUCKDB_FILE)
@@ -281,11 +280,11 @@ def run_ingestion() -> None:
 
         tickers = get_finnhub_tickers()
         if not tickers:
-            logging.warning("Finnhub failed. Falling back to S&P 500 tickers.")
+            logger.warning("Finnhub failed. Falling back to S&P 500 tickers.")
             tickers = get_sp500_tickers()
 
         if not tickers:
-            logging.error("No tickers found. Aborting ingestion.")
+            logger.error("No tickers found. Aborting ingestion.")
             return
 
         end_date = datetime.today().strftime('%Y-%m-%d')
@@ -294,6 +293,6 @@ def run_ingestion() -> None:
         fetch_all_stocks_parallel(tickers, conn, start_date, end_date)
         fetch_spy_data(conn, start_date, end_date)
 
-        logging.info("Data ingestion complete.")
+        logger.info("Data ingestion complete.")
     finally:
         conn.close()
