@@ -238,12 +238,15 @@ Covers:
 
 ---
 
-## 🧠 Key Concepts
+## ⚙️ Design Choices
 
-- **Equal-Weighted Index**: Each day selects top 100 stocks, equally weighted
-- **Daily Rebalancing**: Reflects changes in top 100 by market cap
-- **DuckDB**: In-process analytics engine with high-performance SQL
-- **Composable Modules**: All functionality split into reusable units
+- **Modular Architecture**: Each component of the ETL pipeline (ingestion, index building, metrics, validations, export, visualization) is separated into its own module, ensuring clarity, testability, and reusability.
+- **DuckDB Backend**: Chosen for its high-performance SQL querying and in-memory speed without requiring external setup—perfect for local analytical tasks.
+- **Daily Rebalancing**: Ensures the top 100 are always up-to-date based on current market cap, reflecting real-world index behavior.
+- **Parallel Data Fetching**: Uses concurrent threads to reduce wait times when pulling large volumes of stock data from yfinance.
+- **Streamlit for Visualization**: Enables quick deployment of interactive dashboards without setting up frontend frameworks.
+- **Production-Grade Logging**: Every script uses a shared logger with modular file outputs and console logging for easy debugging and audit trails.
+- **Data Validations**: Built-in checks for missing, null, negative, or extreme values to ensure clean downstream processing.
 
 ---
 
