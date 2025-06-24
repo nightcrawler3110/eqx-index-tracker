@@ -20,7 +20,7 @@ from typing import Optional, Union
 def setup_logging(
     log_file: Optional[Union[str, Path]] = None,
     level: int = logging.INFO,
-    logger_name: str = "eqx.default"
+    logger_name: str = "eqx.default",
 ) -> logging.Logger:
     """
     Sets up and returns a logger configured with both file and console handlers.

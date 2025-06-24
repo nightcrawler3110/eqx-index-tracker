@@ -44,16 +44,20 @@ from src.logger import setup_logging
 logger = setup_logging(Config.INDEX_BUILDER_LOG_FILE, logger_name="eqx.index_builder")
 
 
-def fetch_top_100_by_market_cap(conn: duckdb.DuckDBPyConnection, date: str) -> Optional[pd.DataFrame]:
+def fetch_top_100_by_market_cap(
+    conn: duckdb.DuckDBPyConnection, date: str
+) -> Optional[pd.DataFrame]:
     """Fetch top 100 tickers by market cap on a given date."""
     try:
-        df = conn.execute(f"""
+        df = conn.execute(
+            f"""
             SELECT ticker, close
             FROM stock_prices
             WHERE date = '{date}'
             ORDER BY market_cap DESC
             LIMIT 100
-        """).fetch_df()
+        """
+        ).fetch_df()
 
         if len(df) < 100:
             logger.warning(f"[{date}] Less than 100 stocks available. Skipping.")
@@ -67,8 +71,10 @@ def fetch_top_100_by_market_cap(conn: duckdb.DuckDBPyConnection, date: str) -> O
 def fetch_spy_value(conn: duckdb.DuckDBPyConnection, date: str) -> Optional[float]:
     """Fetch SPY close value on a given date."""
     try:
-        df = conn.execute(f"SELECT spy_close FROM market_index WHERE date = '{date}'").fetch_df()
-        return round(df['spy_close'].iloc[0], 4) if not df.empty else None
+        df = conn.execute(
+            f"SELECT spy_close FROM market_index WHERE date = '{date}'"
+        ).fetch_df()
+        return round(df["spy_close"].iloc[0], 4) if not df.empty else None
     except Exception as e:
         logger.warning(f"[{date}] Failed to fetch SPY value: {e}")
         return None
@@ -90,25 +96,29 @@ def build_index() -> None:
             return
         logger.info(f"Loaded {len(stock_df)} rows from stock_prices.")
 
-        dates_df = conn.execute("SELECT DISTINCT date FROM stock_prices ORDER BY date").fetch_df()
+        dates_df = conn.execute(
+            "SELECT DISTINCT date FROM stock_prices ORDER BY date"
+        ).fetch_df()
         logger.info(f"{len(dates_df)} distinct dates found.")
 
         index_data = []
 
-        for date in dates_df['date']:
+        for date in dates_df["date"]:
             top_df = fetch_top_100_by_market_cap(conn, date)
             if top_df is None:
                 continue
 
-            index_val = round((top_df['close'] * (1 / 100)).sum(), 4)
+            index_val = round((top_df["close"] * (1 / 100)).sum(), 4)
             spy_val = fetch_spy_value(conn, date)
 
-            index_data.append({
-                "date": date,
-                "index_value": index_val,
-                "spy_value": spy_val,
-                "tickers": ",".join(top_df['ticker'].tolist())
-            })
+            index_data.append(
+                {
+                    "date": date,
+                    "index_value": index_val,
+                    "spy_value": spy_val,
+                    "tickers": ",".join(top_df["ticker"].tolist()),
+                }
+            )
 
         df_index = pd.DataFrame(index_data)
         if df_index.empty:
@@ -116,14 +126,16 @@ def build_index() -> None:
             return
 
         conn.execute("BEGIN TRANSACTION")
-        conn.execute("""
+        conn.execute(
+            """
             CREATE TABLE IF NOT EXISTS index_values (
                 date DATE,
                 index_value DOUBLE,
                 spy_value DOUBLE,
                 tickers TEXT
             )
-        """)
+        """
+        )
 
         conn.register("df_index", df_index)
         conn.execute("INSERT INTO index_values SELECT * FROM df_index")

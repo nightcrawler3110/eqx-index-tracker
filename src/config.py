@@ -33,6 +33,7 @@ EXPORT_DIR = BASE_DIR / "export"
 for directory in [LOGS_DIR, REPORTS_DIR, DETAILED_ISSUES_DIR, DATA_DIR, EXPORT_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
 
+
 class Config:
     # --- Environment and Core Files ---
     DUCKDB_FILE = os.getenv("DUCKDB_FILE", str(DATA_DIR / "eqx_index.db"))

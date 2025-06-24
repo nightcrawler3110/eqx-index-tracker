@@ -5,6 +5,7 @@ import pandas as pd
 
 DUCKDB_FILE = "eqx_index.db"
 
+
 def inspect_duckdb(db_file=DUCKDB_FILE):
     conn = duckdb.connect(db_file)
     print(f"Inspecting DuckDB file: {db_file}\n")
@@ -47,6 +48,6 @@ def inspect_duckdb(db_file=DUCKDB_FILE):
 
     conn.close()
 
+
 if __name__ == "__main__":
     inspect_duckdb()
- 

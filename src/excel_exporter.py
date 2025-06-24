@@ -66,15 +66,19 @@ def load_data_from_duckdb() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Fetch data from DuckDB for export."""
     conn = duckdb.connect(Config.DUCKDB_FILE)
     try:
-        performance_df = conn.execute("""
+        performance_df = conn.execute(
+            """
             SELECT date, index_value, daily_return, cumulative_return
             FROM index_metrics
             ORDER BY date
-        """).fetch_df()
+        """
+        ).fetch_df()
 
-        composition_df = conn.execute("""
+        composition_df = conn.execute(
+            """
             SELECT date, tickers FROM index_metrics ORDER BY date
-        """).fetch_df()
+        """
+        ).fetch_df()
 
         summary_df = conn.execute("SELECT * FROM summary_metrics").fetch_df()
 
@@ -87,11 +91,11 @@ def load_data_from_duckdb() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
 def transform_composition(composition_df: pd.DataFrame) -> pd.DataFrame:
     """Explode tickers column into separate columns per day."""
     composition_df = composition_df.copy()
-    composition_df['tickers'] = composition_df['tickers'].apply(safe_split)
+    composition_df["tickers"] = composition_df["tickers"].apply(safe_split)
 
-    exploded = composition_df['tickers'].apply(pd.Series)
-    exploded.columns = [f'ticker_{i+1}' for i in range(exploded.shape[1])]
-    return pd.concat([composition_df['date'], exploded], axis=1)
+    exploded = composition_df["tickers"].apply(pd.Series)
+    exploded.columns = [f"ticker_{i+1}" for i in range(exploded.shape[1])]
+    return pd.concat([composition_df["date"], exploded], axis=1)
 
 
 def compute_composition_changes(composition_df: pd.DataFrame) -> pd.DataFrame:
@@ -100,17 +104,19 @@ def compute_composition_changes(composition_df: pd.DataFrame) -> pd.DataFrame:
     prev_set: set[str] = set()
 
     for _, row in composition_df.iterrows():
-        current_set = set(safe_split(row['tickers']))
+        current_set = set(safe_split(row["tickers"]))
         added = current_set - prev_set
         removed = prev_set - current_set
         intersection = current_set & prev_set
 
-        changes.append({
-            'date': row['date'],
-            'added': ','.join(sorted(added)),
-            'removed': ','.join(sorted(removed)),
-            'intersection_size': len(intersection)
-        })
+        changes.append(
+            {
+                "date": row["date"],
+                "added": ",".join(sorted(added)),
+                "removed": ",".join(sorted(removed)),
+                "intersection_size": len(intersection),
+            }
+        )
         prev_set = current_set
 
     return pd.DataFrame(changes)
@@ -120,7 +126,7 @@ def write_excel(
     performance_df: pd.DataFrame,
     composition_final: pd.DataFrame,
     changes_df: pd.DataFrame,
-    summary_df: pd.DataFrame
+    summary_df: pd.DataFrame,
 ) -> None:
     """Write multiple dataframes to a single Excel file."""
     with pd.ExcelWriter(Config.EXCEL_OUTPUT_FILE, engine="openpyxl") as writer:

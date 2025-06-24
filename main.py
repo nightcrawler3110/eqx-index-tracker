@@ -17,7 +17,6 @@ Pipeline Steps:
 
 Logging:
 --------
-- Logs are written to the path defined in `Config.INGESTION_LOG_FILE`.
 - Logs each step's start, completion, or failure.
 - Collects and reports all errors at the end.
 

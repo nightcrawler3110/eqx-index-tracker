@@ -2,8 +2,10 @@ import pytest
 import pandas as pd
 from unittest.mock import patch, MagicMock
 from src.excel_exporter import (
-    safe_split, transform_composition,
-    compute_composition_changes, export_to_excel
+    safe_split,
+    transform_composition,
+    compute_composition_changes,
+    export_to_excel,
 )
 from src.config import Config
 
@@ -12,14 +14,18 @@ from src.config import Config
 # Unit Tests: safe_split
 # -----------------------
 
-@pytest.mark.parametrize("input_val, expected", [
-    (["AAPL", "MSFT"], ["AAPL", "MSFT"]),
-    ("['AAPL','MSFT']", ["AAPL", "MSFT"]),
-    ("AAPL,MSFT,GOOG", ["AAPL", "MSFT", "GOOG"]),
-    ("[]", []),
-    ("", []),
-    (None, []),
-])
+
+@pytest.mark.parametrize(
+    "input_val, expected",
+    [
+        (["AAPL", "MSFT"], ["AAPL", "MSFT"]),
+        ("['AAPL','MSFT']", ["AAPL", "MSFT"]),
+        ("AAPL,MSFT,GOOG", ["AAPL", "MSFT", "GOOG"]),
+        ("[]", []),
+        ("", []),
+        (None, []),
+    ],
+)
 def test_safe_split_various_inputs(input_val, expected):
     assert safe_split(input_val) == expected
 
@@ -28,26 +34,26 @@ def test_safe_split_various_inputs(input_val, expected):
 # Unit Test: transform_composition
 # -------------------------------
 
+
 def test_transform_composition():
-    df = pd.DataFrame({
-        "date": ["2024-01-01", "2024-01-02"],
-        "tickers": ["AAPL,MSFT", "GOOG,TSLA"]
-    })
+    df = pd.DataFrame(
+        {"date": ["2024-01-01", "2024-01-02"], "tickers": ["AAPL,MSFT", "GOOG,TSLA"]}
+    )
     result = transform_composition(df)
     assert "ticker_1" in result.columns
     assert result.shape == (2, 3)
-    assert result.iloc[0]['ticker_1'] == "AAPL"
+    assert result.iloc[0]["ticker_1"] == "AAPL"
 
 
 # -----------------------------------------
 # Unit Test: compute_composition_changes
 # -----------------------------------------
 
+
 def test_compute_composition_changes():
-    df = pd.DataFrame({
-        "date": ["2024-01-01", "2024-01-02"],
-        "tickers": ["AAPL,MSFT", "AAPL,GOOG"]
-    })
+    df = pd.DataFrame(
+        {"date": ["2024-01-01", "2024-01-02"], "tickers": ["AAPL,MSFT", "AAPL,GOOG"]}
+    )
     result = compute_composition_changes(df)
     assert result.shape[0] == 2
     assert "added" in result.columns
@@ -60,6 +66,7 @@ def test_compute_composition_changes():
 # Integration-style test: export_to_excel (patched)
 # --------------------------------------------------
 
+
 @patch.object(Config, "EXCEL_OUTPUT_FILE", "dummy.xlsx")
 @patch.object(Config, "DUCKDB_FILE", "dummy.db")
 @patch("src.excel_exporter.logger")
@@ -68,12 +75,24 @@ def test_compute_composition_changes():
 @patch("src.excel_exporter.write_excel")
 @patch("src.excel_exporter.load_data_from_duckdb")
 def test_export_to_excel_success(
-    mock_load_data, mock_write_excel, mock_exists, mock_remove, mock_logger, *_  # *_ for config patches
+    mock_load_data,
+    mock_write_excel,
+    mock_exists,
+    mock_remove,
+    mock_logger,
+    *_  # *_ for config patches
 ):
-    perf = pd.DataFrame({"date": ["2024-01-01"], "index_value": [1000], "daily_return": [0.01], "cumulative_return": [0.01]})
+    perf = pd.DataFrame(
+        {
+            "date": ["2024-01-01"],
+            "index_value": [1000],
+            "daily_return": [0.01],
+            "cumulative_return": [0.01],
+        }
+    )
     comp = pd.DataFrame({"date": ["2024-01-01"], "tickers": ["AAPL,MSFT"]})
     summ = pd.DataFrame({"metric": ["max_return"], "value": [0.05]})
-    
+
     mock_load_data.return_value = (perf, comp, summ)
 
     export_to_excel()

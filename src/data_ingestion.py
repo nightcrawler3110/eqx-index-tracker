@@ -53,7 +53,6 @@ Tables Created:
 
 Notes:
 ------
-- The pipeline appends new data and does not enforce deduplication or uniqueness.
 - Stock prices are enriched with market cap using yfinance's `sharesOutstanding` data.
 - Each ticker's data is inserted in its own transaction to isolate failures.
 - Failed tickers are logged and saved to a CSV defined in `Config.FAILED_TICKERS_FILE`.
@@ -77,6 +76,7 @@ from src.logger import setup_logging
 # --- Initialize logger ---
 logger = setup_logging(Config.INGESTION_LOG_FILE, logger_name="eqx.ingestion")
 
+
 # --- HTTP session with retry ---
 def create_requests_session() -> requests.Session:
     session = requests.Session()
@@ -84,14 +84,16 @@ def create_requests_session() -> requests.Session:
         total=5,
         backoff_factor=1,
         status_forcelist=[429, 500, 502, 503, 504],
-        allowed_methods=["GET", "POST"]
+        allowed_methods=["GET", "POST"],
     )
     adapter = HTTPAdapter(max_retries=retries)
     session.mount("https://", adapter)
     session.mount("http://", adapter)
     return session
 
+
 session = create_requests_session()
+
 
 # --- Fetch tickers from Finnhub ---
 def get_finnhub_tickers() -> List[str]:
@@ -106,15 +108,18 @@ def get_finnhub_tickers() -> List[str]:
         data = resp.json()
 
         tickers = [
-            item['symbol'] for item in data
-            if item.get('type') == 'Common Stock' and item.get('isEnabled', False)
-            and item.get('status', 'active').lower() == 'active'
+            item["symbol"]
+            for item in data
+            if item.get("type") == "Common Stock"
+            and item.get("isEnabled", False)
+            and item.get("status", "active").lower() == "active"
         ]
         logger.info(f"Fetched {len(tickers)} live tickers from Finnhub.")
         return tickers
     except Exception as e:
         logger.error(f"Failed to fetch tickers from Finnhub: {e}")
         return []
+
 
 # --- Wikipedia fallback for S&P 500 ---
 def get_sp500_tickers() -> List[str]:
@@ -133,26 +138,34 @@ def get_sp500_tickers() -> List[str]:
         logger.error(f"Failed to fetch S&P 500 tickers: {e}")
         return []
 
+
 # --- Schema creation ---
 def create_tables(conn: duckdb.DuckDBPyConnection) -> None:
-    conn.execute("""
+    conn.execute(
+        """
         CREATE TABLE IF NOT EXISTS stock_prices (
             date DATE,
             ticker TEXT,
             close DOUBLE,
             market_cap DOUBLE
         )
-    """)
-    conn.execute("""
+    """
+    )
+    conn.execute(
+        """
         CREATE TABLE IF NOT EXISTS market_index (
             date DATE,
             spy_close DOUBLE
         )
-    """)
+    """
+    )
     logger.info("Tables created.")
 
+
 # --- Stock data fetch ---
-def fetch_and_prepare_stock_data(ticker: str, start_date: str, end_date: str) -> Optional[pd.DataFrame]:
+def fetch_and_prepare_stock_data(
+    ticker: str, start_date: str, end_date: str
+) -> Optional[pd.DataFrame]:
     try:
         stock = yf.Ticker(ticker)
         df = stock.history(start=start_date, end=end_date)
@@ -164,33 +177,41 @@ def fetch_and_prepare_stock_data(ticker: str, start_date: str, end_date: str) ->
         if not shares_out or shares_out <= 0:
             raise ValueError("Invalid sharesOutstanding")
 
-        df = df.reset_index()[['Date', 'Close']]
-        df['ticker'] = ticker
-        df['market_cap'] = df['Close'] * shares_out
+        df = df.reset_index()[["Date", "Close"]]
+        df["ticker"] = ticker
+        df["market_cap"] = df["Close"] * shares_out
         df.rename(columns={"Date": "date", "Close": "close"}, inplace=True)
 
-        df['date'] = pd.to_datetime(df['date'])
+        df["date"] = pd.to_datetime(df["date"])
         # Strip timezone if present
-        if pd.api.types.is_datetime64tz_dtype(df['date']):
-            df['date'] = df['date'].dt.tz_localize(None)
+        if pd.api.types.is_datetime64tz_dtype(df["date"]):
+            df["date"] = df["date"].dt.tz_localize(None)
 
-        df['close'] = pd.to_numeric(df['close'], errors='coerce')
-        df['market_cap'] = pd.to_numeric(df['market_cap'], errors='coerce')
-        df = df.astype({
-            "ticker": "string",
-            "close": "float64",
-            "market_cap": "float64",
-            "date": "datetime64[ns]"
-        })
+        df["close"] = pd.to_numeric(df["close"], errors="coerce")
+        df["market_cap"] = pd.to_numeric(df["market_cap"], errors="coerce")
+        df = df.astype(
+            {
+                "ticker": "string",
+                "close": "float64",
+                "market_cap": "float64",
+                "date": "datetime64[ns]",
+            }
+        )
 
         return df.dropna()
     except Exception as e:
         logger.warning(f"[{ticker}] Fetch error: {e}")
         return None
 
+
 # --- Parallel ingestion with type-safe casting ---
-def fetch_all_stocks_parallel(tickers: List[str], conn: duckdb.DuckDBPyConnection,
-                               start_date: str, end_date: str, max_workers: int = 8) -> None:
+def fetch_all_stocks_parallel(
+    tickers: List[str],
+    conn: duckdb.DuckDBPyConnection,
+    start_date: str,
+    end_date: str,
+    max_workers: int = 8,
+) -> None:
     success_rows = 0
     failed_tickers: List[str] = []
 
@@ -209,11 +230,17 @@ def fetch_all_stocks_parallel(tickers: List[str], conn: duckdb.DuckDBPyConnectio
                 failed_tickers.append(ticker)
                 continue
 
-            if df is not None and set(df.columns) >= {"date", "ticker", "close", "market_cap"}:
+            if df is not None and set(df.columns) >= {
+                "date",
+                "ticker",
+                "close",
+                "market_cap",
+            }:
                 try:
                     conn.execute("BEGIN")
                     conn.register("temp_df", df)
-                    conn.execute("""
+                    conn.execute(
+                        """
                         INSERT INTO stock_prices
                         SELECT 
                             CAST(date AS DATE),
@@ -221,7 +248,8 @@ def fetch_all_stocks_parallel(tickers: List[str], conn: duckdb.DuckDBPyConnectio
                             CAST(close AS DOUBLE),
                             CAST(market_cap AS DOUBLE)
                         FROM temp_df
-                    """)
+                    """
+                    )
                     conn.unregister("temp_df")
                     conn.execute("COMMIT")
                     success_rows += len(df)
@@ -237,13 +265,18 @@ def fetch_all_stocks_parallel(tickers: List[str], conn: duckdb.DuckDBPyConnectio
                 failed_tickers.append(ticker)
 
     if failed_tickers:
-        pd.DataFrame({'failed_ticker': failed_tickers}).to_csv(Config.FAILED_TICKERS_FILE, index=False)
+        pd.DataFrame({"failed_ticker": failed_tickers}).to_csv(
+            Config.FAILED_TICKERS_FILE, index=False
+        )
         logger.warning(f"Failed tickers saved to {Config.FAILED_TICKERS_FILE}")
 
     logger.info(f"Total rows inserted: {success_rows}")
 
+
 # --- SPY index data fetch (append-only) ---
-def fetch_spy_data(conn: duckdb.DuckDBPyConnection, start_date: str, end_date: str) -> None:
+def fetch_spy_data(
+    conn: duckdb.DuckDBPyConnection, start_date: str, end_date: str
+) -> None:
     try:
         spy = yf.Ticker("^GSPC")
         df = spy.history(start=start_date, end=end_date)
@@ -251,12 +284,12 @@ def fetch_spy_data(conn: duckdb.DuckDBPyConnection, start_date: str, end_date: s
         if df.empty:
             raise ValueError("SPY data is empty")
 
-        df = df.reset_index()[['Date', 'Close']]
-        df.rename(columns={'Date': 'date', 'Close': 'spy_close'}, inplace=True)
-        df['date'] = pd.to_datetime(df['date'])
-        df['spy_close'] = pd.to_numeric(df['spy_close'], errors='coerce')
-        df.dropna(subset=['date', 'spy_close'], inplace=True)
-        df = df[df['spy_close'] > 0]
+        df = df.reset_index()[["Date", "Close"]]
+        df.rename(columns={"Date": "date", "Close": "spy_close"}, inplace=True)
+        df["date"] = pd.to_datetime(df["date"])
+        df["spy_close"] = pd.to_numeric(df["spy_close"], errors="coerce")
+        df.dropna(subset=["date", "spy_close"], inplace=True)
+        df = df[df["spy_close"] > 0]
 
         conn.execute("BEGIN TRANSACTION")
         conn.register("temp_index_df", df)
@@ -267,6 +300,7 @@ def fetch_spy_data(conn: duckdb.DuckDBPyConnection, start_date: str, end_date: s
         logger.info("SPY index data inserted successfully.")
     except Exception as e:
         logger.warning(f"Failed to fetch SPY data: {e}")
+
 
 # --- Main Entry Point ---
 def run_ingestion() -> None:
@@ -287,8 +321,10 @@ def run_ingestion() -> None:
             logger.error("No tickers found. Aborting ingestion.")
             return
 
-        end_date = datetime.today().strftime('%Y-%m-%d')
-        start_date = (datetime.today() - timedelta(days=Config.FETCH_DAYS)).strftime('%Y-%m-%d')
+        end_date = datetime.today().strftime("%Y-%m-%d")
+        start_date = (datetime.today() - timedelta(days=Config.FETCH_DAYS)).strftime(
+            "%Y-%m-%d"
+        )
 
         fetch_all_stocks_parallel(tickers, conn, start_date, end_date)
         fetch_spy_data(conn, start_date, end_date)

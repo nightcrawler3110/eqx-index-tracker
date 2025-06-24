@@ -1,3 +1,48 @@
+"""
+📊 Module: visualize_analytics_report.py
+
+Overview:
+---------
+This Streamlit app visualizes the performance and structure of the EQX Equal-Weighted Index,
+a custom index of the top 100 US stocks by market capitalization.
+
+It pulls data from the DuckDB database and presents insights through interactive charts,
+performance metrics, and rebalancing analytics.
+
+Visualizations & Features:
+--------------------------
+- Index Value Over Time (Line Chart)
+- Index vs SPY Comparison (Line Chart)
+- Normalized Performance (Base 100)
+- Cumulative Return Plot
+- Daily Return Comparison
+- Histogram of Daily Returns
+- Rolling Volatility (7-day)
+- Drawdown Curve
+- Best and Worst Day Highlights
+
+Exploration Tools:
+------------------
+- Ticker breakdown by date
+- Rebalancing comparison between two selected dates
+
+Summary Dashboard:
+------------------
+- Displays final performance and risk metrics stored in `summary_metrics` table.
+
+Dependencies:
+-------------
+- Streamlit, pandas, plotly, duckdb, numpy
+- Config class from config.py for DB file path
+
+Usage:
+------
+Run the dashboard with:
+    streamlit run visualize_analytics_report.py
+
+Ensure the index pipeline (data ingestion → index builder → metrics) has run before using this dashboard.
+"""
+
 import streamlit as st
 import duckdb
 import pandas as pd
@@ -5,6 +50,7 @@ import plotly.express as px
 import numpy as np
 from pathlib import Path
 from config import Config
+
 
 # ----------------------------
 # Load Index Data
@@ -20,6 +66,7 @@ def load_index_data():
         st.error(f"Failed to load index data: {e}")
         return pd.DataFrame()
 
+
 # ----------------------------
 # Load Summary Metrics
 # ----------------------------
@@ -34,6 +81,7 @@ def load_summary_metrics():
         st.warning(f"Summary metrics load failed: {e}")
         return pd.DataFrame()
 
+
 # ----------------------------
 # List Tables
 # ----------------------------
@@ -45,6 +93,7 @@ def list_tables():
         return [t[0] for t in tables]
     except:
         return []
+
 
 # ----------------------------
 # Streamlit Layout
@@ -78,22 +127,32 @@ tab1, tab2, tab3 = st.tabs(["📈 Performance", "🔍 Explore", "📊 Summary"])
 # ----------------------------
 with tab1:
     st.subheader("EQX Equal Index Value Over Time")
-    fig = px.line(df, x="date", y="index_value", title="EQX Equal Index Performance", markers=True)
+    fig = px.line(
+        df, x="date", y="index_value", title="EQX Equal Index Performance", markers=True
+    )
     fig.update_traces(line=dict(color="#FF69B4", width=2))
     fig.update_layout(template="simple_white")
     st.plotly_chart(fig, use_container_width=True)
 
     st.subheader("Index vs SPY")
-    comp_fig = px.line(df, x="date", y=["index_value", "spy_close"],
-                       labels={"value": "Value", "variable": "Index"},
-                       title="SPY vs EQX Equal Index")
+    comp_fig = px.line(
+        df,
+        x="date",
+        y=["index_value", "spy_close"],
+        labels={"value": "Value", "variable": "Index"},
+        title="SPY vs EQX Equal Index",
+    )
     comp_fig.update_layout(template="simple_white")
     st.plotly_chart(comp_fig, use_container_width=True)
 
     st.subheader("Normalized Performance (Base = 100)")
-    norm_fig = px.line(df, x="date", y=["eqx_base_100", "spy_base_100"],
-                       labels={"value": "Normalized Value", "variable": "Index"},
-                       title="EQX vs SPY (Base 100 Performance)")
+    norm_fig = px.line(
+        df,
+        x="date",
+        y=["eqx_base_100", "spy_base_100"],
+        labels={"value": "Normalized Value", "variable": "Index"},
+        title="EQX vs SPY (Base 100 Performance)",
+    )
     norm_fig.update_layout(template="plotly_dark")
     st.plotly_chart(norm_fig, use_container_width=True)
 
@@ -102,20 +161,31 @@ with tab1:
 
     if "cumulative_return" in df.columns:
         st.subheader("Cumulative Return Over Time")
-        cum_fig = px.line(df, x="date", y="cumulative_return", title="EQX Equal Index Cumulative Return")
+        cum_fig = px.line(
+            df,
+            x="date",
+            y="cumulative_return",
+            title="EQX Equal Index Cumulative Return",
+        )
         cum_fig.update_layout(template="plotly_dark")
         st.plotly_chart(cum_fig, use_container_width=True)
 
     if {"daily_return", "spy_return"}.issubset(df.columns):
         st.subheader("Daily Returns Comparison")
-        return_fig = px.line(df, x="date", y=["daily_return", "spy_return"],
-                             title="Daily Returns: EQX vs SPY",
-                             labels={"value": "Daily Return", "variable": "Index"})
+        return_fig = px.line(
+            df,
+            x="date",
+            y=["daily_return", "spy_return"],
+            title="Daily Returns: EQX vs SPY",
+            labels={"value": "Daily Return", "variable": "Index"},
+        )
         return_fig.update_layout(template="plotly_dark")
         st.plotly_chart(return_fig, use_container_width=True)
 
         st.subheader("Histogram of EQX Daily Returns")
-        hist_fig = px.histogram(df, x="daily_return", nbins=50, title="EQX Daily Return Distribution")
+        hist_fig = px.histogram(
+            df, x="daily_return", nbins=50, title="EQX Daily Return Distribution"
+        )
         hist_fig.update_layout(template="simple_white")
         st.plotly_chart(hist_fig, use_container_width=True)
 
@@ -135,17 +205,25 @@ with tab1:
     if "daily_return" in df.columns:
         best = df.loc[df["daily_return"].idxmax()]
         worst = df.loc[df["daily_return"].idxmin()]
-        st.markdown(f"✅ **Best Day**: {best['date'].date()} → {best['daily_return']:.2%}")
-        st.markdown(f"🚨 **Worst Day**: {worst['date'].date()} → {worst['daily_return']:.2%}")
+        st.markdown(
+            f"✅ **Best Day**: {best['date'].date()} → {best['daily_return']:.2%}"
+        )
+        st.markdown(
+            f"🚨 **Worst Day**: {worst['date'].date()} → {worst['daily_return']:.2%}"
+        )
 
 # ----------------------------
 # Tab 2 - Explore
 # ----------------------------
 with tab2:
     st.subheader("Top 100 Tickers by Date")
-    date_selected = st.selectbox("Choose a date to view tickers:", df["date"].sort_values(ascending=False))
+    date_selected = st.selectbox(
+        "Choose a date to view tickers:", df["date"].sort_values(ascending=False)
+    )
     row = df[df["date"] == date_selected]
-    tickers = [t.strip() for t in row["tickers"].iloc[0].split(",")] if not row.empty else []
+    tickers = (
+        [t.strip() for t in row["tickers"].iloc[0].split(",")] if not row.empty else []
+    )
 
     st.markdown(f"Top {len(tickers)} tickers on {date_selected}:")
     st.dataframe(pd.DataFrame({"Ticker": tickers}))
@@ -178,6 +256,8 @@ with tab3:
     st.subheader("Summary Metrics")
     if not summary_df.empty:
         for col in summary_df.columns:
-            st.metric(label=col.replace("_", " ").title(), value=f"{summary_df[col].iloc[0]}")
+            st.metric(
+                label=col.replace("_", " ").title(), value=f"{summary_df[col].iloc[0]}"
+            )
     else:
         st.warning("Summary metrics not available.")

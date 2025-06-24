@@ -24,7 +24,6 @@ Dependencies:
 - src.config.Config
 - src.logger.setup_logger
 
-Author: Shaily
 """
 
 from pathlib import Path
@@ -80,74 +79,90 @@ def compute_metrics() -> None:
         logger.info(f"Merged dataset has {len(df)} rows.")
 
         # --- Daily returns and cumulative ---
-        df['daily_return'] = df['index_value'].pct_change().fillna(0)
-        df['spy_return'] = df['spy_close'].pct_change().fillna(0)
-        df['cumulative_return'] = (1 + df['daily_return']).cumprod() - 1
-        df['rolling_volatility'] = df['daily_return'].rolling(7).std()
-        df['rolling_beta_7d'] = df['daily_return'].rolling(7).corr(df['spy_return'])
+        df["daily_return"] = df["index_value"].pct_change().fillna(0)
+        df["spy_return"] = df["spy_close"].pct_change().fillna(0)
+        df["cumulative_return"] = (1 + df["daily_return"]).cumprod() - 1
+        df["rolling_volatility"] = df["daily_return"].rolling(7).std()
+        df["rolling_beta_7d"] = df["daily_return"].rolling(7).corr(df["spy_return"])
 
         # --- Drawdown ---
-        df['rolling_max'] = df['index_value'].cummax()
-        df['drawdown'] = (df['index_value'] - df['rolling_max']) / df['rolling_max']
-        df['drawdown_pct'] = df['drawdown'] * 100
+        df["rolling_max"] = df["index_value"].cummax()
+        df["drawdown"] = (df["index_value"] - df["rolling_max"]) / df["rolling_max"]
+        df["drawdown_pct"] = df["drawdown"] * 100
 
         # --- Turnover and exposure similarity ---
         turnover = [0]
         similarity = [1.0]
-        df['tickers'] = df.get('tickers', pd.Series([None] * len(df))).apply(
-            lambda x: x.split(',') if isinstance(x, str) else []
+        df["tickers"] = df.get("tickers", pd.Series([None] * len(df))).apply(
+            lambda x: x.split(",") if isinstance(x, str) else []
         )
 
         for i in range(1, len(df)):
-            prev = set(df['tickers'][i - 1])
-            curr = set(df['tickers'][i])
+            prev = set(df["tickers"][i - 1])
+            curr = set(df["tickers"][i])
             turnover.append(len(curr.symmetric_difference(prev)))
-            similarity.append(len(curr & prev) / len(curr | prev) if curr | prev else 1.0)
+            similarity.append(
+                len(curr & prev) / len(curr | prev) if curr | prev else 1.0
+            )
 
-        df['turnover'] = turnover
-        df['exposure_similarity'] = similarity
+        df["turnover"] = turnover
+        df["exposure_similarity"] = similarity
 
         # --- Summary stats ---
         days = len(df)
-        daily_return = df['daily_return']
-        final_return = df['cumulative_return'].iloc[-1] if not df.empty else 0
+        daily_return = df["daily_return"]
+        final_return = df["cumulative_return"].iloc[-1] if not df.empty else 0
 
         annualized_return = (1 + final_return) ** (252 / days) - 1 if days > 0 else 0
         annualized_volatility = daily_return.std() * np.sqrt(252)
         downside_std = daily_return[daily_return < 0].std()
         sortino_ratio = daily_return.mean() / downside_std if downside_std > 0 else 0
-        ulcer_index = np.sqrt(np.mean(df['drawdown_pct'] ** 2)) if not df.empty else 0
+        ulcer_index = np.sqrt(np.mean(df["drawdown_pct"] ** 2)) if not df.empty else 0
 
-        up_market = df[df['spy_return'] > 0]
-        down_market = df[df['spy_return'] < 0]
-        up_capture = up_market['daily_return'].mean() / up_market['spy_return'].mean() if not up_market.empty else 0
-        down_capture = down_market['daily_return'].mean() / down_market['spy_return'].mean() if not down_market.empty else 0
+        up_market = df[df["spy_return"] > 0]
+        down_market = df[df["spy_return"] < 0]
+        up_capture = (
+            up_market["daily_return"].mean() / up_market["spy_return"].mean()
+            if not up_market.empty
+            else 0
+        )
+        down_capture = (
+            down_market["daily_return"].mean() / down_market["spy_return"].mean()
+            if not down_market.empty
+            else 0
+        )
         win_ratio = (daily_return > 0).mean()
 
         summary = {
-            'best_day': df.loc[daily_return.idxmax(), 'date'] if not df.empty else None,
-            'worst_day': df.loc[daily_return.idxmin(), 'date'] if not df.empty else None,
-            'max_drawdown': df['drawdown'].min(),
-            'final_return': final_return,
-            'avg_daily_return': daily_return.mean(),
-            'volatility': daily_return.std(),
-            'sharpe_ratio': daily_return.mean() / daily_return.std() if daily_return.std() > 0 else 0,
-            'sortino_ratio': sortino_ratio,
-            'ulcer_index': ulcer_index,
-            'annualized_return': annualized_return,
-            'annualized_volatility': annualized_volatility,
-            'up_capture': up_capture,
-            'down_capture': down_capture,
-            'win_ratio': win_ratio,
-            'avg_turnover': float(np.mean(turnover)),
-            'total_rebalances': int(np.sum(np.array(turnover) > 0)),
-            'avg_exposure_similarity': float(np.mean(similarity)),
-            'var_95': daily_return.quantile(0.05),
-            'var_99': daily_return.quantile(0.01),
-            'return_skewness': skew(daily_return, nan_policy='omit'),
-            'return_kurtosis': kurtosis(daily_return, nan_policy='omit'),
-            'max_gain_streak': max_consecutive_streak(daily_return, positive=True),
-            'max_loss_streak': max_consecutive_streak(daily_return, positive=False)
+            "best_day": df.loc[daily_return.idxmax(), "date"] if not df.empty else None,
+            "worst_day": (
+                df.loc[daily_return.idxmin(), "date"] if not df.empty else None
+            ),
+            "max_drawdown": df["drawdown"].min(),
+            "final_return": final_return,
+            "avg_daily_return": daily_return.mean(),
+            "volatility": daily_return.std(),
+            "sharpe_ratio": (
+                daily_return.mean() / daily_return.std()
+                if daily_return.std() > 0
+                else 0
+            ),
+            "sortino_ratio": sortino_ratio,
+            "ulcer_index": ulcer_index,
+            "annualized_return": annualized_return,
+            "annualized_volatility": annualized_volatility,
+            "up_capture": up_capture,
+            "down_capture": down_capture,
+            "win_ratio": win_ratio,
+            "avg_turnover": float(np.mean(turnover)),
+            "total_rebalances": int(np.sum(np.array(turnover) > 0)),
+            "avg_exposure_similarity": float(np.mean(similarity)),
+            "var_95": daily_return.quantile(0.05),
+            "var_99": daily_return.quantile(0.01),
+            "return_skewness": skew(daily_return, nan_policy="omit"),
+            "return_kurtosis": kurtosis(daily_return, nan_policy="omit"),
+            "max_gain_streak": max_consecutive_streak(daily_return, positive=True),
+            "max_loss_streak": max_consecutive_streak(daily_return, positive=False),
         }
 
         # --- Ensure column selection is aligned with DB schema ---
@@ -165,7 +180,7 @@ def compute_metrics() -> None:
             "drawdown_pct",
             "tickers",
             "turnover",
-            "exposure_similarity"
+            "exposure_similarity",
         ]
         df_metrics = df[index_metrics_cols].copy()
         summary_df = pd.DataFrame([summary])
@@ -173,7 +188,8 @@ def compute_metrics() -> None:
         # --- Store results ---
         conn.execute("BEGIN")
 
-        conn.execute("""
+        conn.execute(
+            """
             CREATE TABLE IF NOT EXISTS index_metrics (
                 date DATE,
                 index_value DOUBLE,
@@ -190,9 +206,11 @@ def compute_metrics() -> None:
                 turnover INTEGER,
                 exposure_similarity DOUBLE
             )
-        """)
+        """
+        )
 
-        conn.execute("""
+        conn.execute(
+            """
             CREATE TABLE IF NOT EXISTS summary_metrics (
                 best_day DATE,
                 worst_day DATE,
@@ -218,7 +236,8 @@ def compute_metrics() -> None:
                 max_gain_streak INTEGER,
                 max_loss_streak INTEGER
             )
-        """)
+        """
+        )
 
         conn.register("df_metrics", df_metrics)
         conn.execute("INSERT INTO index_metrics SELECT * FROM df_metrics")
