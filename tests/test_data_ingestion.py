@@ -28,7 +28,7 @@ def test_create_tables(duckdb_conn):
 
 def test_fetch_and_prepare_stock_data_valid():
     # Patch yfinance.Ticker
-    with patch('ingestion.yf.Ticker') as mock_ticker:
+    with patch('data_ingestion.yf.Ticker') as mock_ticker:
         mock_stock = MagicMock()
         mock_stock.history.return_value = pd.DataFrame({
             'Date': pd.date_range(end=datetime.today(), periods=3),
@@ -42,7 +42,7 @@ def test_fetch_and_prepare_stock_data_valid():
         assert set(['date', 'ticker', 'close', 'market_cap']).issubset(df.columns)
 
 def test_fetch_and_prepare_stock_data_invalid():
-    with patch('ingestion.yf.Ticker') as mock_ticker:
+    with patch('data_ingestion.yf.Ticker') as mock_ticker:
         mock_stock = MagicMock()
         mock_stock.history.return_value = pd.DataFrame()
         mock_stock.info = {'sharesOutstanding': 1000000}
@@ -52,14 +52,14 @@ def test_fetch_and_prepare_stock_data_invalid():
         assert df is None
 
 def test_get_finnhub_tickers_no_key():
-    with patch('ingestion.Config.FINNHUB_API_KEY', None):
+    with patch('data_ingestion.Config.FINNHUB_API_KEY', None):
         result = get_finnhub_tickers()
         assert result == []
 
 def test_get_sp500_tickers():
     html_mock = '''<table id="constituents"><tr><th>Symbol</th></tr>
                    <tr><td>AAPL</td></tr><tr><td>MSFT</td></tr></table>'''
-    with patch('ingestion.session.get') as mock_get:
+    with patch('data_ingestion.session.get') as mock_get:
         mock_resp = MagicMock()
         mock_resp.text = html_mock
         mock_get.return_value = mock_resp
@@ -67,7 +67,7 @@ def test_get_sp500_tickers():
         assert tickers == ['AAPL', 'MSFT']
 
 def test_fetch_all_stocks_parallel(duckdb_conn):
-    with patch('ingestion.fetch_and_prepare_stock_data') as mock_fetch:
+    with patch('data_ingestion.fetch_and_prepare_stock_data') as mock_fetch:
         df = pd.DataFrame({
             'date': pd.date_range(end=datetime.today(), periods=3),
             'ticker': ['FAKE'] * 3,
@@ -81,7 +81,7 @@ def test_fetch_all_stocks_parallel(duckdb_conn):
         assert len(rows) == 3
 
 def test_fetch_spy_data(duckdb_conn):
-    with patch('ingestion.yf.Ticker') as mock_ticker:
+    with patch('data_ingestion.yf.Ticker') as mock_ticker:
         mock_stock = MagicMock()
         mock_stock.history.return_value = pd.DataFrame({
             'Date': pd.date_range(end=datetime.today(), periods=2),
