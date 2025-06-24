@@ -57,11 +57,12 @@ eqx-index-project/
 └── README.md                           # Project documentation (for GitHub)
 
 ---
-
+---
 
 ## 🏗️ Architecture
 
-```text
+```markdown
+
            ┌────────────────────┐
            │   Data Ingestion   │
            │  (yfinance, API)   │
@@ -104,7 +105,7 @@ eqx-index-project/
       └───────────────────────────────┘
 
 ---
-
+---
 
 ## 🧩 Project Modules
 
@@ -124,7 +125,7 @@ eqx-index-project/
 | `tests/`                        | Unit tests for each major component using `pytest` for validation and correctness.                                 |
 
 ---
-
+---
 
 ## 🧪 DuckDB Schema
 
@@ -136,6 +137,7 @@ eqx-index-project/
 | `index_metrics`   | Daily return, volatility, Sharpe ratio, etc.     |
 | `summary_metrics` | Project-wide stats like max drawdown, CAGR, etc. |
 
+---
 ---
 
 ## 📊 Metrics Computed
@@ -151,6 +153,7 @@ eqx-index-project/
 - Win Ratio, Up/Down Market Capture
 - Longest Gain/Loss Streaks
 
+---
 ---
 
 ## 🚀 Getting Started
