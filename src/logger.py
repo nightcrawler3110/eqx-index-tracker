@@ -1,3 +1,17 @@
+"""
+logger.py — Centralized Logging Setup
+
+This module provides a reusable `setup_logging` function to configure consistent logging
+across the EQX Index project. It sets up both file and console logging handlers with
+customizable log file paths and logging levels.
+
+Features:
+- Ensures log directory exists before writing
+- Prevents duplicate logger setup
+- Supports custom or default log file locations
+- Designed for use in both development and production environments
+"""
+
 import logging
 from pathlib import Path
 from typing import Optional, Union

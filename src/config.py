@@ -1,3 +1,23 @@
+"""
+Configuration module for the EQX Index Project.
+
+This module sets up and manages core directory paths, environment variables, and file locations
+used throughout the project. It ensures that required directories exist and provides a Config
+class with centralized access to configuration values such as database file paths, API keys,
+log files, report files, and data output locations.
+
+Attributes:
+    BASE_DIR (Path): The root directory of the project.
+    LOGS_DIR (Path): Directory for storing log files.
+    REPORTS_DIR (Path): Directory for storing report files.
+    DETAILED_ISSUES_DIR (Path): Directory for storing detailed issue reports.
+    DATA_DIR (Path): Directory for storing data output files.
+
+Classes:
+    Config: Contains static configuration values and file paths, sourced from environment
+        variables or default locations within the project structure.
+"""
+
 import os
 from pathlib import Path
 

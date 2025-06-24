@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 import numpy as np
 from pathlib import Path
-from src.config import Config
+from config import Config
 
 # ----------------------------
 # Load Index Data

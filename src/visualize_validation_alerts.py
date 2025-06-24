@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from pathlib import Path
 
-from src.config import Config  # Centralized config
+from config import Config  # Centralized config
 
 # --- Page Setup ---
 st.set_page_config(page_title="Validation Report", layout="wide")
