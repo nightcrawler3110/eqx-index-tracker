@@ -3,7 +3,9 @@
 import duckdb
 import pandas as pd
 
-DUCKDB_FILE = "eqx_index.db"
+from src.config import Config
+
+DUCKDB_FILE = Config.DUCKDB_FILE
 
 
 def inspect_duckdb(db_file=DUCKDB_FILE):

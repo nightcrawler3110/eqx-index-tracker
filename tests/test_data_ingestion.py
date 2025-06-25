@@ -1,111 +1,149 @@
-import pytest
-import pandas as pd
-import duckdb
+import unittest
 from unittest.mock import patch, MagicMock
 from datetime import datetime
+import pandas as pd
 
-from src.data_ingestion import (
-    fetch_and_prepare_stock_data,
-    get_finnhub_tickers,
-    get_sp500_tickers,
-    create_tables,
-    fetch_all_stocks_parallel,
-    fetch_spy_data,
-)
+import src.data_ingestion as ingestion
 
 
-# --- Fixtures ---
-@pytest.fixture
-def duckdb_conn():
-    conn = duckdb.connect(database=":memory:")
-    create_tables(conn)
-    return conn
+class TestDataIngestion(unittest.TestCase):
 
-
-# --- Tests ---
-
-
-def test_create_tables(duckdb_conn):
-    tables = duckdb_conn.execute("SHOW TABLES").fetchall()
-    assert ("stock_prices",) in tables
-    assert ("market_index",) in tables
-
-
-def test_fetch_and_prepare_stock_data_valid():
-    with patch("src.data_ingestion.yf.Ticker") as mock_ticker:
-        mock_stock = MagicMock()
-        mock_stock.history.return_value = pd.DataFrame(
+    @patch("src.data_ingestion.requests.Session.get")
+    def test_get_finnhub_tickers_success(self, mock_get):
+        mock_get.return_value.status_code = 200
+        mock_get.return_value.json.return_value = [
             {
-                "Date": pd.date_range(end=datetime.today(), periods=3),
-                "Close": [150, 152, 154],
-            }
-        )
-        mock_stock.info = {"sharesOutstanding": 1000000}
-        mock_ticker.return_value = mock_stock
+                "symbol": "AAPL",
+                "type": "Common Stock",
+                "isEnabled": True,
+                "status": "active",
+            },
+            {
+                "symbol": "TSLA",
+                "type": "Common Stock",
+                "isEnabled": True,
+                "status": "active",
+            },
+        ]
 
-        df = fetch_and_prepare_stock_data("AAPL", "2024-01-01", "2024-01-10")
-        assert df is not None
-        assert set(["date", "ticker", "close", "market_cap"]).issubset(df.columns)
+        with patch("src.data_ingestion.Config.FINNHUB_API_KEY", "dummy_key"):
+            tickers = ingestion.get_finnhub_tickers()
+            self.assertIn("AAPL", tickers)
+            self.assertIn("TSLA", tickers)
 
+    @patch("src.data_ingestion.requests.Session.get")
+    def test_get_finnhub_tickers_fail(self, mock_get):
+        mock_get.side_effect = Exception("API failed")
+        with patch("src.data_ingestion.Config.FINNHUB_API_KEY", "dummy_key"):
+            tickers = ingestion.get_finnhub_tickers()
+            self.assertEqual(tickers, [])
 
-def test_fetch_and_prepare_stock_data_invalid():
-    with patch("src.data_ingestion.yf.Ticker") as mock_ticker:
-        mock_stock = MagicMock()
-        mock_stock.history.return_value = pd.DataFrame()
-        mock_stock.info = {"sharesOutstanding": 1000000}
-        mock_ticker.return_value = mock_stock
+    @patch("src.data_ingestion.requests.Session.get")
+    def test_get_sp500_tickers_success(self, mock_get):
+        html = """
+        <table id="constituents">
+            <tr><th>Symbol</th></tr>
+            <tr><td>AAPL</td></tr>
+            <tr><td>GOOG</td></tr>
+        </table>
+        """
+        mock_get.return_value.text = html
+        tickers = ingestion.get_sp500_tickers()
+        self.assertEqual(tickers, ["AAPL", "GOOG"])
 
-        df = fetch_and_prepare_stock_data("INVALID", "2024-01-01", "2024-01-10")
-        assert df is None
+    @patch("src.data_ingestion.requests.Session.get")
+    def test_get_sp500_tickers_fail(self, mock_get):
+        mock_get.side_effect = Exception("wiki fail")
+        tickers = ingestion.get_sp500_tickers()
+        self.assertEqual(tickers, [])
 
-
-def test_get_finnhub_tickers_no_key():
-    with patch("src.data_ingestion.Config.FINNHUB_API_KEY", None):
-        result = get_finnhub_tickers()
-        assert result == []
-
-
-def test_get_sp500_tickers():
-    html_mock = """<table id="constituents"><tr><th>Symbol</th></tr>
-                   <tr><td>AAPL</td></tr><tr><td>MSFT</td></tr></table>"""
-    with patch("src.data_ingestion.session.get") as mock_get:
-        mock_resp = MagicMock()
-        mock_resp.text = html_mock
-        mock_get.return_value = mock_resp
-        tickers = get_sp500_tickers()
-        assert tickers == ["AAPL", "MSFT"]
-
-
-def test_fetch_all_stocks_parallel(duckdb_conn):
-    with patch("src.data_ingestion.fetch_and_prepare_stock_data") as mock_fetch:
+    @patch("src.data_ingestion.yf.Ticker")
+    def test_fetch_and_prepare_stock_data_success(self, mock_ticker_class):
+        mock_ticker = MagicMock()
         df = pd.DataFrame(
             {
-                "date": pd.date_range(end=datetime.today(), periods=3),
-                "ticker": ["FAKE"] * 3,
-                "close": [100, 101, 102],
-                "market_cap": [1e9, 1.01e9, 1.02e9],
+                "Date": [pd.Timestamp("2024-06-24")],
+                "Close": [100.0],
             }
         )
-        mock_fetch.return_value = df
+        mock_ticker.history.return_value = df
+        mock_ticker.info = {"sharesOutstanding": 1000000}
+        mock_ticker_class.return_value = mock_ticker
 
-        fetch_all_stocks_parallel(
-            ["FAKE"], duckdb_conn, "2024-01-01", "2024-01-10", max_workers=2
-        )
-        rows = duckdb_conn.execute("SELECT * FROM stock_prices").df()
-        assert len(rows) == 3
+        result = ingestion.fetch_and_prepare_stock_data("AAPL", "2024-06-24")
+        self.assertIsNotNone(result)
+        self.assertEqual(result.iloc[0]["ticker"], "AAPL")
+        self.assertGreater(result.iloc[0]["market_cap"], 0)
+
+    @patch("src.data_ingestion.yf.Ticker")
+    def test_fetch_and_prepare_stock_data_fail(self, mock_ticker_class):
+        mock_ticker = MagicMock()
+        mock_ticker.history.return_value = pd.DataFrame()
+        mock_ticker.info = {"sharesOutstanding": 1000000}
+        mock_ticker_class.return_value = mock_ticker
+
+        result = ingestion.fetch_and_prepare_stock_data("AAPL", "2024-06-24")
+        self.assertIsNone(result)
+
+    @patch("src.data_ingestion.yf.Ticker")
+    def test_fetch_spy_data_success(self, mock_ticker_class):
+        df = pd.DataFrame({"Date": [pd.Timestamp("2024-06-24")], "Close": [5000.0]})
+
+        mock_ticker = MagicMock()
+        mock_ticker.history.return_value = df
+        mock_ticker_class.return_value = mock_ticker
+
+        conn = MagicMock()
+        ingestion.fetch_spy_data(conn, "2024-06-24")
+        conn.execute.assert_called()
+        conn.register.assert_called()
+        conn.unregister.assert_called()
+
+    def test_create_tables(self):
+        conn = MagicMock()
+        ingestion.create_tables(conn)
+        self.assertTrue(conn.execute.called)
+
+    def test_create_requests_session(self):
+        session = ingestion.create_requests_session()
+        self.assertIsInstance(session, ingestion.requests.Session)
+
+    @patch("src.data_ingestion.get_finnhub_tickers", return_value=["AAPL", "GOOG"])
+    @patch("src.data_ingestion.fetch_all_stocks_parallel")
+    @patch("src.data_ingestion.fetch_spy_data")
+    @patch("src.data_ingestion.create_tables")
+    @patch("src.data_ingestion.duckdb.connect")
+    def test_run_ingestion_success(
+        self,
+        mock_connect,
+        mock_create_tables,
+        mock_fetch_spy,
+        mock_fetch_stocks,
+        mock_get_tickers,
+    ):
+        conn_mock = MagicMock()
+        mock_connect.return_value = conn_mock
+
+        with patch("src.data_ingestion.Config.FINNHUB_API_KEY", "dummy"), patch(
+            "src.data_ingestion.datetime"
+        ) as mock_dt:
+            mock_dt.strptime.return_value = datetime(2024, 6, 24)
+            ingestion.run_ingestion("2024-06-24")
+            mock_create_tables.assert_called_once()
+            mock_fetch_stocks.assert_called_once()
+            mock_fetch_spy.assert_called_once()
+
+    @patch("src.data_ingestion.get_finnhub_tickers", return_value=[])
+    @patch("src.data_ingestion.get_sp500_tickers", return_value=[])
+    @patch("src.data_ingestion.duckdb.connect")
+    def test_run_ingestion_no_tickers(self, mock_connect, mock_sp500, mock_finnhub):
+        with patch("src.data_ingestion.Config.FINNHUB_API_KEY", "dummy"), patch(
+            "src.data_ingestion.datetime"
+        ) as mock_dt:
+            mock_dt.strptime.return_value = datetime(2024, 6, 24)
+            ingestion.run_ingestion("2024-06-24")
+            self.assertTrue(mock_sp500.called)
 
 
-def test_fetch_spy_data(duckdb_conn):
-    with patch("src.data_ingestion.yf.Ticker") as mock_ticker:
-        mock_stock = MagicMock()
-        mock_stock.history.return_value = pd.DataFrame(
-            {
-                "Date": pd.date_range(end=datetime.today(), periods=2),
-                "Close": [4000, 4100],
-            }
-        )
-        mock_ticker.return_value = mock_stock
-
-        fetch_spy_data(duckdb_conn, "2024-01-01", "2024-01-10")
-        rows = duckdb_conn.execute("SELECT * FROM market_index").df()
-        assert len(rows) == 2
+if __name__ == "__main__":
+    unittest.main()

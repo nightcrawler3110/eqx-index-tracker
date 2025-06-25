@@ -3,32 +3,27 @@ Module: index_builder
 
 Description:
 ------------
-This module constructs a custom equal-weighted index of the top 100 US stocks by market capitalization
-for each available date using data from a DuckDB database.
+Builds a custom equal-weighted index from the top 100 US stocks by market capitalization
+and appends the index value to a DuckDB table for the given date.
 
-Key Features:
--------------
-- Computes the index as the average close price of the top 100 stocks (equal weights).
-- Fetches SPY close values for benchmark comparison.
-- Saves daily index values with tickers used per day into the `index_values` table.
-- Designed for append-only behavior (no deletes, no uniqueness constraint).
+Features:
+---------
+- Fetches top 100 stocks by market cap for a specific date.
+- Computes equal-weighted index value.
+- Includes SPY index value for benchmark comparison.
+- Logs index construction status.
+- Supports fault-tolerant index creation with proper rollback.
 
-Functions:
-----------
-- fetch_top_100_by_market_cap(): Get top 100 tickers by market cap on a given date.
-- fetch_spy_value(): Retrieve SPY index value on a given date.
-- build_index(): Main entry point to compute and store index data.
+Tables:
+-------
+- index_values (date, index_value, spy_value, tickers)
 
 Dependencies:
 -------------
-- pandas
 - duckdb
+- pandas
 - src.config.Config
 - src.logger.setup_logging
-
-logger:
---------
-Logs steps and errors to the configured INDEX_BUILDER_LOG_FILE.
 """
 
 import duckdb
@@ -47,7 +42,16 @@ logger = setup_logging(Config.INDEX_BUILDER_LOG_FILE, logger_name="eqx.index_bui
 def fetch_top_100_by_market_cap(
     conn: duckdb.DuckDBPyConnection, date: str
 ) -> Optional[pd.DataFrame]:
-    """Fetch top 100 tickers by market cap on a given date."""
+    """
+    Fetch the top 100 stocks by market capitalization on a given date.
+
+    Args:
+        conn (duckdb.DuckDBPyConnection): Connection to DuckDB.
+        date (str): Target date in 'YYYY-MM-DD' format.
+
+    Returns:
+        Optional[pd.DataFrame]: DataFrame with tickers and close prices, or None on failure.
+    """
     try:
         df = conn.execute(
             f"""
@@ -69,7 +73,16 @@ def fetch_top_100_by_market_cap(
 
 
 def fetch_spy_value(conn: duckdb.DuckDBPyConnection, date: str) -> Optional[float]:
-    """Fetch SPY close value on a given date."""
+    """
+    Fetch the SPY (S&P 500) closing value for a specific date.
+
+    Args:
+        conn (duckdb.DuckDBPyConnection): Connection to DuckDB.
+        date (str): Target date in 'YYYY-MM-DD' format.
+
+    Returns:
+        Optional[float]: Rounded SPY close value or None if not found.
+    """
     try:
         df = conn.execute(
             f"SELECT spy_close FROM market_index WHERE date = '{date}'"
@@ -80,9 +93,21 @@ def fetch_spy_value(conn: duckdb.DuckDBPyConnection, date: str) -> Optional[floa
         return None
 
 
-def build_index() -> None:
-    """Builds and appends index values to DuckDB based on top 100 market cap stocks per day."""
-    logger.info("Starting index build process.")
+def build_index(date: str) -> None:
+    """
+    Compute and append the equal-weighted index value to DuckDB for a given date.
+
+    Steps:
+        - Validates DuckDB presence.
+        - Fetches top 100 tickers by market cap.
+        - Computes equal-weighted index from close prices.
+        - Fetches SPY value for benchmarking.
+        - Appends index data to `index_values` table.
+
+    Args:
+        date (str): Target date in 'YYYY-MM-DD' format.
+    """
+    logger.info(f"Starting index build for date: {date}")
 
     if not Path(Config.DUCKDB_FILE).exists():
         logger.error(f"DuckDB file not found: {Config.DUCKDB_FILE}")
@@ -90,40 +115,24 @@ def build_index() -> None:
 
     conn = duckdb.connect(Config.DUCKDB_FILE)
     try:
-        stock_df = conn.execute("SELECT * FROM stock_prices").fetch_df()
-        if stock_df.empty:
-            logger.warning("No data in `stock_prices`. Aborting index build.")
+        top_df = fetch_top_100_by_market_cap(conn, date)
+        if top_df is None:
+            logger.warning(f"No index calculated for {date}.")
             return
-        logger.info(f"Loaded {len(stock_df)} rows from stock_prices.")
 
-        dates_df = conn.execute(
-            "SELECT DISTINCT date FROM stock_prices ORDER BY date"
-        ).fetch_df()
-        logger.info(f"{len(dates_df)} distinct dates found.")
+        index_val = round((top_df["close"] * (1 / 100)).sum(), 4)
+        spy_val = fetch_spy_value(conn, date)
 
-        index_data = []
-
-        for date in dates_df["date"]:
-            top_df = fetch_top_100_by_market_cap(conn, date)
-            if top_df is None:
-                continue
-
-            index_val = round((top_df["close"] * (1 / 100)).sum(), 4)
-            spy_val = fetch_spy_value(conn, date)
-
-            index_data.append(
+        df_index = pd.DataFrame(
+            [
                 {
                     "date": date,
                     "index_value": index_val,
                     "spy_value": spy_val,
                     "tickers": ",".join(top_df["ticker"].tolist()),
                 }
-            )
-
-        df_index = pd.DataFrame(index_data)
-        if df_index.empty:
-            logger.error("No index values calculated. Aborting.")
-            return
+            ]
+        )
 
         conn.execute("BEGIN TRANSACTION")
         conn.execute(
@@ -136,16 +145,15 @@ def build_index() -> None:
             )
         """
         )
-
         conn.register("df_index", df_index)
         conn.execute("INSERT INTO index_values SELECT * FROM df_index")
         conn.unregister("df_index")
         conn.execute("COMMIT")
 
-        logger.info(f"index_values appended with {len(df_index)} new rows.")
+        logger.info(f"index_values updated with data for {date}.")
     except Exception as e:
         conn.execute("ROLLBACK")
-        logger.error(f"Index build failed: {e}")
+        logger.error(f"Index build failed for {date}: {e}")
     finally:
         conn.close()
         logger.info("Index build process completed.")

@@ -1,5 +1,209 @@
-2025-06-25 07:54:24,209 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
-2025-06-25 07:54:51,024 [INFO] Starting performance metrics computation.
-2025-06-25 07:54:51,032 [INFO] Merged dataset has 26 rows.
-2025-06-25 07:54:51,044 [INFO] Metrics successfully stored in DuckDB.
-2025-06-25 07:54:51,051 [INFO] Performance metrics computation complete.
+2025-06-25 23:08:44,583 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:09:15,710 [INFO] Computing daily metrics for 2024-04-26
+2025-06-25 23:09:15,722 [INFO] Stored metrics for 2024-04-26 successfully.
+2025-06-25 23:09:15,725 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,733 [INFO] Computing daily metrics for 2024-04-27
+2025-06-25 23:09:15,741 [WARNING] Target date 2024-04-27 not present in merged dataset.
+2025-06-25 23:09:15,742 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,749 [INFO] Computing daily metrics for 2024-04-28
+2025-06-25 23:09:15,757 [WARNING] Target date 2024-04-28 not present in merged dataset.
+2025-06-25 23:09:15,758 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,770 [INFO] Computing daily metrics for 2024-04-29
+2025-06-25 23:09:15,783 [INFO] Stored metrics for 2024-04-29 successfully.
+2025-06-25 23:09:15,786 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,799 [INFO] Computing daily metrics for 2024-04-30
+2025-06-25 23:09:15,812 [INFO] Stored metrics for 2024-04-30 successfully.
+2025-06-25 23:09:15,816 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,828 [INFO] Computing daily metrics for 2024-05-01
+2025-06-25 23:09:15,841 [INFO] Stored metrics for 2024-05-01 successfully.
+2025-06-25 23:09:15,844 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,856 [INFO] Computing daily metrics for 2024-05-02
+2025-06-25 23:09:15,870 [INFO] Stored metrics for 2024-05-02 successfully.
+2025-06-25 23:09:15,874 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,887 [INFO] Computing daily metrics for 2024-05-03
+2025-06-25 23:09:15,902 [INFO] Stored metrics for 2024-05-03 successfully.
+2025-06-25 23:09:15,905 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,913 [INFO] Computing daily metrics for 2024-05-04
+2025-06-25 23:09:15,921 [WARNING] Target date 2024-05-04 not present in merged dataset.
+2025-06-25 23:09:15,922 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,930 [INFO] Computing daily metrics for 2024-05-05
+2025-06-25 23:09:15,938 [WARNING] Target date 2024-05-05 not present in merged dataset.
+2025-06-25 23:09:15,938 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,951 [INFO] Computing daily metrics for 2024-05-06
+2025-06-25 23:09:15,966 [INFO] Stored metrics for 2024-05-06 successfully.
+2025-06-25 23:09:15,970 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:15,983 [INFO] Computing daily metrics for 2024-05-07
+2025-06-25 23:09:15,999 [INFO] Stored metrics for 2024-05-07 successfully.
+2025-06-25 23:09:16,002 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,015 [INFO] Computing daily metrics for 2024-05-08
+2025-06-25 23:09:16,028 [INFO] Stored metrics for 2024-05-08 successfully.
+2025-06-25 23:09:16,032 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,044 [INFO] Computing daily metrics for 2024-05-09
+2025-06-25 23:09:16,057 [INFO] Stored metrics for 2024-05-09 successfully.
+2025-06-25 23:09:16,061 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,073 [INFO] Computing daily metrics for 2024-05-10
+2025-06-25 23:09:16,087 [INFO] Stored metrics for 2024-05-10 successfully.
+2025-06-25 23:09:16,091 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,098 [INFO] Computing daily metrics for 2024-05-11
+2025-06-25 23:09:16,106 [WARNING] Target date 2024-05-11 not present in merged dataset.
+2025-06-25 23:09:16,107 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,115 [INFO] Computing daily metrics for 2024-05-12
+2025-06-25 23:09:16,125 [WARNING] Target date 2024-05-12 not present in merged dataset.
+2025-06-25 23:09:16,126 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,140 [INFO] Computing daily metrics for 2024-05-13
+2025-06-25 23:09:16,154 [INFO] Stored metrics for 2024-05-13 successfully.
+2025-06-25 23:09:16,158 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,170 [INFO] Computing daily metrics for 2024-05-14
+2025-06-25 23:09:16,183 [INFO] Stored metrics for 2024-05-14 successfully.
+2025-06-25 23:09:16,187 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,199 [INFO] Computing daily metrics for 2024-05-15
+2025-06-25 23:09:16,212 [INFO] Stored metrics for 2024-05-15 successfully.
+2025-06-25 23:09:16,217 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,229 [INFO] Computing daily metrics for 2024-05-16
+2025-06-25 23:09:16,242 [INFO] Stored metrics for 2024-05-16 successfully.
+2025-06-25 23:09:16,246 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,259 [INFO] Computing daily metrics for 2024-05-17
+2025-06-25 23:09:16,272 [INFO] Stored metrics for 2024-05-17 successfully.
+2025-06-25 23:09:16,275 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,283 [INFO] Computing daily metrics for 2024-05-18
+2025-06-25 23:09:16,291 [WARNING] Target date 2024-05-18 not present in merged dataset.
+2025-06-25 23:09:16,292 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,299 [INFO] Computing daily metrics for 2024-05-19
+2025-06-25 23:09:16,307 [WARNING] Target date 2024-05-19 not present in merged dataset.
+2025-06-25 23:09:16,308 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,321 [INFO] Computing daily metrics for 2024-05-20
+2025-06-25 23:09:16,334 [INFO] Stored metrics for 2024-05-20 successfully.
+2025-06-25 23:09:16,337 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,350 [INFO] Computing daily metrics for 2024-05-21
+2025-06-25 23:09:16,363 [INFO] Stored metrics for 2024-05-21 successfully.
+2025-06-25 23:09:16,368 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,380 [INFO] Computing daily metrics for 2024-05-22
+2025-06-25 23:09:16,393 [INFO] Stored metrics for 2024-05-22 successfully.
+2025-06-25 23:09:16,398 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,412 [INFO] Computing daily metrics for 2024-05-23
+2025-06-25 23:09:16,426 [INFO] Stored metrics for 2024-05-23 successfully.
+2025-06-25 23:09:16,431 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,444 [INFO] Computing daily metrics for 2024-05-24
+2025-06-25 23:09:16,459 [INFO] Stored metrics for 2024-05-24 successfully.
+2025-06-25 23:09:16,463 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,471 [INFO] Computing daily metrics for 2024-05-25
+2025-06-25 23:09:16,480 [WARNING] Target date 2024-05-25 not present in merged dataset.
+2025-06-25 23:09:16,481 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,489 [INFO] Computing daily metrics for 2024-05-26
+2025-06-25 23:09:16,498 [WARNING] Target date 2024-05-26 not present in merged dataset.
+2025-06-25 23:09:16,499 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,506 [INFO] Computing daily metrics for 2024-05-27
+2025-06-25 23:09:16,516 [WARNING] Target date 2024-05-27 not present in merged dataset.
+2025-06-25 23:09:16,517 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,531 [INFO] Computing daily metrics for 2024-05-28
+2025-06-25 23:09:16,544 [INFO] Stored metrics for 2024-05-28 successfully.
+2025-06-25 23:09:16,550 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,564 [INFO] Computing daily metrics for 2024-05-29
+2025-06-25 23:09:16,579 [INFO] Stored metrics for 2024-05-29 successfully.
+2025-06-25 23:09:16,598 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,613 [INFO] Computing daily metrics for 2024-05-30
+2025-06-25 23:09:16,627 [INFO] Stored metrics for 2024-05-30 successfully.
+2025-06-25 23:09:16,633 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,647 [INFO] Computing daily metrics for 2024-05-31
+2025-06-25 23:09:16,661 [INFO] Stored metrics for 2024-05-31 successfully.
+2025-06-25 23:09:16,667 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,674 [INFO] Computing daily metrics for 2024-06-01
+2025-06-25 23:09:16,683 [WARNING] Target date 2024-06-01 not present in merged dataset.
+2025-06-25 23:09:16,685 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,692 [INFO] Computing daily metrics for 2024-06-02
+2025-06-25 23:09:16,701 [WARNING] Target date 2024-06-02 not present in merged dataset.
+2025-06-25 23:09:16,702 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,716 [INFO] Computing daily metrics for 2024-06-03
+2025-06-25 23:09:16,730 [INFO] Stored metrics for 2024-06-03 successfully.
+2025-06-25 23:09:16,736 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,751 [INFO] Computing daily metrics for 2024-06-04
+2025-06-25 23:09:16,766 [INFO] Stored metrics for 2024-06-04 successfully.
+2025-06-25 23:09:16,771 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,787 [INFO] Computing daily metrics for 2024-06-05
+2025-06-25 23:09:16,802 [INFO] Stored metrics for 2024-06-05 successfully.
+2025-06-25 23:09:16,807 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,822 [INFO] Computing daily metrics for 2024-06-06
+2025-06-25 23:09:16,836 [INFO] Stored metrics for 2024-06-06 successfully.
+2025-06-25 23:09:16,842 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,857 [INFO] Computing daily metrics for 2024-06-07
+2025-06-25 23:09:16,871 [INFO] Stored metrics for 2024-06-07 successfully.
+2025-06-25 23:09:16,877 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,885 [INFO] Computing daily metrics for 2024-06-08
+2025-06-25 23:09:16,893 [WARNING] Target date 2024-06-08 not present in merged dataset.
+2025-06-25 23:09:16,894 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,902 [INFO] Computing daily metrics for 2024-06-09
+2025-06-25 23:09:16,910 [WARNING] Target date 2024-06-09 not present in merged dataset.
+2025-06-25 23:09:16,911 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,926 [INFO] Computing daily metrics for 2024-06-10
+2025-06-25 23:09:16,941 [INFO] Stored metrics for 2024-06-10 successfully.
+2025-06-25 23:09:16,947 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,961 [INFO] Computing daily metrics for 2024-06-11
+2025-06-25 23:09:16,975 [INFO] Stored metrics for 2024-06-11 successfully.
+2025-06-25 23:09:16,981 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:16,996 [INFO] Computing daily metrics for 2024-06-12
+2025-06-25 23:09:17,009 [INFO] Stored metrics for 2024-06-12 successfully.
+2025-06-25 23:09:17,016 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,031 [INFO] Computing daily metrics for 2024-06-13
+2025-06-25 23:09:17,045 [INFO] Stored metrics for 2024-06-13 successfully.
+2025-06-25 23:09:17,051 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,067 [INFO] Computing daily metrics for 2024-06-14
+2025-06-25 23:09:17,081 [INFO] Stored metrics for 2024-06-14 successfully.
+2025-06-25 23:09:17,087 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,095 [INFO] Computing daily metrics for 2024-06-15
+2025-06-25 23:09:17,103 [WARNING] Target date 2024-06-15 not present in merged dataset.
+2025-06-25 23:09:17,104 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,113 [INFO] Computing daily metrics for 2024-06-16
+2025-06-25 23:09:17,121 [WARNING] Target date 2024-06-16 not present in merged dataset.
+2025-06-25 23:09:17,122 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,138 [INFO] Computing daily metrics for 2024-06-17
+2025-06-25 23:09:17,153 [INFO] Stored metrics for 2024-06-17 successfully.
+2025-06-25 23:09:17,158 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,173 [INFO] Computing daily metrics for 2024-06-18
+2025-06-25 23:09:17,188 [INFO] Stored metrics for 2024-06-18 successfully.
+2025-06-25 23:09:17,193 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,202 [INFO] Computing daily metrics for 2024-06-19
+2025-06-25 23:09:17,209 [WARNING] Target date 2024-06-19 not present in merged dataset.
+2025-06-25 23:09:17,211 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,226 [INFO] Computing daily metrics for 2024-06-20
+2025-06-25 23:09:17,240 [INFO] Stored metrics for 2024-06-20 successfully.
+2025-06-25 23:09:17,246 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,261 [INFO] Computing daily metrics for 2024-06-21
+2025-06-25 23:09:17,276 [INFO] Stored metrics for 2024-06-21 successfully.
+2025-06-25 23:09:17,282 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,289 [INFO] Computing daily metrics for 2024-06-22
+2025-06-25 23:09:17,298 [WARNING] Target date 2024-06-22 not present in merged dataset.
+2025-06-25 23:09:17,299 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,306 [INFO] Computing daily metrics for 2024-06-23
+2025-06-25 23:09:17,314 [WARNING] Target date 2024-06-23 not present in merged dataset.
+2025-06-25 23:09:17,315 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:17,329 [INFO] Computing daily metrics for 2024-06-24
+2025-06-25 23:09:17,343 [INFO] Stored metrics for 2024-06-24 successfully.
+2025-06-25 23:09:17,349 [INFO] Finished computing daily metrics.
+2025-06-25 23:09:34,094 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:09:34,609 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:10:11,486 [INFO] Computing daily metrics for 2024-06-25
+2025-06-25 23:10:11,502 [INFO] Stored metrics for 2024-06-25 successfully.
+2025-06-25 23:10:11,508 [INFO] Finished computing daily metrics.
+2025-06-25 23:10:11,508 [INFO] Computing summary metrics ending on 2024-06-25
+2025-06-25 23:10:11,524 [INFO] Summary metrics stored for date: 2024-06-25, window_days: 40
+2025-06-25 23:10:11,528 [INFO] Summary metrics computation complete.
+2025-06-25 23:10:59,031 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:10:59,556 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:10:59,558 [INFO] Computing summary metrics ending on 2024-06-21
+2025-06-25 23:10:59,577 [INFO] Summary metrics stored for date: 2024-06-21, window_days: 23
+2025-06-25 23:10:59,584 [INFO] Summary metrics computation complete.
+2025-06-25 23:11:41,203 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:11:41,834 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:11:41,836 [INFO] Computing summary metrics ending on 2024-06-25
+2025-06-25 23:11:41,857 [INFO] Summary metrics stored for date: 2024-06-25, window_days: 40
+2025-06-25 23:11:41,863 [INFO] Summary metrics computation complete.
+2025-06-25 23:11:49,622 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:11:49,980 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:11:49,981 [INFO] Computing summary metrics ending on 2024-06-24
+2025-06-25 23:11:49,998 [INFO] Summary metrics stored for date: 2024-06-24, window_days: 40
+2025-06-25 23:11:50,004 [INFO] Summary metrics computation complete.
+2025-06-25 23:11:53,741 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:11:54,086 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 23:11:54,088 [INFO] Computing summary metrics ending on 2024-06-21
+2025-06-25 23:11:54,105 [INFO] Summary metrics stored for date: 2024-06-21, window_days: 40
+2025-06-25 23:11:54,110 [INFO] Summary metrics computation complete.

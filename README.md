@@ -8,18 +8,52 @@ This project builds a **equal-weighted stock index** of the top 100 US stocks by
 
 ## ✨ Features
 
-- 🧺 **Equal-Weighted Index**: Dynamically selects top 100 US stocks by market cap daily.
-- ⚡️ **Fast Data Ingestion**: Historical stock and SPY price fetching via `yfinance`, with retry and fallback logic.
-- 🧠 **Advanced Metrics**: Computes Sharpe Ratio, Volatility, Drawdown, CAGR, Sortino, VaR, streaks, and more.
-- 📊 **Optimized SQL Backend**: Built on **DuckDB** for blazing-fast local analytical queries.
-- 🔮 **Robust Validations**: Identifies missing, null, or extreme values.
-- 📈 **Streamlit Dashboards**:
-    - Index vs SPY time-series
-    - Rolling returns, drawdowns
-    - Validation alert inspector
-    - Top tickers and composition breakdown
-- 📄 **Excel Export**: Clean report with performance metrics, composition, changes, and summary.
-- 🔢 **Modular Codebase**: Production-grade structure with reusable configs, logging, and tests.
+
+🧺 Equal-Weighted Index Logic  
+    - Dynamically selects the top 100 US stocks by market cap every day.
+    - Ensures the index reflects up-to-date market conditions.
+
+⚡️ High-Performance Data Ingestion  
+    - Supports both historical and daily fetching using `yfinance`.
+    - Features include:
+        • Parallel API calls
+        • Retry + fallback logic
+        • Ticker-level error handling and logging
+
+📦 Daily + Historical Pipeline Support  
+    - `run_daily_batch.sh`: Cron-ready pipeline for daily ingestion, index building, metrics, and export.
+    - `run_historical_pipeline.py`: One-time bootstrap/backfill for past data.
+
+📉 Advanced Performance & Risk Metrics  
+    - Computes detailed analytics including:
+        • Daily/Annual Returns
+        • CAGR, Sharpe, Sortino Ratios
+        • Rolling Volatility, Max Drawdown
+        • Beta, Value-at-Risk (VaR), performance streaks
+
+🧠 Summary + Daily Metrics Separation  
+    - Modular design to isolate:
+        • Daily insights (volatility, beta, drawdown, turnover)
+        • Long-term summaries (return profile, risk ratios, stability)
+
+📊 Streamlit Dashboards  
+    - Interactive UI for exploring:
+        • EQX vs SPY performance
+        • Drawdowns, normalized returns, rolling metrics
+        • Top tickers & weights
+        • Validation alerts (missing/null/extreme values)
+
+📄 Excel Export  
+    - Structured reports including:
+        • Index value and composition
+        • Day-over-day changes
+        • Summary and validation metrics
+
+🔢 Modular Codebase  
+    - Built for production with:
+        • Centralized config & logging
+        • Clean folder structure
+        • Pytest test suite with mocking
 
 ---
 
@@ -27,34 +61,40 @@ This project builds a **equal-weighted stock index** of the top 100 US stocks by
 
 ```text
 eqx-index-project/
-├── main.py                             # Orchestrates full ETL pipeline
-├── src/
-│   ├── config.py                       # Central configuration (paths, filenames)
-│   ├── logger.py                       # Shared logging setup
-│   ├── data_ingestion.py               # Fetches stock & SPY data from yfinance
-│   ├── index_builder.py                # Builds equal-weighted index daily
-│   ├── performance_metrics.py          # Computes returns, drawdowns, Sharpe, etc.
-│   ├── data_validations.py             # Validates nulls, negatives, and spikes
-│   ├── excel_exporter.py               # Exports metrics and composition to Excel
-│   ├── visualize_analytics_report.py   # Streamlit dashboard for performance
-│   ├── visualize_validation_alerts.py  # Streamlit dashboard for validation issues
-│   ├── inspect_duck_db.py              # Explore contents of DuckDB interactively
-│   └── __init__.py
-├── tests/                              # Unit tests for each major component
-│   ├── test_ingestion.py
-│   ├── test_metrics.py
-│   ├── test_validation.py
-│   └── ...
-├── logs/                                # Logs for each module
-│   ├── ingestion.log
-│   ├── metrics.log
-│   └── ...
-├── export/
-│   └── index_metrics.xlsx              # Final Excel report
-├── data/
-│   └── eqx_index.db                    # DuckDB database (generated)
-├── requirements.txt
-└── README.md                           # Project documentation (for GitHub)
+│
+├── data/                          # DuckDB database lives here
+│   └── eqx_index.db
+│
+├── export/                        # Excel exports (daily snapshots)
+│   └── eqx_index_export_*.xlsx
+│
+├── logs/                          # Logs for all modules
+├── mock_out/                      # Output for test mocking
+├── reports/detailed_issues/      # Validation/QA reports
+│
+├── src/                           # Core pipeline modules
+│   ├── config.py                  # Central configuration
+│   ├── logger.py                  # Logging setup
+│   ├── data_ingestion.py         # Fetch & store historical + daily stock data
+│   ├── data_validation.py        # Validation checks on ingested data
+│   ├── index_builder.py          # Builds and appends index values
+│   ├── daily_metrics_calculator.py     # Daily return, volatility, beta etc.
+│   ├── summary_metrics_calculator.py   # Long-term analytics
+│   ├── excel_exporter.py         # Full Excel export pipeline
+│   ├── visualize_analytics_report.py   # Streamlit dashboard (EQX vs SPY)
+│   ├── visualize_validation_issues.py # Dashboard for data issues
+│
+├── tests/                         # Unit tests (pytest)
+│   ├── test_*.py
+│
+├── run_daily_batch.sh            # Daily production script (cron)
+├── run_historical_pipeline.py    # One-time historical data bootstrap
+│
+├── inspect_duck_db.py            # CLI for exploring the DuckDB
+├── eqx_runner.py                 # Modular runner (for manual runs)
+├── failed_tickers.csv            # Logging failures during ingestion
+├── requirements.txt              # Project dependencies
+└── README.md                     # You're looking at it!
 
 ```
 
@@ -109,22 +149,29 @@ eqx-index-project/
 
 ## 🧩 Project Modules
 
-| Module                          | Description                                                                                                       |
-|----------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| `data_ingestion.py`             | Fetches historical data for US stocks and SPY using `yfinance`. Supports parallel fetching with retry logic.      |
-| `index_builder.py`              | Computes the equal-weighted index daily using the top 100 stocks by market cap.                                   |
-| `performance_metrics.py`        | Computes key metrics like daily returns, Sharpe ratio, volatility, drawdown, CAGR, and return streaks.            |
-| `data_validations.py`           | Validates computed results for missing values, negative prices, and anomalies. Stores alerts for inspection.       |
-| `excel_exporter.py`             | Exports final index metrics and summary statistics into a well-formatted Excel file.                               |
-| `visualize_analytics_report.py` | Interactive dashboard to visualize index performance, SPY comparison, and cumulative returns.                      |
-| `visualize_validation_alerts.py`| Streamlit dashboard to explore validation errors, missing values, or outliers.                                     |
-| `config.py`                     | Centralized configuration file for file paths, constants, and DuckDB file location.                                |
-| `logger.py`                     | Unified logging setup with modular log files per script. Supports both console and file logging.                   |
-| `main.py`                       | Main orchestrator script to run the full ETL pipeline in sequence.                                                 |
-| `inspect_duck_db.py`            | Utility script to inspect DuckDB tables, schemas, and sample rows for debugging.                                   |
-| `tests/`                        | Unit tests for each major component using `pytest` for validation and correctness.                                 |
+| Module/File                              | Description                                                                                                                      |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| **`src/config.py`**                      | Central config management for paths, constants, filenames, and parameters.                                                       |
+| **`src/logger.py`**                      | Sets up structured, rotating logs with named loggers per module.                                                                 |
+| **`src/data_ingestion.py`**              | Fetches historical + daily stock and SPY prices via `yfinance`. Includes parallelism, retries, and ticker-level logging.         |
+| **`src/data_validation.py`**             | Validates stock data for nulls, negatives, missing dates, and extreme changes. Stores results in `detailed_issues`.              |
+| **`src/index_builder.py`**               | Selects top 100 tickers by market cap, builds equal-weighted index, and appends to `index_values`.                               |
+| **`src/daily_metrics_calculator.py`**    | Computes daily return, volatility, drawdown, beta, turnover, and exposure similarity. Saves to `index_metrics`.                  |
+| **`src/summary_metrics_calculator.py`**  | Calculates long-term metrics: Sharpe, Sortino, CAGR, max drawdown, VaR, and winning/losing streaks. Stored in `summary_metrics`. |
+| **`src/excel_exporter.py`**              | Exports index data (performance, composition, changes, metrics) to Excel. Sheet-wise formatting and safe file writing.           |
+| **`src/visualize_analytics_report.py`**  | Streamlit app to explore EQX vs SPY, normalized returns, volatility, top tickers, and rebalancing.                               |
+| **`src/visualize_validation_issues.py`** | Streamlit dashboard for inspecting validation issues and anomalies in ingested data.                                             |
+| **`src/eqx_runner.py`**                  | Central runner that coordinates ingestion, index building, metrics, and export. Great for CLI/manual usage.                      |
+| **`src/inspect_duck_db.py`**             | Quick script to inspect DuckDB tables and run ad hoc queries.                                                                    |
 
----
+Utility Scripts
+
+| Script/File                  | Purpose                                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------------------- |
+| `run_daily_batch.sh`         | Production cron job runner for the daily pipeline (ingestion → index → metrics → export). |
+| `run_historical_pipeline.py` | Bootstrapper for historical data ingestion and index backfilling.                         |
+| `failed_tickers.csv`         | Logs failed tickers during data ingestion for review and retry.                           |
+
 ---
 
 ## 🧪 DuckDB Schema
@@ -142,16 +189,44 @@ eqx-index-project/
 
 ## 📊 Metrics Computed
 
-- Total Return / CAGR
-- Daily & Cumulative Return
-- Annualized Volatility
-- Sharpe & Sortino Ratios
-- Drawdowns & Ulcer Index
-- Value-at-Risk (VaR 95%, 99%)
-- Rolling Beta (7D)
-- Turnover & Exposure Similarity
-- Win Ratio, Up/Down Market Capture
-- Longest Gain/Loss Streaks
+
+- `daily_return`: EQX return from previous day
+- `spy_return`: SPY return from previous day
+- `cumulative_return`: EQX return since start of 7-day window
+- `rolling_volatility`: 7-day rolling standard deviation of EQX returns
+- `rolling_beta_7d`: 7-day rolling correlation between EQX and SPY returns
+- `rolling_max`: Maximum EQX index value so far (for drawdown calculation)
+- `drawdown`: Difference between current and peak EQX value
+- `drawdown_pct`: Percentage drawdown from peak
+- `tickers`: List of top 100 tickers used in index on the given day
+- `turnover`: Number of tickers changed since previous day
+- `exposure_similarity`: Jaccard similarity of tickers with previous day
+
+- `window_days`: Number of lookback days for summary metrics
+- `best_day`: Date with highest EQX daily return in window
+- `worst_day`: Date with lowest EQX daily return in window
+- `max_drawdown`: Maximum drawdown value over the window
+- `final_return`: Cumulative EQX return over the window
+- `avg_daily_return`: Mean of EQX daily returns in window
+- `volatility`: Standard deviation of EQX daily returns in window
+- `sharpe_ratio`: Ratio of average return to volatility
+- `sortino_ratio`: Ratio of average return to downside volatility
+- `ulcer_index`: Root mean square of drawdown percentages
+- `annualized_return`: Projected annual return based on window
+- `annualized_volatility`: Projected annual volatility
+- `up_capture`: EQX return capture ratio during SPY up days
+- `down_capture`: EQX return capture ratio during SPY down days
+- `win_ratio`: Proportion of days with positive return
+- `avg_turnover`: Average daily turnover (ticker changes)
+- `total_rebalances`: Number of rebalancing days (non-zero turnover)
+- `avg_exposure_similarity`: Average similarity to previous day's tickers
+- `var_95`: 5th percentile of daily returns (Value-at-Risk 95%)
+- `var_99`: 1st percentile of daily returns (Value-at-Risk 99%)
+- `return_skewness`: Skewness of daily return distribution
+- `return_kurtosis`: Kurtosis of daily return distribution
+- `max_gain_streak`: Longest consecutive streak of positive returns
+- `max_loss_streak`: Longest consecutive streak of negative returns
+
 
 ---
 ---
@@ -177,16 +252,41 @@ $ pip install -r requirements.txt
 
 ---
 
-## 🏠 Running the Pipeline
+"""
+🏠 EQX Runner – Command-Line Pipeline Entry
+===========================================
 
-```bash
-python main.py
-```
-This will:
-- Ingest historical stock + SPY data
-- Compute index values + metrics
-- Run validations
-- Export to Excel
+Module: eqx_runner.py
+
+Description:
+------------
+Main CLI entry point for the EQX index pipeline. Supports step-by-step or full
+execution of the entire workflow: data ingestion, index construction, metric computation,
+data validation, and Excel export.
+
+Supported Steps (--steps):
+--------------------------
+- ingest_data             : Ingest stock & SPY data for the given date
+- build_index             : Construct equal-weighted index from top 100 market cap stocks
+- compute_daily_metrics   : Compute per-day metrics (return, volatility, drawdown, turnover, etc.)
+- compute_summary_metrics : Compute summary stats (Sharpe, Sortino, CAGR, streaks, VaR, etc.)
+- validate_data           : Run validations on index values and computed metrics
+- export_excel            : Export results to a clean Excel report
+- run_all                 : Execute all steps sequentially
+
+Usage Example:
+--------------
+Run full pipeline for a specific date with a 30-day summary window and Excel export:
+
+    python eqx_runner.py --steps run_all --date 2024-06-25 --window 30 --excel_output_dir /path/to/output
+
+Arguments:
+----------
+--steps            List of steps to run (space-separated if multiple)
+--date             Target date in YYYY-MM-DD format
+--window           Lookback window (in days) for summary metrics (default: 40)
+--excel_output_dir Output directory for Excel export (optional)
+
 
 ---
 
@@ -215,24 +315,36 @@ Includes:
 
 ---
 
-## ✅ Running Unit Tests
+"""
+✅ Running Unit Tests
+----------------------
 
-```bash
-pytest
-```
-Covers:
-- Data ingestion
-- Index construction
-- Metrics computation
-- Excel exporting
-- Validations
+Run the full test suite using:
 
----
+    pytest
+
+Test Coverage Includes:
+------------------------
+
+- Data Ingestion
+    • Parallel fetching, retry logic, ticker filtering, failure logging
+- Index Construction
+    • Top 100 selection by market cap, equal-weighted index value calculation
+- Daily Metrics Computation
+    • Returns, volatility, drawdowns, turnover, exposure similarity
+- Summary Metrics Calculation
+    • Sharpe, Sortino, VaR, Ulcer Index, streaks, capture ratios
+- Excel Exporting
+    • Composition breakdowns, performance metrics, clean sheet formatting
+- Mocking & Isolation
+    • All external dependencies (DuckDB, ExcelWriter, APIs) are fully mocked
+"""
+
 
 ## 📁 Outputs
 
 - `eqx_index.db` – DuckDB database
-- `export/index_metrics.xlsx` – Excel export
+- `export/ – Excel exports
 - `logs/` – Logs per module
 - Streamlit dashboards – Interactive exploration
 
@@ -250,7 +362,7 @@ Covers:
 
 ---
 
-## 🙏 Acknowledgements
+## Acknowledgements
 - yfinance – Stock price data
 - DuckDB – Local OLAP SQL engine
 - Streamlit – Visualization platform

@@ -3,29 +3,16 @@ Module: data_ingestion
 
 Description:
 ------------
-This module ingests historical US stock data and SPY index prices into a DuckDB database.
-It fetches live stock tickers from Finnhub (with fallback to the S&P 500 list from Wikipedia),
-downloads historical price data via yfinance, calculates market caps using share counts,
-and appends the results into normalized DuckDB tables.
+This module ingests US stock data and SPY index prices into a DuckDB database
+for a single specified date.
 
 Design:
 -------
 - Parallel data fetching using ThreadPoolExecutor.
 - Resilient HTTP session with retry logic.
-- Data integrity enforced via per-ticker transactions and explicit column type casting.
-- Graceful handling of bad tickers, missing data, and API errors.
-- logger and CSV tracking of failed ticker ingestions.
-
-Main Functions:
----------------
-- create_requests_session(): Prepares an HTTP session with retry strategy.
-- get_finnhub_tickers(): Fetches US stock tickers from Finnhub API.
-- get_sp500_tickers(): Fallback function to retrieve S&P 500 tickers from Wikipedia.
-- create_tables(conn): Creates DuckDB tables for stock prices and market index data.
-- fetch_and_prepare_stock_data(ticker, start_date, end_date): Downloads and formats stock data.
-- fetch_all_stocks_parallel(tickers, conn, start_date, end_date): Ingests all tickers in parallel.
-- fetch_spy_data(conn, start_date, end_date): Appends SPY (S&P 500) index price data.
-- run_ingestion(): Main orchestrator for running the entire ingestion pipeline.
+- Per-ticker transaction isolation and type-safe casting.
+- Handles missing or failed tickers gracefully.
+- Logs failures and saves failed tickers to CSV.
 
 Dependencies:
 -------------
@@ -33,35 +20,21 @@ Dependencies:
 - pandas
 - yfinance
 - requests
-- bs4 (BeautifulSoup)
-- src.config.Config (project-specific configuration module)
-- src.logger.setup_logger (project-specific logger setup)
+- bs4
+- src.config.Config
+- src.logger.setup_logging
 
-Tables Created:
----------------
-- stock_prices (
-      date DATE,
-      ticker TEXT,
-      close DOUBLE,
-      market_cap DOUBLE
-  )
-
-- market_index (
-      date DATE,
-      spy_close DOUBLE
-  )
-
-Notes:
-------
-- Stock prices are enriched with market cap using yfinance's `sharesOutstanding` data.
-- Each ticker's data is inserted in its own transaction to isolate failures.
-- Failed tickers are logged and saved to a CSV defined in `Config.FAILED_TICKERS_FILE`.
+Tables:
+-------
+- stock_prices (date, ticker, close, market_cap)
+- market_index (date, spy_close)
 """
 
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Optional
+from pathlib import Path
 
 import duckdb
 import pandas as pd
@@ -73,12 +46,11 @@ from requests.adapters import HTTPAdapter, Retry
 from src.config import Config
 from src.logger import setup_logging
 
-# --- Initialize logger ---
 logger = setup_logging(Config.INGESTION_LOG_FILE, logger_name="eqx.ingestion")
 
 
-# --- HTTP session with retry ---
 def create_requests_session() -> requests.Session:
+    """Create a retry-enabled HTTP session for robust API communication."""
     session = requests.Session()
     retries = Retry(
         total=5,
@@ -95,8 +67,8 @@ def create_requests_session() -> requests.Session:
 session = create_requests_session()
 
 
-# --- Fetch tickers from Finnhub ---
 def get_finnhub_tickers() -> List[str]:
+    """Fetch active US common stock tickers from Finnhub."""
     if not Config.FINNHUB_API_KEY:
         logger.error("Finnhub API key missing! Set FINNHUB_API_KEY.")
         return []
@@ -121,8 +93,8 @@ def get_finnhub_tickers() -> List[str]:
         return []
 
 
-# --- Wikipedia fallback for S&P 500 ---
 def get_sp500_tickers() -> List[str]:
+    """Fallback method to fetch S&P 500 tickers from Wikipedia."""
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     try:
         html = session.get(url, timeout=10).text
@@ -139,8 +111,8 @@ def get_sp500_tickers() -> List[str]:
         return []
 
 
-# --- Schema creation ---
 def create_tables(conn: duckdb.DuckDBPyConnection) -> None:
+    """Create DuckDB tables if they do not exist."""
     conn.execute(
         """
         CREATE TABLE IF NOT EXISTS stock_prices (
@@ -149,7 +121,7 @@ def create_tables(conn: duckdb.DuckDBPyConnection) -> None:
             close DOUBLE,
             market_cap DOUBLE
         )
-    """
+        """
     )
     conn.execute(
         """
@@ -157,18 +129,19 @@ def create_tables(conn: duckdb.DuckDBPyConnection) -> None:
             date DATE,
             spy_close DOUBLE
         )
-    """
+        """
     )
     logger.info("Tables created.")
 
 
-# --- Stock data fetch ---
-def fetch_and_prepare_stock_data(
-    ticker: str, start_date: str, end_date: str
-) -> Optional[pd.DataFrame]:
+def fetch_and_prepare_stock_data(ticker: str, date: str) -> Optional[pd.DataFrame]:
+    """Fetch and prepare stock price and market cap data for a given ticker and date."""
     try:
+        dt = datetime.strptime(date, "%Y-%m-%d")
+        next_day = (dt + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+
         stock = yf.Ticker(ticker)
-        df = stock.history(start=start_date, end=end_date)
+        df = stock.history(start=date, end=next_day)
 
         if df.empty:
             raise ValueError("No data found")
@@ -182,43 +155,30 @@ def fetch_and_prepare_stock_data(
         df["market_cap"] = df["Close"] * shares_out
         df.rename(columns={"Date": "date", "Close": "close"}, inplace=True)
 
-        df["date"] = pd.to_datetime(df["date"])
-        # Strip timezone if present
-        if pd.api.types.is_datetime64tz_dtype(df["date"]):
-            df["date"] = df["date"].dt.tz_localize(None)
-
+        df["date"] = pd.to_datetime(df["date"]).dt.date
         df["close"] = pd.to_numeric(df["close"], errors="coerce")
         df["market_cap"] = pd.to_numeric(df["market_cap"], errors="coerce")
-        df = df.astype(
-            {
-                "ticker": "string",
-                "close": "float64",
-                "market_cap": "float64",
-                "date": "datetime64[ns]",
-            }
-        )
 
+        df = df[df["date"] == dt.date()]
         return df.dropna()
     except Exception as e:
         logger.warning(f"[{ticker}] Fetch error: {e}")
         return None
 
 
-# --- Parallel ingestion with type-safe casting ---
 def fetch_all_stocks_parallel(
     tickers: List[str],
     conn: duckdb.DuckDBPyConnection,
-    start_date: str,
-    end_date: str,
+    date: str,
     max_workers: int = 8,
 ) -> None:
+    """Fetch and insert stock data in parallel into DuckDB."""
     success_rows = 0
     failed_tickers: List[str] = []
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(fetch_and_prepare_stock_data, t, start_date, end_date): t
-            for t in tickers
+            executor.submit(fetch_and_prepare_stock_data, t, date): t for t in tickers
         }
 
         for future in as_completed(futures):
@@ -230,12 +190,7 @@ def fetch_all_stocks_parallel(
                 failed_tickers.append(ticker)
                 continue
 
-            if df is not None and set(df.columns) >= {
-                "date",
-                "ticker",
-                "close",
-                "market_cap",
-            }:
+            if df is not None and not df.empty:
                 try:
                     conn.execute("BEGIN")
                     conn.register("temp_df", df)
@@ -248,7 +203,7 @@ def fetch_all_stocks_parallel(
                             CAST(close AS DOUBLE),
                             CAST(market_cap AS DOUBLE)
                         FROM temp_df
-                    """
+                        """
                     )
                     conn.unregister("temp_df")
                     conn.execute("COMMIT")
@@ -273,23 +228,24 @@ def fetch_all_stocks_parallel(
     logger.info(f"Total rows inserted: {success_rows}")
 
 
-# --- SPY index data fetch (append-only) ---
-def fetch_spy_data(
-    conn: duckdb.DuckDBPyConnection, start_date: str, end_date: str
-) -> None:
+def fetch_spy_data(conn: duckdb.DuckDBPyConnection, date: str) -> None:
+    """Fetch and insert SPY (S&P 500 Index) closing price for the given date."""
     try:
+        dt = datetime.strptime(date, "%Y-%m-%d")
+        next_day = (dt + pd.Timedelta(days=1)).strftime("%Y-%m-%d")
+
         spy = yf.Ticker("^GSPC")
-        df = spy.history(start=start_date, end=end_date)
+        df = spy.history(start=date, end=next_day)
 
         if df.empty:
             raise ValueError("SPY data is empty")
 
         df = df.reset_index()[["Date", "Close"]]
         df.rename(columns={"Date": "date", "Close": "spy_close"}, inplace=True)
-        df["date"] = pd.to_datetime(df["date"])
+        df["date"] = pd.to_datetime(df["date"]).dt.date
         df["spy_close"] = pd.to_numeric(df["spy_close"], errors="coerce")
         df.dropna(subset=["date", "spy_close"], inplace=True)
-        df = df[df["spy_close"] > 0]
+        df = df[df["date"] == dt.date()]
 
         conn.execute("BEGIN TRANSACTION")
         conn.register("temp_index_df", df)
@@ -302,14 +258,39 @@ def fetch_spy_data(
         logger.warning(f"Failed to fetch SPY data: {e}")
 
 
-# --- Main Entry Point ---
-def run_ingestion() -> None:
+def run_ingestion(date: Optional[str] = None) -> None:
+    """
+    Ingests stock price data and SPY index value into DuckDB for a specific date.
+
+    Args:
+        date (Optional[str]): Target date in 'YYYY-MM-DD' format.
+    """
     if not Config.FINNHUB_API_KEY:
         logger.error("Cannot proceed without FINNHUB_API_KEY.")
         return
 
-    conn = duckdb.connect(Config.DUCKDB_FILE)
+    if not date:
+        logger.error("Must provide `date`. Aborting ingestion.")
+        return
+
     try:
+        datetime.strptime(date, "%Y-%m-%d")
+    except ValueError:
+        logger.error("Invalid date format. Use YYYY-MM-DD.")
+        return
+
+    logger.info(f"Ingesting data for: {date}")
+
+    db_path = Path(Config.DUCKDB_FILE)
+
+    try:
+        conn = duckdb.connect(str(db_path))
+    except Exception as e:
+        logger.error(f"Failed to connect to DuckDB: {e}")
+        return
+
+    try:
+        logger.info("Ensuring DuckDB schema is ready.")
         create_tables(conn)
 
         tickers = get_finnhub_tickers()
@@ -321,14 +302,8 @@ def run_ingestion() -> None:
             logger.error("No tickers found. Aborting ingestion.")
             return
 
-        end_date = datetime.today().strftime("%Y-%m-%d")
-        start_date = (datetime.today() - timedelta(days=Config.FETCH_DAYS)).strftime(
-            "%Y-%m-%d"
-        )
+        fetch_all_stocks_parallel(tickers, conn, date)
+        fetch_spy_data(conn, date)
 
-        fetch_all_stocks_parallel(tickers, conn, start_date, end_date)
-        fetch_spy_data(conn, start_date, end_date)
-
-        logger.info("Data ingestion complete.")
     finally:
         conn.close()

@@ -1,4 +1,8 @@
-2025-06-25 07:54:24,210 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
-2025-06-25 07:54:51,076 [INFO] Starting Excel export process...
-2025-06-25 07:54:51,083 [INFO] Data loaded from DuckDB.
-2025-06-25 07:54:51,219 [INFO] Excel export successful: /Users/shailyjaloree/eqx-index-project/export/equal_weight_index.xlsx
+2025-06-25 23:09:34,609 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
+2025-06-25 23:10:11,554 [INFO] Starting Excel export process...
+2025-06-25 23:10:11,563 [INFO] Data loaded from DuckDB for window: 2024-05-16 → 2024-06-25
+2025-06-25 23:10:11,772 [INFO] Excel export successful: /Users/shailyjaloree/eqx-index-project/export/eqx_index_export_2024-06-25.xlsx
+2025-06-25 23:10:59,556 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
+2025-06-25 23:11:41,834 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
+2025-06-25 23:11:49,980 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
+2025-06-25 23:11:54,086 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log

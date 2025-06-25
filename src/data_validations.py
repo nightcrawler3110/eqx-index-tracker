@@ -4,7 +4,7 @@ Module: data_validation
 Description:
 ------------
 This module provides essential data validation functions and a runner to check the integrity
-of key tables in a DuckDB database.
+of key tables in a DuckDB database for a specific date.
 
 It validates against:
 - Null values in critical columns
@@ -23,20 +23,11 @@ Functions:
 - validate_positive_values(): Check for non-positive numeric fields.
 - validate_price_spikes(): Detect extreme price changes.
 - run_for_table(): Run all validations on a specific table.
-- run_validations(): Orchestrates validations across all key tables.
+- run_validations_for_date(): Orchestrates validations for a single date.
 
 Types:
 ------
 - ValidationRecord: Tuple[str, str, str, int, str] representing (table, issue, column, count, path).
-
-logger:
---------
-All steps, warnings, and validation issues are logged using the configured logger.
-
-Output:
--------
-- Detailed issue rows saved in `Config.DETAILED_ISSUES_DIR`.
-- Summary report saved to `Config.VALIDATION_LOG`.
 """
 
 import logging
@@ -134,15 +125,25 @@ def run_for_table(
         logger.error(f"Error validating {table_name}: {e}")
 
 
-def run_validations() -> None:
-    """Run essential data validation checks on DuckDB tables."""
-    logger.info("Validation script started.")
+def run_validations(date: str) -> None:
+    """
+    Run validation checks for a specific date.
+
+    Args:
+        date (str): Date in YYYY-MM-DD format
+    """
+    logger.info(f"Running validations for date: {date}")
+
+    if not Config.DUCKDB_FILE or not Path(Config.DUCKDB_FILE).exists():
+        logger.error(f"DuckDB file not found: {Config.DUCKDB_FILE}")
+        return
+
     conn = duckdb.connect(str(Config.DUCKDB_FILE))
     report: List[ValidationRecord] = []
 
     run_for_table(
         conn,
-        "SELECT * FROM stock_prices",
+        f"SELECT * FROM stock_prices WHERE date = DATE '{date}' OR date = DATE '{date}' - INTERVAL 1 DAY",
         "stock_prices",
         [
             lambda df, name: validate_no_nulls(df, name, ["close", "market_cap"]),
@@ -156,7 +157,7 @@ def run_validations() -> None:
 
     run_for_table(
         conn,
-        "SELECT * FROM market_index",
+        f"SELECT * FROM market_index WHERE date = DATE '{date}'",
         "market_index",
         [
             lambda df, name: validate_no_nulls(df, name, ["spy_close"]),
@@ -167,7 +168,7 @@ def run_validations() -> None:
 
     run_for_table(
         conn,
-        "SELECT * FROM index_values",
+        f"SELECT * FROM index_values WHERE date = DATE '{date}'",
         "index_values",
         [
             lambda df, name: validate_no_nulls(df, name, ["index_value", "spy_value"]),
@@ -180,7 +181,7 @@ def run_validations() -> None:
 
     run_for_table(
         conn,
-        "SELECT * FROM index_metrics",
+        f"SELECT * FROM index_metrics WHERE date = DATE '{date}'",
         "index_metrics",
         [
             lambda df, name: validate_no_nulls(df, name, ["index_value", "spy_close"]),
@@ -191,6 +192,7 @@ def run_validations() -> None:
         report,
     )
 
+    # Save summary
     if report:
         df_report = pd.DataFrame(
             report, columns=["table", "issue", "column", "count", "details_file"]
@@ -203,3 +205,4 @@ def run_validations() -> None:
         logger.info("All data passed validation checks. No issues found.")
 
     conn.close()
+    logger.info("Validation script completed.")

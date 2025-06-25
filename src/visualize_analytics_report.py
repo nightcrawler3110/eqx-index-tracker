@@ -254,10 +254,56 @@ with tab2:
 # ----------------------------
 with tab3:
     st.subheader("Summary Metrics")
-    if not summary_df.empty:
-        for col in summary_df.columns:
-            st.metric(
-                label=col.replace("_", " ").title(), value=f"{summary_df[col].iloc[0]}"
-            )
+
+    if (
+        summary_df.empty
+        or "date" not in summary_df.columns
+        or "window_days" not in summary_df.columns
+    ):
+        st.warning("Summary metrics not available or missing required columns.")
     else:
-        st.warning("Summary metrics not available.")
+        # Convert date column to datetime
+        summary_df["date"] = pd.to_datetime(summary_df["date"])
+
+        # Step 1: Let user select from available window days
+        unique_windows = sorted(summary_df["window_days"].unique())
+        selected_window = st.selectbox("Select rolling window (days):", unique_windows)
+
+        # Step 2: Filter based on selected window
+        filtered_df = summary_df[summary_df["window_days"] == selected_window]
+
+        if filtered_df.empty:
+            st.warning(f"No summary metrics found for window {selected_window}.")
+        else:
+            # Step 3: Select date from available options within selected window
+            available_dates = (
+                filtered_df["date"].dt.date.sort_values(ascending=False).unique()
+            )
+            selected_date = st.selectbox(
+                "Select a date to view metrics:", available_dates
+            )
+
+            summary_row = filtered_df[filtered_df["date"].dt.date == selected_date]
+
+            if summary_row.empty:
+                st.warning(
+                    f"No metrics found for {selected_date} with window {selected_window}."
+                )
+            else:
+                st.markdown(
+                    f"### Summary for {selected_date} (Window: {selected_window} days)"
+                )
+
+                for col in summary_row.columns:
+                    if col not in {"date", "window_days"}:
+                        val = summary_row[col].iloc[0]
+
+                        # Format float to 4 decimals
+                        if isinstance(val, float):
+                            val_display = f"{val:.4f}"
+                        else:
+                            val_display = str(val)
+
+                        st.metric(
+                            label=col.replace("_", " ").title(), value=val_display
+                        )
