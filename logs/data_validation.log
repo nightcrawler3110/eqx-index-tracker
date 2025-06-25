@@ -1,11 +1,11 @@
-2025-06-25 07:33:21,311 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
-2025-06-25 07:33:50,334 [INFO] Validation script started.
-2025-06-25 07:33:50,339 [INFO] Validating table: stock_prices
-2025-06-25 07:33:50,346 [INFO] Loaded `stock_prices` — 10060 rows
-2025-06-25 07:33:50,349 [INFO] Validating table: market_index
-2025-06-25 07:33:50,350 [INFO] Loaded `market_index` — 20 rows
-2025-06-25 07:33:50,351 [INFO] Validating table: index_values
-2025-06-25 07:33:50,352 [INFO] Loaded `index_values` — 20 rows
-2025-06-25 07:33:50,353 [INFO] Validating table: index_metrics
-2025-06-25 07:33:50,355 [INFO] Loaded `index_metrics` — 20 rows
-2025-06-25 07:33:50,355 [INFO] All data passed validation checks. No issues found.
+2025-06-25 07:41:04,976 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
+2025-06-25 07:41:39,005 [INFO] Validation script started.
+2025-06-25 07:41:39,011 [INFO] Validating table: stock_prices
+2025-06-25 07:41:39,018 [INFO] Loaded `stock_prices` — 10060 rows
+2025-06-25 07:41:39,021 [INFO] Validating table: market_index
+2025-06-25 07:41:39,023 [INFO] Loaded `market_index` — 20 rows
+2025-06-25 07:41:39,023 [INFO] Validating table: index_values
+2025-06-25 07:41:39,025 [INFO] Loaded `index_values` — 20 rows
+2025-06-25 07:41:39,025 [INFO] Validating table: index_metrics
+2025-06-25 07:41:39,027 [INFO] Loaded `index_metrics` — 20 rows
+2025-06-25 07:41:39,028 [INFO] All data passed validation checks. No issues found.

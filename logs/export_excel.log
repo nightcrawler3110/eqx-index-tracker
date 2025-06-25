@@ -1,5 +1,5 @@
-2025-06-25 07:33:21,311 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
-2025-06-25 07:33:50,357 [INFO] Starting Excel export process...
-2025-06-25 07:33:50,357 [INFO] Deleted old Excel file: /Users/shailyjaloree/eqx-index-project/export/equal_weight_index.xlsx
-2025-06-25 07:33:50,364 [INFO] Data loaded from DuckDB.
-2025-06-25 07:33:50,484 [INFO] Excel export successful: /Users/shailyjaloree/eqx-index-project/export/equal_weight_index.xlsx
+2025-06-25 07:41:04,976 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/export_excel.log
+2025-06-25 07:41:39,029 [INFO] Starting Excel export process...
+2025-06-25 07:41:39,030 [INFO] Deleted old Excel file: /Users/shailyjaloree/eqx-index-project/export/equal_weight_index.xlsx
+2025-06-25 07:41:39,037 [INFO] Data loaded from DuckDB.
+2025-06-25 07:41:39,169 [INFO] Excel export successful: /Users/shailyjaloree/eqx-index-project/export/equal_weight_index.xlsx

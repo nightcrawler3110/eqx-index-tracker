@@ -1,5 +1,5 @@
-2025-06-25 07:33:21,310 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
-2025-06-25 07:33:50,309 [INFO] Starting performance metrics computation.
-2025-06-25 07:33:50,317 [INFO] Merged dataset has 20 rows.
-2025-06-25 07:33:50,329 [INFO] Metrics successfully stored in DuckDB.
-2025-06-25 07:33:50,333 [INFO] Performance metrics computation complete.
+2025-06-25 07:41:04,974 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/performance_metrics.log
+2025-06-25 07:41:38,981 [INFO] Starting performance metrics computation.
+2025-06-25 07:41:38,988 [INFO] Merged dataset has 20 rows.
+2025-06-25 07:41:39,000 [INFO] Metrics successfully stored in DuckDB.
+2025-06-25 07:41:39,005 [INFO] Performance metrics computation complete.

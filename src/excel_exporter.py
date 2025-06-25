@@ -102,21 +102,31 @@ def compute_composition_changes(composition_df: pd.DataFrame) -> pd.DataFrame:
     """Compute added/removed tickers compared to previous day."""
     changes = []
     prev_set: set[str] = set()
+    first = True
 
     for _, row in composition_df.iterrows():
         current_set = set(safe_split(row["tickers"]))
-        added = current_set - prev_set
-        removed = prev_set - current_set
-        intersection = current_set & prev_set
 
-        changes.append(
-            {
+        if first:
+            changes.append({
+                "date": row["date"],
+                "added": ",".join(sorted(current_set)),
+                "removed": "",
+                "intersection_size": 0,
+            })
+            first = False
+        else:
+            added = current_set - prev_set
+            removed = prev_set - current_set
+            intersection = current_set & prev_set
+
+            changes.append({
                 "date": row["date"],
                 "added": ",".join(sorted(added)),
                 "removed": ",".join(sorted(removed)),
                 "intersection_size": len(intersection),
-            }
-        )
+            })
+
         prev_set = current_set
 
     return pd.DataFrame(changes)
