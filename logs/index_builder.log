@@ -1,6 +1,6 @@
-2025-06-25 07:41:04,416 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
-2025-06-25 07:41:38,949 [INFO] Starting index build process.
-2025-06-25 07:41:38,958 [INFO] Loaded 10060 rows from stock_prices.
-2025-06-25 07:41:38,959 [INFO] 20 distinct dates found.
-2025-06-25 07:41:38,977 [INFO] index_values appended with 20 new rows.
-2025-06-25 07:41:38,980 [INFO] Index build process completed.
+2025-06-25 07:54:23,740 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
+2025-06-25 07:54:50,990 [INFO] Starting index build process.
+2025-06-25 07:54:50,997 [INFO] Loaded 13052 rows from stock_prices.
+2025-06-25 07:54:50,999 [INFO] 26 distinct dates found.
+2025-06-25 07:54:51,020 [INFO] index_values appended with 26 new rows.
+2025-06-25 07:54:51,024 [INFO] Index build process completed.

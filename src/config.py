@@ -38,7 +38,7 @@ class Config:
     # --- Environment and Core Files ---
     DUCKDB_FILE = os.getenv("DUCKDB_FILE", str(DATA_DIR / "eqx_index.db"))
     FINNHUB_API_KEY = os.getenv("FINNHUB_API_KEY")
-    FETCH_DAYS = int(os.getenv("FETCH_DAYS", "30"))
+    FETCH_DAYS = int(os.getenv("FETCH_DAYS", "40"))
     FAILED_TICKERS_FILE = BASE_DIR / "failed_tickers.csv"
 
     # --- Logs ---

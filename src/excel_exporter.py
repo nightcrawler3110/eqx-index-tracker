@@ -21,8 +21,8 @@ Functions:
 - write_excel(): Writes all dataframes to Excel with separate sheets.
 - export_to_excel(): Main orchestrator function with safe file handling.
 
-logger:
---------
+Logger:
+-------
 All steps and issues are logged using the configured logger.
 
 Configuration:
@@ -33,6 +33,7 @@ Configuration:
 """
 
 import os
+import ast
 import logging
 from pathlib import Path
 from typing import List, Any
@@ -54,8 +55,21 @@ def safe_split(x: Any) -> List[str]:
         if isinstance(x, (list, np.ndarray)):
             return list(x)
         elif isinstance(x, str):
-            x = x.strip("[]").replace("'", "")
-            return [item.strip() for item in x.split(",") if item.strip()]
+            x = x.strip()
+            # Handle stringified Python list (e.g., "['AAPL','MSFT']")
+            if x.startswith("[") and x.endswith("]"):
+                try:
+                    parsed = ast.literal_eval(x)
+                    if isinstance(parsed, list):
+                        return [str(item).strip() for item in parsed]
+                except Exception:
+                    pass
+            # Otherwise, treat as comma-separated
+            return [
+                item.strip()
+                for item in x.strip("[]").replace("'", "").split(",")
+                if item.strip()
+            ]
         return []
     except Exception as e:
         logger.warning(f"safe_split failed for input: {x} | Error: {e}")
@@ -102,30 +116,32 @@ def compute_composition_changes(composition_df: pd.DataFrame) -> pd.DataFrame:
     """Compute added/removed tickers compared to previous day."""
     changes = []
     prev_set: set[str] = set()
-    first = True
 
-    for _, row in composition_df.iterrows():
+    for idx, row in composition_df.iterrows():
         current_set = set(safe_split(row["tickers"]))
 
-        if first:
-            changes.append({
-                "date": row["date"],
-                "added": ",".join(sorted(current_set)),
-                "removed": "",
-                "intersection_size": 0,
-            })
-            first = False
+        if idx == 0:
+            changes.append(
+                {
+                    "date": row["date"],
+                    "added": ",".join(sorted(current_set)),
+                    "removed": "",
+                    "intersection_size": 0,
+                }
+            )
         else:
             added = current_set - prev_set
             removed = prev_set - current_set
             intersection = current_set & prev_set
 
-            changes.append({
-                "date": row["date"],
-                "added": ",".join(sorted(added)),
-                "removed": ",".join(sorted(removed)),
-                "intersection_size": len(intersection),
-            })
+            changes.append(
+                {
+                    "date": row["date"],
+                    "added": ",".join(sorted(added)),
+                    "removed": ",".join(sorted(removed)),
+                    "intersection_size": len(intersection),
+                }
+            )
 
         prev_set = current_set
 
@@ -150,7 +166,6 @@ def export_to_excel() -> None:
     """Main function to export index data to Excel."""
     logger.info("Starting Excel export process...")
 
-    # Delete old export if exists
     try:
         if Path(Config.EXCEL_OUTPUT_FILE).exists():
             os.remove(Config.EXCEL_OUTPUT_FILE)
@@ -167,7 +182,6 @@ def export_to_excel() -> None:
         composition_final = transform_composition(composition_df)
         changes_df = compute_composition_changes(composition_df)
         write_excel(performance_df, composition_final, changes_df, summary_df)
-
         logger.info(f"Excel export successful: {Config.EXCEL_OUTPUT_FILE}")
     except Exception as e:
         logger.error(f"Export failed: {e}")
