@@ -1,1093 +1,1085 @@
-2025-06-25 23:08:44,582 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:08:44,583 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:08:44,584 [INFO] Starting full ingestion from 2024-04-26 to 2024-06-24
-2025-06-25 23:08:47,027 [INFO] Fetched 0 live tickers from Finnhub.
-2025-06-25 23:08:47,705 [INFO] Fetched 503 tickers from Wikipedia S&P 500 list.
-2025-06-25 23:08:47,712 [INFO] Tables created.
-2025-06-25 23:08:48,876 [INFO] [APD] Inserted 40 rows.
-2025-06-25 23:08:48,880 [INFO] [AES] Inserted 40 rows.
-2025-06-25 23:08:48,883 [INFO] [ADBE] Inserted 40 rows.
-2025-06-25 23:08:48,908 [INFO] [ABNB] Inserted 40 rows.
-2025-06-25 23:08:48,917 [INFO] [ABBV] Inserted 40 rows.
-2025-06-25 23:08:48,918 [INFO] [AMD] Inserted 40 rows.
-2025-06-25 23:08:48,924 [INFO] [AOS] Inserted 40 rows.
-2025-06-25 23:08:48,931 [INFO] [ABT] Inserted 40 rows.
-2025-06-25 23:08:48,945 [INFO] [AFL] Inserted 40 rows.
-2025-06-25 23:08:48,947 [INFO] [ACN] Inserted 40 rows.
-2025-06-25 23:08:48,988 [INFO] [A] Inserted 40 rows.
-2025-06-25 23:08:49,151 [INFO] [MMM] Inserted 40 rows.
-2025-06-25 23:08:49,296 [INFO] [AKAM] Inserted 40 rows.
-2025-06-25 23:08:49,305 [INFO] [ARE] Inserted 40 rows.
-2025-06-25 23:08:49,307 [INFO] [ALB] Inserted 40 rows.
-2025-06-25 23:08:49,336 [INFO] [ALGN] Inserted 40 rows.
-2025-06-25 23:08:49,337 [INFO] [GOOGL] Inserted 40 rows.
-2025-06-25 23:08:49,347 [INFO] [GOOG] Inserted 40 rows.
-2025-06-25 23:08:49,353 [INFO] [ALLE] Inserted 40 rows.
-2025-06-25 23:08:49,395 [INFO] [ALL] Inserted 40 rows.
-2025-06-25 23:08:49,455 [INFO] [MO] Inserted 40 rows.
-2025-06-25 23:08:49,498 [INFO] [LNT] Inserted 40 rows.
-2025-06-25 23:08:49,507 [INFO] [AMZN] Inserted 40 rows.
-2025-06-25 23:08:49,759 [INFO] [AEE] Inserted 40 rows.
-2025-06-25 23:08:49,775 [INFO] [AXP] Inserted 40 rows.
-2025-06-25 23:08:49,817 [INFO] [AMCR] Inserted 40 rows.
-2025-06-25 23:08:49,820 [INFO] [AIG] Inserted 40 rows.
-2025-06-25 23:08:49,855 [INFO] [AME] Inserted 40 rows.
-2025-06-25 23:08:49,882 [INFO] [AMGN] Inserted 40 rows.
-2025-06-25 23:08:49,896 [INFO] [AEP] Inserted 40 rows.
-2025-06-25 23:08:49,898 [INFO] [AWK] Inserted 40 rows.
-2025-06-25 23:08:49,899 [INFO] [AMT] Inserted 40 rows.
-2025-06-25 23:08:49,906 [INFO] [AMP] Inserted 40 rows.
-2025-06-25 23:08:49,925 [INFO] [APH] Inserted 40 rows.
-2025-06-25 23:08:50,058 [INFO] [ADI] Inserted 40 rows.
-2025-06-25 23:08:50,166 [INFO] [ANSS] Inserted 40 rows.
-2025-06-25 23:08:50,225 [INFO] [AON] Inserted 40 rows.
-2025-06-25 23:08:50,264 [INFO] [APA] Inserted 40 rows.
-2025-06-25 23:08:50,265 [INFO] [APO] Inserted 40 rows.
-2025-06-25 23:08:50,286 [INFO] [AAPL] Inserted 40 rows.
-2025-06-25 23:08:50,321 [INFO] [ANET] Inserted 40 rows.
-2025-06-25 23:08:50,333 [INFO] [ACGL] Inserted 40 rows.
-2025-06-25 23:08:50,356 [INFO] [ADM] Inserted 40 rows.
-2025-06-25 23:08:50,399 [INFO] [AJG] Inserted 40 rows.
-2025-06-25 23:08:50,444 [INFO] [APTV] Inserted 40 rows.
-2025-06-25 23:08:50,461 [INFO] [AMAT] Inserted 40 rows.
-2025-06-25 23:08:50,606 [INFO] [AIZ] Inserted 40 rows.
-2025-06-25 23:08:50,661 [INFO] [ATO] Inserted 40 rows.
-2025-06-25 23:08:50,688 [INFO] [ADSK] Inserted 40 rows.
-2025-06-25 23:08:50,692 [INFO] [AZO] Inserted 40 rows.
-2025-06-25 23:08:50,739 [INFO] [T] Inserted 40 rows.
-2025-06-25 23:08:50,740 [INFO] [ADP] Inserted 40 rows.
-2025-06-25 23:08:50,777 [INFO] [AXON] Inserted 40 rows.
-2025-06-25 23:08:50,789 [INFO] [AVB] Inserted 40 rows.
-2025-06-25 23:08:50,855 [INFO] [AVY] Inserted 40 rows.
-2025-06-25 23:08:50,864 [INFO] [BKR] Inserted 40 rows.
-2025-06-25 23:08:50,894 [INFO] [BALL] Inserted 40 rows.
-2025-06-25 23:08:50,948 [INFO] [BAC] Inserted 40 rows.
-2025-06-25 23:08:51,067 [INFO] [BAX] Inserted 40 rows.
-2025-06-25 23:08:51,093 [INFO] [BRK-B] Inserted 40 rows.
-2025-06-25 23:08:51,150 [INFO] [BDX] Inserted 40 rows.
-2025-06-25 23:08:51,201 [INFO] [TECH] Inserted 40 rows.
-2025-06-25 23:08:51,246 [INFO] [BX] Inserted 40 rows.
-2025-06-25 23:08:51,268 [INFO] [BIIB] Inserted 40 rows.
-2025-06-25 23:08:51,286 [INFO] [BBY] Inserted 40 rows.
-2025-06-25 23:08:51,293 [INFO] [BKNG] Inserted 40 rows.
-2025-06-25 23:08:51,328 [INFO] [BLK] Inserted 40 rows.
-2025-06-25 23:08:51,358 [INFO] [BA] Inserted 40 rows.
-2025-06-25 23:08:51,436 [INFO] [BK] Inserted 40 rows.
-2025-06-25 23:08:51,483 [INFO] [BSX] Inserted 40 rows.
-2025-06-25 23:08:51,507 [INFO] [AVGO] Inserted 40 rows.
-2025-06-25 23:08:51,546 [INFO] [BMY] Inserted 40 rows.
-2025-06-25 23:08:51,570 [INFO] [BR] Inserted 40 rows.
-2025-06-25 23:08:51,656 [INFO] [BRO] Inserted 40 rows.
-2025-06-25 23:08:51,730 [INFO] [BG] Inserted 40 rows.
-2025-06-25 23:08:51,752 [INFO] [BXP] Inserted 40 rows.
-2025-06-25 23:08:51,774 [INFO] [CDNS] Inserted 40 rows.
-2025-06-25 23:08:51,793 [INFO] [BLDR] Inserted 40 rows.
-2025-06-25 23:08:51,795 [INFO] [CHRW] Inserted 40 rows.
-2025-06-25 23:08:51,957 [INFO] [BF-B] Inserted 40 rows.
-2025-06-25 23:08:51,984 [INFO] [COF] Inserted 40 rows.
-2025-06-25 23:08:51,987 [INFO] [CPB] Inserted 40 rows.
-2025-06-25 23:08:51,999 [INFO] [CAH] Inserted 40 rows.
-2025-06-25 23:08:52,090 [INFO] [CPT] Inserted 40 rows.
-2025-06-25 23:08:52,130 [INFO] [CZR] Inserted 40 rows.
-2025-06-25 23:08:52,169 [INFO] [CARR] Inserted 40 rows.
-2025-06-25 23:08:52,182 [INFO] [CCL] Inserted 40 rows.
-2025-06-25 23:08:52,201 [INFO] [KMX] Inserted 40 rows.
-2025-06-25 23:08:52,271 [INFO] [CAT] Inserted 40 rows.
-2025-06-25 23:08:52,321 [INFO] [CBRE] Inserted 40 rows.
-2025-06-25 23:08:52,348 [INFO] [CBOE] Inserted 40 rows.
-2025-06-25 23:08:52,398 [INFO] [CDW] Inserted 40 rows.
-2025-06-25 23:08:52,407 [INFO] [CNC] Inserted 40 rows.
-2025-06-25 23:08:52,534 [INFO] [COR] Inserted 40 rows.
-2025-06-25 23:08:52,544 [INFO] [CRL] Inserted 40 rows.
-2025-06-25 23:08:52,590 [INFO] [CHTR] Inserted 40 rows.
-2025-06-25 23:08:52,631 [INFO] [SCHW] Inserted 40 rows.
-2025-06-25 23:08:52,632 [INFO] [CNP] Inserted 40 rows.
-2025-06-25 23:08:52,669 [INFO] [CF] Inserted 40 rows.
-2025-06-25 23:08:52,697 [INFO] [CVX] Inserted 40 rows.
-2025-06-25 23:08:52,699 [INFO] [CMG] Inserted 40 rows.
-2025-06-25 23:08:52,771 [INFO] [CB] Inserted 40 rows.
-2025-06-25 23:08:52,818 [INFO] [CHD] Inserted 40 rows.
-2025-06-25 23:08:52,896 [INFO] [CI] Inserted 40 rows.
-2025-06-25 23:08:52,898 [INFO] [CINF] Inserted 40 rows.
-2025-06-25 23:08:53,009 [INFO] [CSCO] Inserted 40 rows.
-2025-06-25 23:08:53,043 [INFO] [CFG] Inserted 40 rows.
-2025-06-25 23:08:53,115 [INFO] [CLX] Inserted 40 rows.
-2025-06-25 23:08:53,160 [INFO] [CTAS] Inserted 40 rows.
-2025-06-25 23:08:53,173 [INFO] [CMS] Inserted 40 rows.
-2025-06-25 23:08:53,174 [INFO] [C] Inserted 40 rows.
-2025-06-25 23:08:53,219 [INFO] [CTSH] Inserted 40 rows.
-2025-06-25 23:08:53,300 [INFO] [CME] Inserted 40 rows.
-2025-06-25 23:08:53,319 [INFO] [KO] Inserted 40 rows.
-2025-06-25 23:08:53,346 [INFO] [CMCSA] Inserted 40 rows.
-2025-06-25 23:08:53,359 [INFO] [COIN] Inserted 40 rows.
-2025-06-25 23:08:53,405 [INFO] [CL] Inserted 40 rows.
-2025-06-25 23:08:53,477 [INFO] [CAG] Inserted 40 rows.
-2025-06-25 23:08:53,589 [INFO] [STZ] Inserted 40 rows.
-2025-06-25 23:08:53,591 [INFO] [CEG] Inserted 40 rows.
-2025-06-25 23:08:53,634 [INFO] [COO] Inserted 40 rows.
-2025-06-25 23:08:53,713 [INFO] [ED] Inserted 40 rows.
-2025-06-25 23:08:53,737 [INFO] [CPAY] Inserted 40 rows.
-2025-06-25 23:08:53,741 [INFO] [COP] Inserted 40 rows.
-2025-06-25 23:08:53,751 [INFO] [CPRT] Inserted 40 rows.
-2025-06-25 23:08:53,779 [INFO] [CTVA] Inserted 40 rows.
-2025-06-25 23:08:53,785 [INFO] [CSGP] Inserted 40 rows.
-2025-06-25 23:08:53,816 [INFO] [GLW] Inserted 40 rows.
-2025-06-25 23:08:53,850 [INFO] [COST] Inserted 40 rows.
-2025-06-25 23:08:53,935 [INFO] [CTRA] Inserted 40 rows.
-2025-06-25 23:08:54,019 [INFO] [CCI] Inserted 40 rows.
-2025-06-25 23:08:54,099 [INFO] [CSX] Inserted 40 rows.
-2025-06-25 23:08:54,127 [INFO] [CRWD] Inserted 40 rows.
-2025-06-25 23:08:54,190 [INFO] [DVA] Inserted 40 rows.
-2025-06-25 23:08:54,193 [INFO] [DHR] Inserted 40 rows.
-2025-06-25 23:08:54,200 [INFO] [CVS] Inserted 40 rows.
-2025-06-25 23:08:54,208 [INFO] [CMI] Inserted 40 rows.
-2025-06-25 23:08:54,244 [INFO] [DECK] Inserted 40 rows.
-2025-06-25 23:08:54,310 [INFO] [DRI] Inserted 40 rows.
-2025-06-25 23:08:54,332 [INFO] [DAY] Inserted 40 rows.
-2025-06-25 23:08:54,349 [INFO] [DELL] Inserted 40 rows.
-2025-06-25 23:08:54,445 [INFO] [DE] Inserted 40 rows.
-2025-06-25 23:08:54,446 [INFO] [DAL] Inserted 40 rows.
-2025-06-25 23:08:54,539 [INFO] [DVN] Inserted 40 rows.
-2025-06-25 23:08:54,596 [INFO] [FANG] Inserted 40 rows.
-2025-06-25 23:08:54,612 [INFO] [DLTR] Inserted 40 rows.
-2025-06-25 23:08:54,617 [INFO] [DG] Inserted 40 rows.
-2025-06-25 23:08:54,650 [INFO] [DXCM] Inserted 40 rows.
-2025-06-25 23:08:54,717 [INFO] [D] Inserted 40 rows.
-2025-06-25 23:08:54,724 [INFO] [DLR] Inserted 40 rows.
-2025-06-25 23:08:54,736 [INFO] [DPZ] Inserted 40 rows.
-2025-06-25 23:08:54,754 [INFO] [DASH] Inserted 40 rows.
-2025-06-25 23:08:54,828 [INFO] [DOV] Inserted 40 rows.
-2025-06-25 23:08:54,850 [INFO] [DOW] Inserted 40 rows.
-2025-06-25 23:08:54,916 [INFO] [DHI] Inserted 40 rows.
-2025-06-25 23:08:55,044 [INFO] [DTE] Inserted 40 rows.
-2025-06-25 23:08:55,061 [INFO] [EMN] Inserted 40 rows.
-2025-06-25 23:08:55,074 [INFO] [DD] Inserted 40 rows.
-2025-06-25 23:08:55,136 [INFO] [ETN] Inserted 40 rows.
-2025-06-25 23:08:55,184 [INFO] [EW] Inserted 40 rows.
-2025-06-25 23:08:55,191 [INFO] [ECL] Inserted 40 rows.
-2025-06-25 23:08:55,206 [INFO] [EIX] Inserted 40 rows.
-2025-06-25 23:08:55,256 [INFO] [EBAY] Inserted 40 rows.
-2025-06-25 23:08:55,265 [INFO] [EA] Inserted 40 rows.
-2025-06-25 23:08:55,283 [INFO] [ELV] Inserted 40 rows.
-2025-06-25 23:08:55,290 [INFO] [DUK] Inserted 40 rows.
-2025-06-25 23:08:55,397 [INFO] [EMR] Inserted 40 rows.
-2025-06-25 23:08:55,520 [INFO] [EOG] Inserted 40 rows.
-2025-06-25 23:08:55,538 [INFO] [EPAM] Inserted 40 rows.
-2025-06-25 23:08:55,570 [INFO] [ENPH] Inserted 40 rows.
-2025-06-25 23:08:55,627 [INFO] [EQIX] Inserted 40 rows.
-2025-06-25 23:08:55,659 [INFO] [EFX] Inserted 40 rows.
-2025-06-25 23:08:55,666 [INFO] [EQT] Inserted 40 rows.
-2025-06-25 23:08:55,697 [INFO] [ETR] Inserted 40 rows.
-2025-06-25 23:08:55,699 [INFO] [ERIE] Inserted 40 rows.
-2025-06-25 23:08:55,720 [INFO] [EQR] Inserted 40 rows.
-2025-06-25 23:08:55,744 [INFO] [EL] Inserted 40 rows.
-2025-06-25 23:08:55,848 [INFO] [EG] Inserted 40 rows.
-2025-06-25 23:08:55,864 [INFO] [ESS] Inserted 40 rows.
-2025-06-25 23:08:55,979 [INFO] [EVRG] Inserted 40 rows.
-2025-06-25 23:08:56,046 [INFO] [ES] Inserted 40 rows.
-2025-06-25 23:08:56,058 [INFO] [EXE] Inserted 40 rows.
-2025-06-25 23:08:56,060 [INFO] [EXC] Inserted 40 rows.
-2025-06-25 23:08:56,071 [INFO] [EXPE] Inserted 40 rows.
-2025-06-25 23:08:56,173 [INFO] [FDS] Inserted 40 rows.
-2025-06-25 23:08:56,201 [INFO] [XOM] Inserted 40 rows.
-2025-06-25 23:08:56,229 [INFO] [EXR] Inserted 40 rows.
-2025-06-25 23:08:56,238 [INFO] [EXPD] Inserted 40 rows.
-2025-06-25 23:08:56,259 [INFO] [FFIV] Inserted 40 rows.
-2025-06-25 23:08:56,296 [INFO] [FICO] Inserted 40 rows.
-2025-06-25 23:08:56,340 [INFO] [FAST] Inserted 40 rows.
-2025-06-25 23:08:56,443 [INFO] [FRT] Inserted 40 rows.
-2025-06-25 23:08:56,483 [INFO] [FSLR] Inserted 40 rows.
-2025-06-25 23:08:56,488 [INFO] [FDX] Inserted 40 rows.
-2025-06-25 23:08:56,522 [INFO] [FIS] Inserted 40 rows.
-2025-06-25 23:08:56,617 [INFO] [FE] Inserted 40 rows.
-2025-06-25 23:08:56,632 [INFO] [FI] Inserted 40 rows.
-2025-06-25 23:08:56,644 [INFO] [FITB] Inserted 40 rows.
-2025-06-25 23:08:56,657 [INFO] [FTNT] Inserted 40 rows.
-2025-06-25 23:08:56,690 [INFO] [F] Inserted 40 rows.
-2025-06-25 23:08:56,699 [INFO] [FTV] Inserted 40 rows.
-2025-06-25 23:08:56,712 [INFO] [FOXA] Inserted 40 rows.
-2025-06-25 23:08:56,758 [INFO] [FOX] Inserted 40 rows.
-2025-06-25 23:08:56,912 [INFO] [FCX] Inserted 40 rows.
-2025-06-25 23:08:56,939 [INFO] [IT] Inserted 40 rows.
-2025-06-25 23:08:56,941 [INFO] [GRMN] Inserted 40 rows.
-2025-06-25 23:08:57,010 [INFO] [BEN] Inserted 40 rows.
-2025-06-25 23:08:57,035 [INFO] [GEHC] Inserted 40 rows.
-2025-06-25 23:08:57,057 [INFO] [GEV] Inserted 40 rows.
-2025-06-25 23:08:57,087 [INFO] [GNRC] Inserted 40 rows.
-2025-06-25 23:08:57,102 [INFO] [GEN] Inserted 40 rows.
-2025-06-25 23:08:57,179 [INFO] [GM] Inserted 40 rows.
-2025-06-25 23:08:57,210 [INFO] [GIS] Inserted 40 rows.
-2025-06-25 23:08:57,224 [INFO] [GD] Inserted 40 rows.
-2025-06-25 23:08:57,240 [INFO] [GE] Inserted 40 rows.
-2025-06-25 23:08:57,360 [INFO] [GILD] Inserted 40 rows.
-2025-06-25 23:08:57,453 [INFO] [GL] Inserted 40 rows.
-2025-06-25 23:08:57,455 [INFO] [GDDY] Inserted 40 rows.
-2025-06-25 23:08:57,498 [INFO] [GPN] Inserted 40 rows.
-2025-06-25 23:08:57,553 [INFO] [HAL] Inserted 40 rows.
-2025-06-25 23:08:57,557 [INFO] [HIG] Inserted 40 rows.
-2025-06-25 23:08:57,611 [INFO] [GPC] Inserted 40 rows.
-2025-06-25 23:08:57,636 [INFO] [HCA] Inserted 40 rows.
-2025-06-25 23:08:57,638 [INFO] [GS] Inserted 40 rows.
-2025-06-25 23:08:57,689 [INFO] [DOC] Inserted 40 rows.
-2025-06-25 23:08:57,752 [INFO] [HAS] Inserted 40 rows.
-2025-06-25 23:08:57,762 [INFO] [HSIC] Inserted 40 rows.
-2025-06-25 23:08:57,888 [INFO] [HPE] Inserted 40 rows.
-2025-06-25 23:08:58,012 [INFO] [HES] Inserted 40 rows.
-2025-06-25 23:08:58,016 [INFO] [HD] Inserted 40 rows.
-2025-06-25 23:08:58,031 [INFO] [HSY] Inserted 40 rows.
-2025-06-25 23:08:58,032 [INFO] [HLT] Inserted 40 rows.
-2025-06-25 23:08:58,079 [INFO] [HOLX] Inserted 40 rows.
-2025-06-25 23:08:58,089 [INFO] [HRL] Inserted 40 rows.
-2025-06-25 23:08:58,091 [INFO] [HON] Inserted 40 rows.
-2025-06-25 23:08:58,103 [INFO] [HST] Inserted 40 rows.
-2025-06-25 23:08:58,160 [INFO] [HWM] Inserted 40 rows.
-2025-06-25 23:08:58,206 [INFO] [HUBB] Inserted 40 rows.
-2025-06-25 23:08:58,356 [INFO] [HPQ] Inserted 40 rows.
-2025-06-25 23:08:58,377 [INFO] [HUM] Inserted 40 rows.
-2025-06-25 23:08:58,445 [INFO] [HBAN] Inserted 40 rows.
-2025-06-25 23:08:58,483 [INFO] [INCY] Inserted 40 rows.
-2025-06-25 23:08:58,486 [INFO] [IDXX] Inserted 40 rows.
-2025-06-25 23:08:58,487 [INFO] [HII] Inserted 40 rows.
-2025-06-25 23:08:58,550 [INFO] [IBM] Inserted 40 rows.
-2025-06-25 23:08:58,604 [INFO] [PODD] Inserted 40 rows.
-2025-06-25 23:08:58,607 [INFO] [IEX] Inserted 40 rows.
-2025-06-25 23:08:58,627 [INFO] [IR] Inserted 40 rows.
-2025-06-25 23:08:58,638 [INFO] [INTC] Inserted 40 rows.
-2025-06-25 23:08:58,660 [INFO] [ITW] Inserted 40 rows.
-2025-06-25 23:08:58,802 [INFO] [ICE] Inserted 40 rows.
-2025-06-25 23:08:58,908 [INFO] [INTU] Inserted 40 rows.
-2025-06-25 23:08:58,921 [INFO] [ISRG] Inserted 40 rows.
-2025-06-25 23:08:58,924 [INFO] [IPG] Inserted 40 rows.
-2025-06-25 23:08:58,957 [INFO] [IFF] Inserted 40 rows.
-2025-06-25 23:08:59,025 [INFO] [IVZ] Inserted 40 rows.
-2025-06-25 23:08:59,027 [INFO] [INVH] Inserted 40 rows.
-2025-06-25 23:08:59,045 [INFO] [IRM] Inserted 40 rows.
-2025-06-25 23:08:59,047 [INFO] [IP] Inserted 40 rows.
-2025-06-25 23:08:59,090 [INFO] [JBHT] Inserted 40 rows.
-2025-06-25 23:08:59,099 [INFO] [JBL] Inserted 40 rows.
-2025-06-25 23:08:59,155 [INFO] [IQV] Inserted 40 rows.
-2025-06-25 23:08:59,258 [INFO] [JKHY] Inserted 40 rows.
-2025-06-25 23:08:59,318 [INFO] [J] Inserted 40 rows.
-2025-06-25 23:08:59,381 [INFO] [JCI] Inserted 40 rows.
-2025-06-25 23:08:59,454 [INFO] [KVUE] Inserted 40 rows.
-2025-06-25 23:08:59,476 [INFO] [KDP] Inserted 40 rows.
-2025-06-25 23:08:59,518 [INFO] [JNPR] Inserted 40 rows.
-2025-06-25 23:08:59,554 [INFO] [KEY] Inserted 40 rows.
-2025-06-25 23:08:59,555 [INFO] [JPM] Inserted 40 rows.
-2025-06-25 23:08:59,606 [INFO] [JNJ] Inserted 40 rows.
-2025-06-25 23:08:59,624 [INFO] [KMB] Inserted 40 rows.
-2025-06-25 23:08:59,625 [INFO] [KEYS] Inserted 40 rows.
-2025-06-25 23:08:59,638 [INFO] [K] Inserted 40 rows.
-2025-06-25 23:08:59,724 [INFO] [KIM] Inserted 40 rows.
-2025-06-25 23:08:59,727 [INFO] [KMI] Inserted 40 rows.
-2025-06-25 23:08:59,803 [INFO] [KKR] Inserted 40 rows.
-2025-06-25 23:08:59,892 [INFO] [KHC] Inserted 40 rows.
-2025-06-25 23:09:00,000 [INFO] [LH] Inserted 40 rows.
-2025-06-25 23:09:00,001 [INFO] [LHX] Inserted 40 rows.
-2025-06-25 23:09:00,009 [INFO] [KLAC] Inserted 40 rows.
-2025-06-25 23:09:00,134 [INFO] [KR] Inserted 40 rows.
-2025-06-25 23:09:00,146 [INFO] [LW] Inserted 40 rows.
-2025-06-25 23:09:00,157 [INFO] [LII] Inserted 40 rows.
-2025-06-25 23:09:00,174 [INFO] [LVS] Inserted 40 rows.
-2025-06-25 23:09:00,195 [INFO] [LDOS] Inserted 40 rows.
-2025-06-25 23:09:00,295 [INFO] [LRCX] Inserted 40 rows.
-2025-06-25 23:09:00,346 [INFO] [LIN] Inserted 40 rows.
-2025-06-25 23:09:00,348 [INFO] [LEN] Inserted 40 rows.
-2025-06-25 23:09:00,415 [INFO] [LKQ] Inserted 40 rows.
-2025-06-25 23:09:00,525 [INFO] [LLY] Inserted 40 rows.
-2025-06-25 23:09:00,543 [INFO] [LYV] Inserted 40 rows.
-2025-06-25 23:09:00,573 [INFO] [LULU] Inserted 40 rows.
-2025-06-25 23:09:00,619 [INFO] [LMT] Inserted 40 rows.
-2025-06-25 23:09:00,620 [INFO] [LOW] Inserted 40 rows.
-2025-06-25 23:09:00,722 [INFO] [LYB] Inserted 40 rows.
-2025-06-25 23:09:00,723 [INFO] [L] Inserted 40 rows.
-2025-06-25 23:09:00,760 [INFO] [MPC] Inserted 40 rows.
-2025-06-25 23:09:00,784 [INFO] [MTB] Inserted 40 rows.
-2025-06-25 23:09:00,865 [INFO] [MKTX] Inserted 40 rows.
-2025-06-25 23:09:00,867 [INFO] [MMC] Inserted 40 rows.
-2025-06-25 23:09:00,924 [INFO] [MAR] Inserted 40 rows.
-2025-06-25 23:09:01,009 [INFO] [MAS] Inserted 40 rows.
-2025-06-25 23:09:01,011 [INFO] [MA] Inserted 40 rows.
-2025-06-25 23:09:01,031 [INFO] [MTCH] Inserted 40 rows.
-2025-06-25 23:09:01,089 [INFO] [MLM] Inserted 40 rows.
-2025-06-25 23:09:01,091 [INFO] [MKC] Inserted 40 rows.
-2025-06-25 23:09:01,181 [INFO] [MCD] Inserted 40 rows.
-2025-06-25 23:09:01,192 [INFO] [MCK] Inserted 40 rows.
-2025-06-25 23:09:01,256 [INFO] [META] Inserted 40 rows.
-2025-06-25 23:09:01,261 [INFO] [MDT] Inserted 40 rows.
-2025-06-25 23:09:01,303 [INFO] [MET] Inserted 40 rows.
-2025-06-25 23:09:01,314 [INFO] [MRK] Inserted 40 rows.
-2025-06-25 23:09:01,471 [INFO] [MTD] Inserted 40 rows.
-2025-06-25 23:09:01,484 [INFO] [MU] Inserted 40 rows.
-2025-06-25 23:09:01,518 [INFO] [MSFT] Inserted 40 rows.
-2025-06-25 23:09:01,585 [INFO] [MGM] Inserted 40 rows.
-2025-06-25 23:09:01,652 [INFO] [MOH] Inserted 40 rows.
-2025-06-25 23:09:01,654 [INFO] [MHK] Inserted 40 rows.
-2025-06-25 23:09:01,684 [INFO] [MAA] Inserted 40 rows.
-2025-06-25 23:09:01,752 [INFO] [MRNA] Inserted 40 rows.
-2025-06-25 23:09:01,753 [INFO] [MCHP] Inserted 40 rows.
-2025-06-25 23:09:01,782 [INFO] [MPWR] Inserted 40 rows.
-2025-06-25 23:09:01,855 [INFO] [TAP] Inserted 40 rows.
-2025-06-25 23:09:01,876 [INFO] [MDLZ] Inserted 40 rows.
-2025-06-25 23:09:01,891 [INFO] [MNST] Inserted 40 rows.
-2025-06-25 23:09:01,953 [INFO] [MCO] Inserted 40 rows.
-2025-06-25 23:09:02,038 [INFO] [MS] Inserted 40 rows.
-2025-06-25 23:09:02,063 [INFO] [MOS] Inserted 40 rows.
-2025-06-25 23:09:02,111 [INFO] [MSCI] Inserted 40 rows.
-2025-06-25 23:09:02,145 [INFO] [MSI] Inserted 40 rows.
-2025-06-25 23:09:02,194 [INFO] [NFLX] Inserted 40 rows.
-2025-06-25 23:09:02,196 [INFO] [NTAP] Inserted 40 rows.
-2025-06-25 23:09:02,280 [INFO] [NEM] Inserted 40 rows.
-2025-06-25 23:09:02,282 [INFO] [NWSA] Inserted 40 rows.
-2025-06-25 23:09:02,330 [INFO] [NDAQ] Inserted 40 rows.
-2025-06-25 23:09:02,432 [INFO] [NWS] Inserted 40 rows.
-2025-06-25 23:09:02,487 [INFO] [NEE] Inserted 40 rows.
-2025-06-25 23:09:02,507 [INFO] [NI] Inserted 40 rows.
-2025-06-25 23:09:02,514 [INFO] [NKE] Inserted 40 rows.
-2025-06-25 23:09:02,584 [INFO] [NDSN] Inserted 40 rows.
-2025-06-25 23:09:02,658 [INFO] [NSC] Inserted 40 rows.
-2025-06-25 23:09:02,728 [INFO] [NTRS] Inserted 40 rows.
-2025-06-25 23:09:02,750 [INFO] [NOC] Inserted 40 rows.
-2025-06-25 23:09:02,766 [INFO] [NCLH] Inserted 40 rows.
-2025-06-25 23:09:02,775 [INFO] [NRG] Inserted 40 rows.
-2025-06-25 23:09:02,788 [INFO] [NVDA] Inserted 40 rows.
-2025-06-25 23:09:02,793 [INFO] [NUE] Inserted 40 rows.
-2025-06-25 23:09:02,892 [INFO] [NVR] Inserted 40 rows.
-2025-06-25 23:09:02,983 [INFO] [NXPI] Inserted 40 rows.
-2025-06-25 23:09:02,991 [INFO] [OXY] Inserted 40 rows.
-2025-06-25 23:09:03,042 [INFO] [ORLY] Inserted 40 rows.
-2025-06-25 23:09:03,115 [INFO] [OMC] Inserted 40 rows.
-2025-06-25 23:09:03,124 [INFO] [ON] Inserted 40 rows.
-2025-06-25 23:09:03,130 [INFO] [ODFL] Inserted 40 rows.
-2025-06-25 23:09:03,215 [INFO] [OTIS] Inserted 40 rows.
-2025-06-25 23:09:03,238 [INFO] [OKE] Inserted 40 rows.
-2025-06-25 23:09:03,239 [INFO] [ORCL] Inserted 40 rows.
-2025-06-25 23:09:03,310 [INFO] [PCAR] Inserted 40 rows.
-2025-06-25 23:09:03,357 [INFO] [PKG] Inserted 40 rows.
-2025-06-25 23:09:03,394 [INFO] [PANW] Inserted 40 rows.
-2025-06-25 23:09:03,454 [INFO] [PLTR] Inserted 40 rows.
-2025-06-25 23:09:03,492 [INFO] [PH] Inserted 40 rows.
-2025-06-25 23:09:03,530 [INFO] [PARA] Inserted 40 rows.
-2025-06-25 23:09:03,548 [INFO] [PYPL] Inserted 40 rows.
-2025-06-25 23:09:03,582 [INFO] [PAYX] Inserted 40 rows.
-2025-06-25 23:09:03,644 [INFO] [PAYC] Inserted 40 rows.
-2025-06-25 23:09:03,694 [INFO] [PNR] Inserted 40 rows.
-2025-06-25 23:09:03,726 [INFO] [PEP] Inserted 40 rows.
-2025-06-25 23:09:03,758 [INFO] [PFE] Inserted 40 rows.
-2025-06-25 23:09:03,788 [INFO] [PCG] Inserted 40 rows.
-2025-06-25 23:09:03,800 [INFO] [PM] Inserted 40 rows.
-2025-06-25 23:09:03,832 [INFO] [PSX] Inserted 40 rows.
-2025-06-25 23:09:03,925 [INFO] [PNC] Inserted 40 rows.
-2025-06-25 23:09:03,942 [INFO] [PNW] Inserted 40 rows.
-2025-06-25 23:09:03,999 [INFO] [PPG] Inserted 40 rows.
-2025-06-25 23:09:04,095 [INFO] [POOL] Inserted 40 rows.
-2025-06-25 23:09:04,161 [INFO] [PPL] Inserted 40 rows.
-2025-06-25 23:09:04,201 [INFO] [PG] Inserted 40 rows.
-2025-06-25 23:09:04,205 [INFO] [PLD] Inserted 40 rows.
-2025-06-25 23:09:04,220 [INFO] [PRU] Inserted 40 rows.
-2025-06-25 23:09:04,245 [INFO] [PTC] Inserted 40 rows.
-2025-06-25 23:09:04,300 [INFO] [PGR] Inserted 40 rows.
-2025-06-25 23:09:04,301 [INFO] [PEG] Inserted 40 rows.
-2025-06-25 23:09:04,334 [INFO] [PFG] Inserted 40 rows.
-2025-06-25 23:09:04,368 [INFO] [PSA] Inserted 40 rows.
-2025-06-25 23:09:04,378 [INFO] [PHM] Inserted 40 rows.
-2025-06-25 23:09:04,415 [INFO] [PWR] Inserted 40 rows.
-2025-06-25 23:09:04,649 [INFO] [QCOM] Inserted 40 rows.
-2025-06-25 23:09:04,673 [INFO] [RL] Inserted 40 rows.
-2025-06-25 23:09:04,685 [INFO] [RJF] Inserted 40 rows.
-2025-06-25 23:09:04,700 [INFO] [O] Inserted 40 rows.
-2025-06-25 23:09:04,724 [INFO] [DGX] Inserted 40 rows.
-2025-06-25 23:09:04,759 [INFO] [RTX] Inserted 40 rows.
-2025-06-25 23:09:04,760 [INFO] [REG] Inserted 40 rows.
-2025-06-25 23:09:04,779 [INFO] [RF] Inserted 40 rows.
-2025-06-25 23:09:04,782 [INFO] [RMD] Inserted 40 rows.
-2025-06-25 23:09:04,849 [INFO] [REGN] Inserted 40 rows.
-2025-06-25 23:09:04,887 [INFO] [RVTY] Inserted 40 rows.
-2025-06-25 23:09:04,920 [INFO] [RSG] Inserted 40 rows.
-2025-06-25 23:09:05,100 [INFO] [ROK] Inserted 40 rows.
-2025-06-25 23:09:05,137 [INFO] [ROP] Inserted 40 rows.
-2025-06-25 23:09:05,143 [INFO] [ROST] Inserted 40 rows.
-2025-06-25 23:09:05,156 [INFO] [RCL] Inserted 40 rows.
-2025-06-25 23:09:05,168 [INFO] [CRM] Inserted 40 rows.
-2025-06-25 23:09:05,169 [INFO] [SBAC] Inserted 40 rows.
-2025-06-25 23:09:05,233 [INFO] [SPGI] Inserted 40 rows.
-2025-06-25 23:09:05,243 [INFO] [SLB] Inserted 40 rows.
-2025-06-25 23:09:05,287 [INFO] [ROL] Inserted 40 rows.
-2025-06-25 23:09:05,331 [INFO] [NOW] Inserted 40 rows.
-2025-06-25 23:09:05,359 [INFO] [STX] Inserted 40 rows.
-2025-06-25 23:09:05,477 [INFO] [SRE] Inserted 40 rows.
-2025-06-25 23:09:05,658 [INFO] [SNA] Inserted 40 rows.
-2025-06-25 23:09:05,660 [INFO] [SPG] Inserted 40 rows.
-2025-06-25 23:09:05,669 [INFO] [SJM] Inserted 40 rows.
-2025-06-25 23:09:05,673 [INFO] [SHW] Inserted 40 rows.
-2025-06-25 23:09:05,681 [INFO] [SO] Inserted 40 rows.
-2025-06-25 23:09:05,794 [INFO] [SOLV] Inserted 40 rows.
-2025-06-25 23:09:05,797 [INFO] [SWKS] Inserted 40 rows.
-2025-06-25 23:09:05,857 [INFO] [LUV] Inserted 40 rows.
-2025-06-25 23:09:05,871 [INFO] [SWK] Inserted 40 rows.
-2025-06-25 23:09:05,914 [INFO] [STLD] Inserted 40 rows.
-2025-06-25 23:09:05,930 [INFO] [STT] Inserted 40 rows.
-2025-06-25 23:09:05,932 [INFO] [SBUX] Inserted 40 rows.
-2025-06-25 23:09:06,076 [INFO] [SNPS] Inserted 40 rows.
-2025-06-25 23:09:06,124 [INFO] [SYK] Inserted 40 rows.
-2025-06-25 23:09:06,186 [INFO] [SMCI] Inserted 40 rows.
-2025-06-25 23:09:06,199 [INFO] [STE] Inserted 40 rows.
-2025-06-25 23:09:06,211 [INFO] [SYF] Inserted 40 rows.
-2025-06-25 23:09:06,218 [INFO] [TMUS] Inserted 40 rows.
-2025-06-25 23:09:06,231 [INFO] [SYY] Inserted 40 rows.
-2025-06-25 23:09:06,272 [INFO] [TTWO] Inserted 40 rows.
-2025-06-25 23:09:06,343 [INFO] [TROW] Inserted 40 rows.
-2025-06-25 23:09:06,344 [INFO] [TPR] Inserted 40 rows.
-2025-06-25 23:09:06,374 [INFO] [TRGP] Inserted 40 rows.
-2025-06-25 23:09:06,451 [INFO] [TGT] Inserted 40 rows.
-2025-06-25 23:09:06,549 [INFO] [TDY] Inserted 40 rows.
-2025-06-25 23:09:06,585 [INFO] [TSLA] Inserted 40 rows.
-2025-06-25 23:09:06,604 [INFO] [TER] Inserted 40 rows.
-2025-06-25 23:09:06,613 [INFO] [TEL] Inserted 40 rows.
-2025-06-25 23:09:06,672 [INFO] [TXN] Inserted 40 rows.
-2025-06-25 23:09:06,733 [INFO] [TXT] Inserted 40 rows.
-2025-06-25 23:09:06,786 [INFO] [TPL] Inserted 40 rows.
-2025-06-25 23:09:06,807 [INFO] [TSCO] Inserted 40 rows.
-2025-06-25 23:09:06,815 [INFO] [TKO] Inserted 40 rows.
-2025-06-25 23:09:06,816 [INFO] [TJX] Inserted 40 rows.
-2025-06-25 23:09:06,932 [INFO] [TT] Inserted 40 rows.
-2025-06-25 23:09:06,943 [INFO] [TMO] Inserted 40 rows.
-2025-06-25 23:09:06,967 [INFO] [TDG] Inserted 40 rows.
-2025-06-25 23:09:07,026 [INFO] [TRMB] Inserted 40 rows.
-2025-06-25 23:09:07,028 [INFO] [TRV] Inserted 40 rows.
-2025-06-25 23:09:07,052 [INFO] [TFC] Inserted 40 rows.
-2025-06-25 23:09:07,189 [INFO] [TYL] Inserted 40 rows.
-2025-06-25 23:09:07,200 [INFO] [TSN] Inserted 40 rows.
-2025-06-25 23:09:07,252 [INFO] [ULTA] Inserted 40 rows.
-2025-06-25 23:09:07,277 [INFO] [UDR] Inserted 40 rows.
-2025-06-25 23:09:07,373 [INFO] [USB] Inserted 40 rows.
-2025-06-25 23:09:07,374 [INFO] [UBER] Inserted 40 rows.
-2025-06-25 23:09:07,416 [INFO] [UNP] Inserted 40 rows.
-2025-06-25 23:09:07,445 [INFO] [UPS] Inserted 40 rows.
-2025-06-25 23:09:07,450 [INFO] [URI] Inserted 40 rows.
-2025-06-25 23:09:07,465 [INFO] [UNH] Inserted 40 rows.
-2025-06-25 23:09:07,469 [INFO] [UAL] Inserted 40 rows.
-2025-06-25 23:09:07,493 [INFO] [UHS] Inserted 40 rows.
-2025-06-25 23:09:07,643 [INFO] [VTR] Inserted 40 rows.
-2025-06-25 23:09:07,673 [INFO] [VLO] Inserted 40 rows.
-2025-06-25 23:09:07,702 [INFO] [VRSN] Inserted 40 rows.
-2025-06-25 23:09:07,806 [INFO] [VRSK] Inserted 40 rows.
-2025-06-25 23:09:07,838 [INFO] [VLTO] Inserted 40 rows.
-2025-06-25 23:09:07,847 [INFO] [VZ] Inserted 40 rows.
-2025-06-25 23:09:07,871 [INFO] [VICI] Inserted 40 rows.
-2025-06-25 23:09:07,918 [INFO] [VTRS] Inserted 40 rows.
-2025-06-25 23:09:07,966 [INFO] [VMC] Inserted 40 rows.
-2025-06-25 23:09:07,968 [INFO] [VRTX] Inserted 40 rows.
-2025-06-25 23:09:08,006 [INFO] [V] Inserted 40 rows.
-2025-06-25 23:09:08,016 [INFO] [VST] Inserted 40 rows.
-2025-06-25 23:09:08,133 [INFO] [GWW] Inserted 40 rows.
-2025-06-25 23:09:08,192 [INFO] [WAB] Inserted 40 rows.
-2025-06-25 23:09:08,228 [INFO] [WRB] Inserted 40 rows.
-2025-06-25 23:09:08,282 [INFO] [WBA] Inserted 40 rows.
-2025-06-25 23:09:08,284 [INFO] [WBD] Inserted 40 rows.
-2025-06-25 23:09:08,317 [INFO] [DIS] Inserted 40 rows.
-2025-06-25 23:09:08,341 [INFO] [WMT] Inserted 40 rows.
-2025-06-25 23:09:08,381 [INFO] [WAT] Inserted 40 rows.
-2025-06-25 23:09:08,421 [INFO] [WEC] Inserted 40 rows.
-2025-06-25 23:09:08,480 [INFO] [WM] Inserted 40 rows.
-2025-06-25 23:09:08,492 [INFO] [WELL] Inserted 40 rows.
-2025-06-25 23:09:08,502 [INFO] [WFC] Inserted 40 rows.
-2025-06-25 23:09:08,612 [INFO] [WST] Inserted 40 rows.
-2025-06-25 23:09:08,621 [INFO] [WDC] Inserted 40 rows.
-2025-06-25 23:09:08,721 [INFO] [WSM] Inserted 40 rows.
-2025-06-25 23:09:08,731 [INFO] [WMB] Inserted 40 rows.
-2025-06-25 23:09:08,788 [INFO] [WDAY] Inserted 40 rows.
-2025-06-25 23:09:08,825 [INFO] [WYNN] Inserted 40 rows.
-2025-06-25 23:09:08,842 [INFO] [WY] Inserted 40 rows.
-2025-06-25 23:09:08,903 [INFO] [XYL] Inserted 40 rows.
-2025-06-25 23:09:08,915 [INFO] [YUM] Inserted 40 rows.
-2025-06-25 23:09:09,008 [INFO] [ZBH] Inserted 40 rows.
-2025-06-25 23:09:09,011 [INFO] [XEL] Inserted 40 rows.
-2025-06-25 23:09:09,023 [INFO] [WTW] Inserted 40 rows.
-2025-06-25 23:09:09,033 [INFO] [ZTS] Inserted 40 rows.
-2025-06-25 23:09:09,182 [INFO] [ZBRA] Inserted 40 rows.
-2025-06-25 23:09:09,338 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:09,430 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:09,524 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:09,630 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:09,728 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:09,827 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:09,923 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,025 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,118 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:10,329 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:10,429 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,534 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,634 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,740 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,845 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:10,943 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:11,039 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:11,139 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:11,247 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:11,466 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:11,564 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:11,789 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:11,883 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:11,974 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:12,080 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:12,191 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:12,314 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:12,422 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:12,539 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:12,635 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:12,726 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:12,817 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:12,918 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,020 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,122 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,223 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,319 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:13,415 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:13,519 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,620 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,726 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,842 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:13,949 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:14,047 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:14,138 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:14,240 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:14,351 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:14,456 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:14,560 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:14,659 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:14,758 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:14,854 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:14,954 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:15,059 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:15,163 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:15,286 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:15,389 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:15,489 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:15,587 [WARNING] Failed to fetch SPY data: SPY data is empty
-2025-06-25 23:09:15,688 [INFO] SPY index data inserted successfully.
-2025-06-25 23:09:15,690 [WARNING] Saved failed tickers to: /Users/shailyjaloree/eqx-index-project/failed_tickers.csv
-2025-06-25 23:09:15,690 [INFO] Ingestion complete: 20080 rows inserted.
-2025-06-25 23:09:17,349 [INFO] Full pipeline completed for all dates.
-2025-06-25 23:09:34,094 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:09:34,610 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:09:34,610 [INFO] Ingesting data for: 2024-06-25
-2025-06-25 23:09:34,618 [INFO] Ensuring DuckDB schema is ready.
-2025-06-25 23:09:34,618 [INFO] Tables created.
-2025-06-25 23:09:36,727 [INFO] Fetched 0 live tickers from Finnhub.
-2025-06-25 23:09:36,733 [WARNING] Finnhub failed. Falling back to S&P 500 tickers.
-2025-06-25 23:09:37,531 [INFO] Fetched 503 tickers from Wikipedia S&P 500 list.
-2025-06-25 23:09:38,255 [INFO] [ABBV] Inserted 1 rows.
-2025-06-25 23:09:38,288 [INFO] [ABT] Inserted 1 rows.
-2025-06-25 23:09:38,339 [INFO] [AMD] Inserted 1 rows.
-2025-06-25 23:09:38,368 [INFO] [MMM] Inserted 1 rows.
-2025-06-25 23:09:38,376 [INFO] [ADBE] Inserted 1 rows.
-2025-06-25 23:09:38,417 [INFO] [ACN] Inserted 1 rows.
-2025-06-25 23:09:38,424 [INFO] [AES] Inserted 1 rows.
-2025-06-25 23:09:38,439 [INFO] [AOS] Inserted 1 rows.
-2025-06-25 23:09:38,747 [INFO] [AFL] Inserted 1 rows.
-2025-06-25 23:09:38,775 [INFO] [AKAM] Inserted 1 rows.
-2025-06-25 23:09:38,794 [INFO] [ABNB] Inserted 1 rows.
-2025-06-25 23:09:38,825 [INFO] [APD] Inserted 1 rows.
-2025-06-25 23:09:38,835 [INFO] [A] Inserted 1 rows.
-2025-06-25 23:09:38,857 [INFO] [ALGN] Inserted 1 rows.
-2025-06-25 23:09:38,899 [INFO] [ARE] Inserted 1 rows.
-2025-06-25 23:09:38,901 [INFO] [ALB] Inserted 1 rows.
-2025-06-25 23:09:39,158 [INFO] [ALLE] Inserted 1 rows.
-2025-06-25 23:09:39,222 [INFO] [GOOGL] Inserted 1 rows.
-2025-06-25 23:09:39,252 [INFO] [GOOG] Inserted 1 rows.
-2025-06-25 23:09:39,275 [INFO] [ALL] Inserted 1 rows.
-2025-06-25 23:09:39,328 [INFO] [AMCR] Inserted 1 rows.
-2025-06-25 23:09:39,357 [INFO] [AMZN] Inserted 1 rows.
-2025-06-25 23:09:39,367 [INFO] [LNT] Inserted 1 rows.
-2025-06-25 23:09:39,422 [INFO] [MO] Inserted 1 rows.
-2025-06-25 23:09:39,587 [INFO] [AEE] Inserted 1 rows.
-2025-06-25 23:09:39,676 [INFO] [AMT] Inserted 1 rows.
-2025-06-25 23:09:39,713 [INFO] [AWK] Inserted 1 rows.
-2025-06-25 23:09:39,769 [INFO] [AIG] Inserted 1 rows.
-2025-06-25 23:09:39,777 [INFO] [AXP] Inserted 1 rows.
-2025-06-25 23:09:39,882 [INFO] [AEP] Inserted 1 rows.
-2025-06-25 23:09:40,009 [INFO] [AMP] Inserted 1 rows.
-2025-06-25 23:09:40,011 [INFO] [AMGN] Inserted 1 rows.
-2025-06-25 23:09:40,029 [INFO] [APH] Inserted 1 rows.
-2025-06-25 23:09:40,164 [INFO] [AME] Inserted 1 rows.
-2025-06-25 23:09:40,165 [INFO] [ADI] Inserted 1 rows.
-2025-06-25 23:09:40,217 [INFO] [AON] Inserted 1 rows.
-2025-06-25 23:09:40,319 [INFO] [ANSS] Inserted 1 rows.
-2025-06-25 23:09:40,330 [INFO] [APA] Inserted 1 rows.
-2025-06-25 23:09:40,397 [INFO] [AAPL] Inserted 1 rows.
-2025-06-25 23:09:40,423 [INFO] [APO] Inserted 1 rows.
-2025-06-25 23:09:40,486 [INFO] [AMAT] Inserted 1 rows.
-2025-06-25 23:09:40,513 [INFO] [ACGL] Inserted 1 rows.
-2025-06-25 23:09:40,657 [INFO] [ADM] Inserted 1 rows.
-2025-06-25 23:09:40,730 [INFO] [ANET] Inserted 1 rows.
-2025-06-25 23:09:40,769 [INFO] [AJG] Inserted 1 rows.
-2025-06-25 23:09:40,838 [INFO] [AIZ] Inserted 1 rows.
-2025-06-25 23:09:40,857 [INFO] [T] Inserted 1 rows.
-2025-06-25 23:09:40,943 [INFO] [ADSK] Inserted 1 rows.
-2025-06-25 23:09:41,068 [INFO] [ATO] Inserted 1 rows.
-2025-06-25 23:09:41,143 [INFO] [AZO] Inserted 1 rows.
-2025-06-25 23:09:41,216 [INFO] [ADP] Inserted 1 rows.
-2025-06-25 23:09:41,288 [INFO] [AVY] Inserted 1 rows.
-2025-06-25 23:09:41,399 [INFO] [BKR] Inserted 1 rows.
-2025-06-25 23:09:41,427 [INFO] [AVB] Inserted 1 rows.
-2025-06-25 23:09:41,459 [INFO] [AXON] Inserted 1 rows.
-2025-06-25 23:09:41,467 [INFO] [BALL] Inserted 1 rows.
-2025-06-25 23:09:41,659 [INFO] [BAX] Inserted 1 rows.
-2025-06-25 23:09:41,660 [INFO] [BAC] Inserted 1 rows.
-2025-06-25 23:09:41,776 [INFO] [APTV] Inserted 1 rows.
-2025-06-25 23:09:41,876 [INFO] [TECH] Inserted 1 rows.
-2025-06-25 23:09:41,878 [INFO] [BBY] Inserted 1 rows.
-2025-06-25 23:09:41,888 [INFO] [BDX] Inserted 1 rows.
-2025-06-25 23:09:41,920 [INFO] [BRK-B] Inserted 1 rows.
-2025-06-25 23:09:41,990 [INFO] [BIIB] Inserted 1 rows.
-2025-06-25 23:09:42,075 [INFO] [BLK] Inserted 1 rows.
-2025-06-25 23:09:42,099 [INFO] [BX] Inserted 1 rows.
-2025-06-25 23:09:42,234 [INFO] [BK] Inserted 1 rows.
-2025-06-25 23:09:42,280 [INFO] [BSX] Inserted 1 rows.
-2025-06-25 23:09:42,328 [INFO] [BA] Inserted 1 rows.
-2025-06-25 23:09:42,391 [INFO] [BKNG] Inserted 1 rows.
-2025-06-25 23:09:42,398 [INFO] [AVGO] Inserted 1 rows.
-2025-06-25 23:09:42,406 [INFO] [BMY] Inserted 1 rows.
-2025-06-25 23:09:42,527 [INFO] [BR] Inserted 1 rows.
-2025-06-25 23:09:42,669 [INFO] [BLDR] Inserted 1 rows.
-2025-06-25 23:09:42,684 [INFO] [BG] Inserted 1 rows.
-2025-06-25 23:09:42,690 [INFO] [BF-B] Inserted 1 rows.
-2025-06-25 23:09:42,694 [INFO] [BRO] Inserted 1 rows.
-2025-06-25 23:09:42,767 [INFO] [CHRW] Inserted 1 rows.
-2025-06-25 23:09:42,810 [INFO] [CDNS] Inserted 1 rows.
-2025-06-25 23:09:42,812 [INFO] [BXP] Inserted 1 rows.
-2025-06-25 23:09:42,919 [INFO] [CZR] Inserted 1 rows.
-2025-06-25 23:09:43,062 [INFO] [CPB] Inserted 1 rows.
-2025-06-25 23:09:43,109 [INFO] [KMX] Inserted 1 rows.
-2025-06-25 23:09:43,114 [INFO] [CPT] Inserted 1 rows.
-2025-06-25 23:09:43,137 [INFO] [COF] Inserted 1 rows.
-2025-06-25 23:09:43,167 [INFO] [CAH] Inserted 1 rows.
-2025-06-25 23:09:43,321 [INFO] [CARR] Inserted 1 rows.
-2025-06-25 23:09:43,393 [INFO] [CAT] Inserted 1 rows.
-2025-06-25 23:09:43,401 [INFO] [CCL] Inserted 1 rows.
-2025-06-25 23:09:43,448 [INFO] [CBRE] Inserted 1 rows.
-2025-06-25 23:09:43,472 [INFO] [CBOE] Inserted 1 rows.
-2025-06-25 23:09:43,518 [INFO] [CDW] Inserted 1 rows.
-2025-06-25 23:09:43,587 [INFO] [CNC] Inserted 1 rows.
-2025-06-25 23:09:43,589 [INFO] [COR] Inserted 1 rows.
-2025-06-25 23:09:43,733 [INFO] [CF] Inserted 1 rows.
-2025-06-25 23:09:43,744 [INFO] [CRL] Inserted 1 rows.
-2025-06-25 23:09:43,788 [INFO] [CNP] Inserted 1 rows.
-2025-06-25 23:09:43,809 [INFO] [CHTR] Inserted 1 rows.
-2025-06-25 23:09:43,832 [INFO] [SCHW] Inserted 1 rows.
-2025-06-25 23:09:43,991 [INFO] [CMG] Inserted 1 rows.
-2025-06-25 23:09:44,005 [INFO] [CVX] Inserted 1 rows.
-2025-06-25 23:09:44,048 [INFO] [CB] Inserted 1 rows.
-2025-06-25 23:09:44,221 [INFO] [CI] Inserted 1 rows.
-2025-06-25 23:09:44,229 [INFO] [CHD] Inserted 1 rows.
-2025-06-25 23:09:44,246 [INFO] [CINF] Inserted 1 rows.
-2025-06-25 23:09:44,248 [INFO] [CTAS] Inserted 1 rows.
-2025-06-25 23:09:44,406 [INFO] [CFG] Inserted 1 rows.
-2025-06-25 23:09:44,437 [INFO] [C] Inserted 1 rows.
-2025-06-25 23:09:44,494 [INFO] [CSCO] Inserted 1 rows.
-2025-06-25 23:09:44,542 [INFO] [CLX] Inserted 1 rows.
-2025-06-25 23:09:44,652 [INFO] [CTSH] Inserted 1 rows.
-2025-06-25 23:09:44,670 [INFO] [CME] Inserted 1 rows.
-2025-06-25 23:09:44,694 [INFO] [CMS] Inserted 1 rows.
-2025-06-25 23:09:44,905 [INFO] [CL] Inserted 1 rows.
-2025-06-25 23:09:44,914 [INFO] [COIN] Inserted 1 rows.
-2025-06-25 23:09:44,944 [INFO] [KO] Inserted 1 rows.
-2025-06-25 23:09:44,964 [INFO] [CMCSA] Inserted 1 rows.
-2025-06-25 23:09:44,996 [INFO] [CAG] Inserted 1 rows.
-2025-06-25 23:09:45,085 [INFO] [ED] Inserted 1 rows.
-2025-06-25 23:09:45,102 [INFO] [COP] Inserted 1 rows.
-2025-06-25 23:09:45,287 [INFO] [COO] Inserted 1 rows.
-2025-06-25 23:09:45,324 [INFO] [STZ] Inserted 1 rows.
-2025-06-25 23:09:45,345 [INFO] [CPRT] Inserted 1 rows.
-2025-06-25 23:09:45,426 [INFO] [GLW] Inserted 1 rows.
-2025-06-25 23:09:45,451 [INFO] [CEG] Inserted 1 rows.
-2025-06-25 23:09:45,501 [INFO] [CSGP] Inserted 1 rows.
-2025-06-25 23:09:45,517 [INFO] [CPAY] Inserted 1 rows.
-2025-06-25 23:09:45,614 [INFO] [CTVA] Inserted 1 rows.
-2025-06-25 23:09:45,709 [INFO] [COST] Inserted 1 rows.
-2025-06-25 23:09:45,731 [INFO] [CRWD] Inserted 1 rows.
-2025-06-25 23:09:45,769 [INFO] [CTRA] Inserted 1 rows.
-2025-06-25 23:09:45,891 [INFO] [CCI] Inserted 1 rows.
-2025-06-25 23:09:45,911 [INFO] [CSX] Inserted 1 rows.
-2025-06-25 23:09:45,967 [INFO] [CMI] Inserted 1 rows.
-2025-06-25 23:09:45,975 [INFO] [CVS] Inserted 1 rows.
-2025-06-25 23:09:46,100 [INFO] [DHR] Inserted 1 rows.
-2025-06-25 23:09:46,131 [INFO] [DVA] Inserted 1 rows.
-2025-06-25 23:09:46,145 [INFO] [DRI] Inserted 1 rows.
-2025-06-25 23:09:46,288 [INFO] [DAY] Inserted 1 rows.
-2025-06-25 23:09:46,298 [INFO] [DECK] Inserted 1 rows.
-2025-06-25 23:09:46,417 [INFO] [DAL] Inserted 1 rows.
-2025-06-25 23:09:46,480 [INFO] [FANG] Inserted 1 rows.
-2025-06-25 23:09:46,502 [INFO] [DE] Inserted 1 rows.
-2025-06-25 23:09:46,508 [INFO] [DELL] Inserted 1 rows.
-2025-06-25 23:09:46,552 [INFO] [DVN] Inserted 1 rows.
-2025-06-25 23:09:46,647 [INFO] [DXCM] Inserted 1 rows.
-2025-06-25 23:09:46,666 [INFO] [DG] Inserted 1 rows.
-2025-06-25 23:09:46,823 [INFO] [DLTR] Inserted 1 rows.
-2025-06-25 23:09:46,838 [INFO] [DLR] Inserted 1 rows.
-2025-06-25 23:09:46,915 [INFO] [DASH] Inserted 1 rows.
-2025-06-25 23:09:46,941 [INFO] [DPZ] Inserted 1 rows.
-2025-06-25 23:09:47,031 [INFO] [D] Inserted 1 rows.
-2025-06-25 23:09:47,038 [INFO] [DOV] Inserted 1 rows.
-2025-06-25 23:09:47,057 [INFO] [DOW] Inserted 1 rows.
-2025-06-25 23:09:47,161 [INFO] [DHI] Inserted 1 rows.
-2025-06-25 23:09:47,312 [INFO] [DUK] Inserted 1 rows.
-2025-06-25 23:09:47,332 [INFO] [DTE] Inserted 1 rows.
-2025-06-25 23:09:47,393 [INFO] [EMN] Inserted 1 rows.
-2025-06-25 23:09:47,396 [INFO] [DD] Inserted 1 rows.
-2025-06-25 23:09:47,476 [INFO] [ETN] Inserted 1 rows.
-2025-06-25 23:09:47,513 [INFO] [ECL] Inserted 1 rows.
-2025-06-25 23:09:47,589 [INFO] [EIX] Inserted 1 rows.
-2025-06-25 23:09:47,624 [INFO] [EBAY] Inserted 1 rows.
-2025-06-25 23:09:47,718 [INFO] [EW] Inserted 1 rows.
-2025-06-25 23:09:47,743 [INFO] [EA] Inserted 1 rows.
-2025-06-25 23:09:47,803 [INFO] [ENPH] Inserted 1 rows.
-2025-06-25 23:09:47,827 [INFO] [ELV] Inserted 1 rows.
-2025-06-25 23:09:48,016 [INFO] [EMR] Inserted 1 rows.
-2025-06-25 23:09:48,017 [INFO] [EOG] Inserted 1 rows.
-2025-06-25 23:09:48,098 [INFO] [ETR] Inserted 1 rows.
-2025-06-25 23:09:48,173 [INFO] [EQT] Inserted 1 rows.
-2025-06-25 23:09:48,195 [INFO] [EPAM] Inserted 1 rows.
-2025-06-25 23:09:48,209 [INFO] [EFX] Inserted 1 rows.
-2025-06-25 23:09:48,217 [INFO] [EQIX] Inserted 1 rows.
-2025-06-25 23:09:48,311 [INFO] [EQR] Inserted 1 rows.
-2025-06-25 23:09:48,391 [INFO] [ESS] Inserted 1 rows.
-2025-06-25 23:09:48,527 [INFO] [EL] Inserted 1 rows.
-2025-06-25 23:09:48,566 [INFO] [ERIE] Inserted 1 rows.
-2025-06-25 23:09:48,596 [INFO] [EG] Inserted 1 rows.
-2025-06-25 23:09:48,599 [INFO] [EVRG] Inserted 1 rows.
-2025-06-25 23:09:48,611 [INFO] [EXC] Inserted 1 rows.
-2025-06-25 23:09:48,734 [INFO] [EXE] Inserted 1 rows.
-2025-06-25 23:09:48,751 [INFO] [EXPE] Inserted 1 rows.
-2025-06-25 23:09:48,810 [INFO] [ES] Inserted 1 rows.
-2025-06-25 23:09:48,969 [INFO] [FDS] Inserted 1 rows.
-2025-06-25 23:09:48,994 [INFO] [EXR] Inserted 1 rows.
-2025-06-25 23:09:49,101 [INFO] [EXPD] Inserted 1 rows.
-2025-06-25 23:09:49,103 [INFO] [XOM] Inserted 1 rows.
-2025-06-25 23:09:49,133 [INFO] [FFIV] Inserted 1 rows.
-2025-06-25 23:09:49,191 [INFO] [FICO] Inserted 1 rows.
-2025-06-25 23:09:49,251 [INFO] [FAST] Inserted 1 rows.
-2025-06-25 23:09:49,280 [INFO] [FRT] Inserted 1 rows.
-2025-06-25 23:09:49,407 [INFO] [FIS] Inserted 1 rows.
-2025-06-25 23:09:49,504 [INFO] [FSLR] Inserted 1 rows.
-2025-06-25 23:09:49,528 [INFO] [FDX] Inserted 1 rows.
-2025-06-25 23:09:49,600 [INFO] [FI] Inserted 1 rows.
-2025-06-25 23:09:49,645 [INFO] [F] Inserted 1 rows.
-2025-06-25 23:09:49,776 [INFO] [FITB] Inserted 1 rows.
-2025-06-25 23:09:49,814 [INFO] [FE] Inserted 1 rows.
-2025-06-25 23:09:49,819 [INFO] [FTV] Inserted 1 rows.
-2025-06-25 23:09:49,824 [INFO] [FTNT] Inserted 1 rows.
-2025-06-25 23:09:49,911 [INFO] [FOXA] Inserted 1 rows.
-2025-06-25 23:09:49,920 [INFO] [FOX] Inserted 1 rows.
-2025-06-25 23:09:50,022 [INFO] [FCX] Inserted 1 rows.
-2025-06-25 23:09:50,186 [INFO] [BEN] Inserted 1 rows.
-2025-06-25 23:09:50,225 [INFO] [GRMN] Inserted 1 rows.
-2025-06-25 23:09:50,227 [INFO] [IT] Inserted 1 rows.
-2025-06-25 23:09:50,247 [INFO] [GEHC] Inserted 1 rows.
-2025-06-25 23:09:50,301 [INFO] [GEV] Inserted 1 rows.
-2025-06-25 23:09:50,330 [INFO] [GEN] Inserted 1 rows.
-2025-06-25 23:09:50,332 [INFO] [GE] Inserted 1 rows.
-2025-06-25 23:09:50,368 [INFO] [GNRC] Inserted 1 rows.
-2025-06-25 23:09:50,625 [INFO] [GD] Inserted 1 rows.
-2025-06-25 23:09:50,683 [INFO] [GIS] Inserted 1 rows.
-2025-06-25 23:09:50,703 [INFO] [GPC] Inserted 1 rows.
-2025-06-25 23:09:50,704 [INFO] [GILD] Inserted 1 rows.
-2025-06-25 23:09:50,738 [INFO] [GPN] Inserted 1 rows.
-2025-06-25 23:09:50,766 [INFO] [GDDY] Inserted 1 rows.
-2025-06-25 23:09:50,793 [INFO] [GM] Inserted 1 rows.
-2025-06-25 23:09:50,888 [INFO] [GL] Inserted 1 rows.
-2025-06-25 23:09:51,148 [INFO] [HAS] Inserted 1 rows.
-2025-06-25 23:09:51,154 [INFO] [HIG] Inserted 1 rows.
-2025-06-25 23:09:51,180 [INFO] [GS] Inserted 1 rows.
-2025-06-25 23:09:51,206 [INFO] [DOC] Inserted 1 rows.
-2025-06-25 23:09:51,212 [INFO] [HSIC] Inserted 1 rows.
-2025-06-25 23:09:51,263 [INFO] [HAL] Inserted 1 rows.
-2025-06-25 23:09:51,272 [INFO] [HCA] Inserted 1 rows.
-2025-06-25 23:09:51,435 [INFO] [HSY] Inserted 1 rows.
-2025-06-25 23:09:51,634 [INFO] [HOLX] Inserted 1 rows.
-2025-06-25 23:09:51,721 [INFO] [HLT] Inserted 1 rows.
-2025-06-25 23:09:51,735 [INFO] [HD] Inserted 1 rows.
-2025-06-25 23:09:51,737 [INFO] [HPE] Inserted 1 rows.
-2025-06-25 23:09:51,738 [INFO] [HON] Inserted 1 rows.
-2025-06-25 23:09:51,741 [INFO] [HRL] Inserted 1 rows.
-2025-06-25 23:09:51,810 [INFO] [HST] Inserted 1 rows.
-2025-06-25 23:09:51,821 [INFO] [HES] Inserted 1 rows.
-2025-06-25 23:09:52,083 [INFO] [HWM] Inserted 1 rows.
-2025-06-25 23:09:52,207 [INFO] [HUM] Inserted 1 rows.
-2025-06-25 23:09:52,253 [INFO] [HPQ] Inserted 1 rows.
-2025-06-25 23:09:52,267 [INFO] [IEX] Inserted 1 rows.
-2025-06-25 23:09:52,298 [INFO] [IBM] Inserted 1 rows.
-2025-06-25 23:09:52,300 [INFO] [HII] Inserted 1 rows.
-2025-06-25 23:09:52,301 [INFO] [HUBB] Inserted 1 rows.
-2025-06-25 23:09:52,424 [INFO] [HBAN] Inserted 1 rows.
-2025-06-25 23:09:52,533 [INFO] [IDXX] Inserted 1 rows.
-2025-06-25 23:09:52,655 [INFO] [ITW] Inserted 1 rows.
-2025-06-25 23:09:52,666 [INFO] [IR] Inserted 1 rows.
-2025-06-25 23:09:52,668 [INFO] [INCY] Inserted 1 rows.
-2025-06-25 23:09:52,675 [INFO] [INTC] Inserted 1 rows.
-2025-06-25 23:09:52,734 [INFO] [ICE] Inserted 1 rows.
-2025-06-25 23:09:52,808 [INFO] [PODD] Inserted 1 rows.
-2025-06-25 23:09:52,911 [INFO] [IFF] Inserted 1 rows.
-2025-06-25 23:09:53,068 [INFO] [IP] Inserted 1 rows.
-2025-06-25 23:09:53,070 [INFO] [INTU] Inserted 1 rows.
-2025-06-25 23:09:53,115 [INFO] [IVZ] Inserted 1 rows.
-2025-06-25 23:09:53,151 [INFO] [INVH] Inserted 1 rows.
-2025-06-25 23:09:53,202 [INFO] [ISRG] Inserted 1 rows.
-2025-06-25 23:09:53,240 [INFO] [IPG] Inserted 1 rows.
-2025-06-25 23:09:53,325 [INFO] [IRM] Inserted 1 rows.
-2025-06-25 23:09:53,431 [INFO] [IQV] Inserted 1 rows.
-2025-06-25 23:09:53,525 [INFO] [JBHT] Inserted 1 rows.
-2025-06-25 23:09:53,559 [INFO] [JKHY] Inserted 1 rows.
-2025-06-25 23:09:53,561 [INFO] [J] Inserted 1 rows.
-2025-06-25 23:09:53,603 [INFO] [JBL] Inserted 1 rows.
-2025-06-25 23:09:53,698 [INFO] [JCI] Inserted 1 rows.
-2025-06-25 23:09:53,809 [INFO] [JNJ] Inserted 1 rows.
-2025-06-25 23:09:53,840 [INFO] [JNPR] Inserted 1 rows.
-2025-06-25 23:09:53,889 [INFO] [KVUE] Inserted 1 rows.
-2025-06-25 23:09:53,910 [INFO] [JPM] Inserted 1 rows.
-2025-06-25 23:09:53,937 [INFO] [KDP] Inserted 1 rows.
-2025-06-25 23:09:54,130 [INFO] [K] Inserted 1 rows.
-2025-06-25 23:09:54,131 [INFO] [KEYS] Inserted 1 rows.
-2025-06-25 23:09:54,282 [INFO] [KEY] Inserted 1 rows.
-2025-06-25 23:09:54,403 [INFO] [KLAC] Inserted 1 rows.
-2025-06-25 23:09:54,419 [INFO] [KMB] Inserted 1 rows.
-2025-06-25 23:09:54,523 [INFO] [KIM] Inserted 1 rows.
-2025-06-25 23:09:54,555 [INFO] [KHC] Inserted 1 rows.
-2025-06-25 23:09:54,564 [INFO] [KKR] Inserted 1 rows.
-2025-06-25 23:09:54,566 [INFO] [KMI] Inserted 1 rows.
-2025-06-25 23:09:54,604 [INFO] [KR] Inserted 1 rows.
-2025-06-25 23:09:54,719 [INFO] [LHX] Inserted 1 rows.
-2025-06-25 23:09:54,776 [INFO] [LH] Inserted 1 rows.
-2025-06-25 23:09:54,861 [INFO] [LRCX] Inserted 1 rows.
-2025-06-25 23:09:54,901 [INFO] [LDOS] Inserted 1 rows.
-2025-06-25 23:09:54,908 [INFO] [LVS] Inserted 1 rows.
-2025-06-25 23:09:54,921 [INFO] [LW] Inserted 1 rows.
-2025-06-25 23:09:55,013 [INFO] [LEN] Inserted 1 rows.
-2025-06-25 23:09:55,050 [INFO] [LII] Inserted 1 rows.
-2025-06-25 23:09:55,156 [INFO] [LIN] Inserted 1 rows.
-2025-06-25 23:09:55,282 [INFO] [LYV] Inserted 1 rows.
-2025-06-25 23:09:55,315 [INFO] [LKQ] Inserted 1 rows.
-2025-06-25 23:09:55,316 [INFO] [LLY] Inserted 1 rows.
-2025-06-25 23:09:55,389 [INFO] [L] Inserted 1 rows.
-2025-06-25 23:09:55,400 [INFO] [LMT] Inserted 1 rows.
-2025-06-25 23:09:55,461 [INFO] [LOW] Inserted 1 rows.
-2025-06-25 23:09:55,596 [INFO] [LULU] Inserted 1 rows.
-2025-06-25 23:09:55,603 [INFO] [LYB] Inserted 1 rows.
-2025-06-25 23:09:55,732 [INFO] [MPC] Inserted 1 rows.
-2025-06-25 23:09:55,777 [INFO] [MTB] Inserted 1 rows.
-2025-06-25 23:09:55,847 [INFO] [MKTX] Inserted 1 rows.
-2025-06-25 23:09:55,900 [INFO] [MLM] Inserted 1 rows.
-2025-06-25 23:09:55,928 [INFO] [MAR] Inserted 1 rows.
-2025-06-25 23:09:56,003 [INFO] [MMC] Inserted 1 rows.
-2025-06-25 23:09:56,033 [INFO] [MA] Inserted 1 rows.
-2025-06-25 23:09:56,074 [INFO] [MAS] Inserted 1 rows.
-2025-06-25 23:09:56,170 [INFO] [MTCH] Inserted 1 rows.
-2025-06-25 23:09:56,310 [INFO] [MCD] Inserted 1 rows.
-2025-06-25 23:09:56,334 [INFO] [MCK] Inserted 1 rows.
-2025-06-25 23:09:56,363 [INFO] [MKC] Inserted 1 rows.
-2025-06-25 23:09:56,370 [INFO] [META] Inserted 1 rows.
-2025-06-25 23:09:56,509 [INFO] [MDT] Inserted 1 rows.
-2025-06-25 23:09:56,525 [INFO] [MET] Inserted 1 rows.
-2025-06-25 23:09:56,581 [INFO] [MTD] Inserted 1 rows.
-2025-06-25 23:09:56,767 [INFO] [MGM] Inserted 1 rows.
-2025-06-25 23:09:56,886 [INFO] [MCHP] Inserted 1 rows.
-2025-06-25 23:09:56,951 [INFO] [MAA] Inserted 1 rows.
-2025-06-25 23:09:56,967 [INFO] [MRNA] Inserted 1 rows.
-2025-06-25 23:09:56,982 [INFO] [MHK] Inserted 1 rows.
-2025-06-25 23:09:56,985 [INFO] [MU] Inserted 1 rows.
-2025-06-25 23:09:57,001 [INFO] [MSFT] Inserted 1 rows.
-2025-06-25 23:09:57,165 [INFO] [MOH] Inserted 1 rows.
-2025-06-25 23:09:57,323 [INFO] [TAP] Inserted 1 rows.
-2025-06-25 23:09:57,325 [INFO] [MPWR] Inserted 1 rows.
-2025-06-25 23:09:57,368 [INFO] [MNST] Inserted 1 rows.
-2025-06-25 23:09:57,418 [INFO] [MDLZ] Inserted 1 rows.
-2025-06-25 23:09:57,444 [INFO] [MS] Inserted 1 rows.
-2025-06-25 23:09:57,536 [INFO] [MCO] Inserted 1 rows.
-2025-06-25 23:09:57,755 [INFO] [MSCI] Inserted 1 rows.
-2025-06-25 23:09:57,823 [INFO] [NTAP] Inserted 1 rows.
-2025-06-25 23:09:57,872 [INFO] [MOS] Inserted 1 rows.
-2025-06-25 23:09:57,907 [INFO] [NDAQ] Inserted 1 rows.
-2025-06-25 23:09:57,924 [INFO] [MSI] Inserted 1 rows.
-2025-06-25 23:09:57,925 [INFO] [NEM] Inserted 1 rows.
-2025-06-25 23:09:57,977 [INFO] [NFLX] Inserted 1 rows.
-2025-06-25 23:09:58,155 [INFO] [NWS] Inserted 1 rows.
-2025-06-25 23:09:58,234 [INFO] [NWSA] Inserted 1 rows.
-2025-06-25 23:09:58,319 [INFO] [NEE] Inserted 1 rows.
-2025-06-25 23:09:58,371 [INFO] [NKE] Inserted 1 rows.
-2025-06-25 23:09:58,383 [INFO] [NDSN] Inserted 1 rows.
-2025-06-25 23:09:58,399 [INFO] [NI] Inserted 1 rows.
-2025-06-25 23:09:58,456 [INFO] [NSC] Inserted 1 rows.
-2025-06-25 23:09:58,484 [INFO] [MRK] Inserted 1 rows.
-2025-06-25 23:09:58,608 [INFO] [NTRS] Inserted 1 rows.
-2025-06-25 23:09:58,710 [INFO] [NOC] Inserted 1 rows.
-2025-06-25 23:09:58,725 [INFO] [NRG] Inserted 1 rows.
-2025-06-25 23:09:58,815 [INFO] [NVDA] Inserted 1 rows.
-2025-06-25 23:09:58,837 [INFO] [NCLH] Inserted 1 rows.
-2025-06-25 23:09:58,859 [INFO] [NUE] Inserted 1 rows.
-2025-06-25 23:09:58,867 [INFO] [NXPI] Inserted 1 rows.
-2025-06-25 23:09:58,991 [INFO] [NVR] Inserted 1 rows.
-2025-06-25 23:09:59,003 [INFO] [ORLY] Inserted 1 rows.
-2025-06-25 23:09:59,193 [INFO] [ODFL] Inserted 1 rows.
-2025-06-25 23:09:59,206 [INFO] [OXY] Inserted 1 rows.
-2025-06-25 23:09:59,226 [INFO] [ON] Inserted 1 rows.
-2025-06-25 23:09:59,268 [INFO] [OMC] Inserted 1 rows.
-2025-06-25 23:09:59,317 [INFO] [OKE] Inserted 1 rows.
-2025-06-25 23:09:59,359 [INFO] [ORCL] Inserted 1 rows.
-2025-06-25 23:09:59,455 [INFO] [PCAR] Inserted 1 rows.
-2025-06-25 23:09:59,518 [INFO] [OTIS] Inserted 1 rows.
-2025-06-25 23:09:59,612 [INFO] [PKG] Inserted 1 rows.
-2025-06-25 23:09:59,617 [INFO] [PARA] Inserted 1 rows.
-2025-06-25 23:09:59,736 [INFO] [PLTR] Inserted 1 rows.
-2025-06-25 23:09:59,740 [INFO] [PANW] Inserted 1 rows.
-2025-06-25 23:09:59,807 [INFO] [PH] Inserted 1 rows.
-2025-06-25 23:09:59,852 [INFO] [PAYX] Inserted 1 rows.
-2025-06-25 23:09:59,855 [INFO] [PAYC] Inserted 1 rows.
-2025-06-25 23:09:59,972 [INFO] [PYPL] Inserted 1 rows.
-2025-06-25 23:09:59,996 [INFO] [PNR] Inserted 1 rows.
-2025-06-25 23:10:00,087 [INFO] [PEP] Inserted 1 rows.
-2025-06-25 23:10:00,217 [INFO] [PSX] Inserted 1 rows.
-2025-06-25 23:10:00,218 [INFO] [PFE] Inserted 1 rows.
-2025-06-25 23:10:00,252 [INFO] [PM] Inserted 1 rows.
-2025-06-25 23:10:00,264 [INFO] [PNW] Inserted 1 rows.
-2025-06-25 23:10:00,330 [INFO] [PCG] Inserted 1 rows.
-2025-06-25 23:10:00,423 [INFO] [POOL] Inserted 1 rows.
-2025-06-25 23:10:00,438 [INFO] [PNC] Inserted 1 rows.
-2025-06-25 23:10:00,603 [INFO] [PPL] Inserted 1 rows.
-2025-06-25 23:10:00,666 [INFO] [PPG] Inserted 1 rows.
-2025-06-25 23:10:00,668 [INFO] [PFG] Inserted 1 rows.
-2025-06-25 23:10:00,672 [INFO] [PG] Inserted 1 rows.
-2025-06-25 23:10:00,756 [INFO] [PLD] Inserted 1 rows.
-2025-06-25 23:10:00,822 [INFO] [PGR] Inserted 1 rows.
-2025-06-25 23:10:00,870 [INFO] [PRU] Inserted 1 rows.
-2025-06-25 23:10:00,920 [INFO] [PEG] Inserted 1 rows.
-2025-06-25 23:10:00,933 [INFO] [PTC] Inserted 1 rows.
-2025-06-25 23:10:01,088 [INFO] [PWR] Inserted 1 rows.
-2025-06-25 23:10:01,202 [INFO] [QCOM] Inserted 1 rows.
-2025-06-25 23:10:01,234 [INFO] [PSA] Inserted 1 rows.
-2025-06-25 23:10:01,258 [INFO] [PHM] Inserted 1 rows.
-2025-06-25 23:10:01,355 [INFO] [RL] Inserted 1 rows.
-2025-06-25 23:10:01,364 [INFO] [DGX] Inserted 1 rows.
-2025-06-25 23:10:01,378 [INFO] [RJF] Inserted 1 rows.
-2025-06-25 23:10:01,541 [INFO] [RTX] Inserted 1 rows.
-2025-06-25 23:10:01,542 [INFO] [O] Inserted 1 rows.
-2025-06-25 23:10:01,621 [INFO] [REGN] Inserted 1 rows.
-2025-06-25 23:10:01,648 [INFO] [REG] Inserted 1 rows.
-2025-06-25 23:10:01,709 [INFO] [RMD] Inserted 1 rows.
-2025-06-25 23:10:01,736 [INFO] [RF] Inserted 1 rows.
-2025-06-25 23:10:01,782 [INFO] [RVTY] Inserted 1 rows.
-2025-06-25 23:10:01,792 [INFO] [RSG] Inserted 1 rows.
-2025-06-25 23:10:01,936 [INFO] [ROL] Inserted 1 rows.
-2025-06-25 23:10:02,019 [INFO] [ROK] Inserted 1 rows.
-2025-06-25 23:10:02,075 [INFO] [ROST] Inserted 1 rows.
-2025-06-25 23:10:02,156 [INFO] [RCL] Inserted 1 rows.
-2025-06-25 23:10:02,164 [INFO] [ROP] Inserted 1 rows.
-2025-06-25 23:10:02,205 [INFO] [SBAC] Inserted 1 rows.
-2025-06-25 23:10:02,219 [INFO] [CRM] Inserted 1 rows.
-2025-06-25 23:10:02,335 [INFO] [SPGI] Inserted 1 rows.
-2025-06-25 23:10:02,511 [INFO] [SRE] Inserted 1 rows.
-2025-06-25 23:10:02,538 [INFO] [SHW] Inserted 1 rows.
-2025-06-25 23:10:02,580 [INFO] [STX] Inserted 1 rows.
-2025-06-25 23:10:02,654 [INFO] [SWKS] Inserted 1 rows.
-2025-06-25 23:10:02,665 [INFO] [SLB] Inserted 1 rows.
-2025-06-25 23:10:02,687 [INFO] [NOW] Inserted 1 rows.
-2025-06-25 23:10:02,690 [WARNING] [SW] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:02,793 [INFO] [SJM] Inserted 1 rows.
-2025-06-25 23:10:02,852 [INFO] [SPG] Inserted 1 rows.
-2025-06-25 23:10:02,877 [WARNING] [SNA] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:03,060 [WARNING] [SBUX] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:03,355 [WARNING] [STT] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:03,464 [WARNING] [SO] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:03,465 [WARNING] [SOLV] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:03,866 [WARNING] [SWK] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:03,972 [WARNING] [LUV] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:03,972 [WARNING] [STE] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:04,059 [WARNING] [STLD] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:04,236 [WARNING] [SYY] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:04,332 [WARNING] [SYK] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:04,419 [WARNING] [TTWO] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:04,560 [WARNING] [SMCI] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:04,608 [WARNING] [SYF] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:04,790 [WARNING] [TGT] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:04,838 [WARNING] [SNPS] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:04,895 [WARNING] [TROW] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,090 [WARNING] [TRGP] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,108 [WARNING] [TMUS] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:05,186 [WARNING] [TDY] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,188 [WARNING] [TPR] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:05,287 [WARNING] [TEL] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,466 [WARNING] [TXN] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,664 [WARNING] [TER] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,847 [WARNING] [TPL] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:05,946 [WARNING] [TJX] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:05,950 [WARNING] [TXT] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:05,954 [WARNING] [TSLA] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:06,037 [WARNING] [TMO] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:06,173 [WARNING] [TKO] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:06,218 [WARNING] [TDG] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:06,251 [WARNING] [TSCO] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:06,459 [WARNING] [TRMB] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:06,553 [WARNING] [TT] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:06,640 [WARNING] [USB] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:06,733 [WARNING] [TRV] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:06,826 [WARNING] [TYL] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:06,925 [WARNING] [TFC] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:06,934 [WARNING] [UBER] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,016 [WARNING] [UAL] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:07,206 [WARNING] [UPS] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:07,234 [WARNING] [TSN] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,309 [WARNING] [UDR] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,336 [WARNING] [ULTA] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,388 [WARNING] [UNH] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:07,484 [WARNING] [UNP] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,591 [WARNING] [URI] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:07,693 [WARNING] [UHS] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,771 [WARNING] [VRSK] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:07,881 [WARNING] [VTR] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:07,971 [WARNING] [VRTX] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:08,077 [WARNING] [VLTO] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:08,085 [WARNING] [VRSN] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:08,149 [WARNING] [VICI] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:08,203 [WARNING] [VLO] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:08,244 [WARNING] [VZ] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:08,346 [WARNING] [V] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:08,445 [WARNING] [VTRS] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:08,530 [WARNING] [WRB] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:08,726 [WARNING] [VST] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:08,913 [WARNING] [WAB] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:09,011 [WARNING] [WBA] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,014 [WARNING] [GWW] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,022 [WARNING] [VMC] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,188 [WARNING] [WBD] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:09,288 [WARNING] [WMT] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,365 [WARNING] [WFC] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:09,443 [WARNING] [DIS] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,567 [WARNING] [WM] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:09,662 [WARNING] [WEC] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,670 [WARNING] [WELL] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,680 [WARNING] [WAT] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:09,747 [WARNING] [WY] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:09,991 [WARNING] [WMB] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:10,086 [WARNING] [WST] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:10,089 [WARNING] [WSM] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:10,198 [WARNING] [WDAY] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:10,299 [WARNING] [WDC] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:10,497 [WARNING] [ZBRA] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:10,595 [WARNING] [WTW] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:10,689 [WARNING] [WYNN] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:10,781 [WARNING] [YUM] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:10,789 [WARNING] [XEL] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:11,001 [WARNING] [XYL] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:11,112 [WARNING] [ZBH] Fetch error: argument of type 'NoneType' is not iterable
-2025-06-25 23:10:11,294 [WARNING] [ZTS] Fetch error: Too Many Requests. Rate limited. Try after a while.
-2025-06-25 23:10:11,298 [WARNING] Failed tickers saved to /Users/shailyjaloree/eqx-index-project/failed_tickers.csv
-2025-06-25 23:10:11,298 [INFO] Total rows inserted: 416
-2025-06-25 23:10:11,461 [INFO] SPY index data inserted successfully.
-2025-06-25 23:10:59,030 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:10:59,558 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:11:41,202 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:11:41,836 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:11:49,621 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:11:49,981 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:11:53,741 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
-2025-06-25 23:11:54,088 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
+2025-06-26 07:40:50,717 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
+2025-06-26 07:40:50,718 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
+2025-06-26 07:40:50,718 [INFO] Starting full ingestion from 2024-04-26 to 2024-06-24
+2025-06-26 07:40:55,838 [INFO] Fetched 0 live tickers from Finnhub.
+2025-06-26 07:40:56,648 [INFO] Fetched 503 tickers from Wikipedia S&P 500 list.
+2025-06-26 07:40:56,655 [INFO] Tables created.
+2025-06-26 07:40:57,850 [INFO] [ABT] Inserted 40 rows.
+2025-06-26 07:40:57,947 [INFO] [A] Inserted 40 rows.
+2025-06-26 07:40:57,950 [INFO] [ACN] Inserted 40 rows.
+2025-06-26 07:40:57,952 [INFO] [ABNB] Inserted 40 rows.
+2025-06-26 07:40:57,954 [INFO] [ADBE] Inserted 40 rows.
+2025-06-26 07:40:57,977 [INFO] [AES] Inserted 40 rows.
+2025-06-26 07:40:58,059 [INFO] [AOS] Inserted 40 rows.
+2025-06-26 07:40:58,061 [INFO] [AMD] Inserted 40 rows.
+2025-06-26 07:40:58,091 [INFO] [ABBV] Inserted 40 rows.
+2025-06-26 07:40:58,099 [INFO] [MMM] Inserted 40 rows.
+2025-06-26 07:40:58,168 [INFO] [APD] Inserted 40 rows.
+2025-06-26 07:40:58,301 [INFO] [AFL] Inserted 40 rows.
+2025-06-26 07:40:58,564 [INFO] [ALGN] Inserted 40 rows.
+2025-06-26 07:40:58,583 [INFO] [AKAM] Inserted 40 rows.
+2025-06-26 07:40:58,586 [INFO] [ALB] Inserted 40 rows.
+2025-06-26 07:40:58,598 [INFO] [ARE] Inserted 40 rows.
+2025-06-26 07:40:58,613 [INFO] [LNT] Inserted 40 rows.
+2025-06-26 07:40:58,853 [INFO] [ALL] Inserted 40 rows.
+2025-06-26 07:40:58,855 [INFO] [GOOGL] Inserted 40 rows.
+2025-06-26 07:40:58,856 [INFO] [AMZN] Inserted 40 rows.
+2025-06-26 07:40:58,857 [INFO] [GOOG] Inserted 40 rows.
+2025-06-26 07:40:58,859 [INFO] [ALLE] Inserted 40 rows.
+2025-06-26 07:40:59,013 [INFO] [AMCR] Inserted 40 rows.
+2025-06-26 07:40:59,075 [INFO] [MO] Inserted 40 rows.
+2025-06-26 07:40:59,207 [INFO] [AEP] Inserted 40 rows.
+2025-06-26 07:40:59,342 [INFO] [AIG] Inserted 40 rows.
+2025-06-26 07:40:59,345 [INFO] [AMT] Inserted 40 rows.
+2025-06-26 07:40:59,347 [INFO] [AEE] Inserted 40 rows.
+2025-06-26 07:40:59,349 [INFO] [AXP] Inserted 40 rows.
+2025-06-26 07:40:59,554 [INFO] [AMP] Inserted 40 rows.
+2025-06-26 07:40:59,558 [INFO] [AME] Inserted 40 rows.
+2025-06-26 07:40:59,559 [INFO] [AMGN] Inserted 40 rows.
+2025-06-26 07:40:59,662 [INFO] [AWK] Inserted 40 rows.
+2025-06-26 07:40:59,665 [INFO] [APH] Inserted 40 rows.
+2025-06-26 07:40:59,697 [INFO] [ANSS] Inserted 40 rows.
+2025-06-26 07:40:59,882 [INFO] [ADI] Inserted 40 rows.
+2025-06-26 07:40:59,904 [INFO] [AON] Inserted 40 rows.
+2025-06-26 07:41:00,056 [INFO] [AMAT] Inserted 40 rows.
+2025-06-26 07:41:00,074 [INFO] [APO] Inserted 40 rows.
+2025-06-26 07:41:00,076 [INFO] [AAPL] Inserted 40 rows.
+2025-06-26 07:41:00,077 [INFO] [APA] Inserted 40 rows.
+2025-06-26 07:41:00,159 [INFO] [ACGL] Inserted 40 rows.
+2025-06-26 07:41:00,182 [INFO] [ADM] Inserted 40 rows.
+2025-06-26 07:41:00,185 [INFO] [APTV] Inserted 40 rows.
+2025-06-26 07:41:00,401 [INFO] [AJG] Inserted 40 rows.
+2025-06-26 07:41:00,410 [INFO] [AIZ] Inserted 40 rows.
+2025-06-26 07:41:00,470 [INFO] [ATO] Inserted 40 rows.
+2025-06-26 07:41:00,579 [INFO] [T] Inserted 40 rows.
+2025-06-26 07:41:00,588 [INFO] [ANET] Inserted 40 rows.
+2025-06-26 07:41:00,680 [INFO] [ADSK] Inserted 40 rows.
+2025-06-26 07:41:00,683 [INFO] [AVB] Inserted 40 rows.
+2025-06-26 07:41:00,686 [INFO] [AZO] Inserted 40 rows.
+2025-06-26 07:41:00,688 [INFO] [ADP] Inserted 40 rows.
+2025-06-26 07:41:00,797 [INFO] [AXON] Inserted 40 rows.
+2025-06-26 07:41:00,915 [INFO] [BKR] Inserted 40 rows.
+2025-06-26 07:41:00,932 [INFO] [AVY] Inserted 40 rows.
+2025-06-26 07:41:01,063 [INFO] [BAC] Inserted 40 rows.
+2025-06-26 07:41:01,070 [INFO] [BALL] Inserted 40 rows.
+2025-06-26 07:41:01,140 [INFO] [BAX] Inserted 40 rows.
+2025-06-26 07:41:01,153 [INFO] [BRK-B] Inserted 40 rows.
+2025-06-26 07:41:01,274 [INFO] [BDX] Inserted 40 rows.
+2025-06-26 07:41:01,277 [INFO] [BLK] Inserted 40 rows.
+2025-06-26 07:41:01,372 [INFO] [BIIB] Inserted 40 rows.
+2025-06-26 07:41:01,413 [INFO] [BK] Inserted 40 rows.
+2025-06-26 07:41:01,421 [INFO] [BX] Inserted 40 rows.
+2025-06-26 07:41:01,423 [INFO] [TECH] Inserted 40 rows.
+2025-06-26 07:41:01,438 [INFO] [BA] Inserted 40 rows.
+2025-06-26 07:41:01,473 [INFO] [BBY] Inserted 40 rows.
+2025-06-26 07:41:01,503 [INFO] [BKNG] Inserted 40 rows.
+2025-06-26 07:41:01,667 [INFO] [AVGO] Inserted 40 rows.
+2025-06-26 07:41:01,672 [INFO] [BSX] Inserted 40 rows.
+2025-06-26 07:41:01,681 [INFO] [BMY] Inserted 40 rows.
+2025-06-26 07:41:01,805 [INFO] [BR] Inserted 40 rows.
+2025-06-26 07:41:01,834 [INFO] [BF-B] Inserted 40 rows.
+2025-06-26 07:41:01,873 [INFO] [BLDR] Inserted 40 rows.
+2025-06-26 07:41:01,890 [INFO] [BRO] Inserted 40 rows.
+2025-06-26 07:41:01,916 [INFO] [CHRW] Inserted 40 rows.
+2025-06-26 07:41:01,939 [INFO] [BXP] Inserted 40 rows.
+2025-06-26 07:41:01,942 [INFO] [BG] Inserted 40 rows.
+2025-06-26 07:41:01,960 [INFO] [CZR] Inserted 40 rows.
+2025-06-26 07:41:02,090 [INFO] [CDNS] Inserted 40 rows.
+2025-06-26 07:41:02,151 [INFO] [COF] Inserted 40 rows.
+2025-06-26 07:41:02,154 [INFO] [CPT] Inserted 40 rows.
+2025-06-26 07:41:02,231 [INFO] [CPB] Inserted 40 rows.
+2025-06-26 07:41:02,279 [INFO] [KMX] Inserted 40 rows.
+2025-06-26 07:41:02,358 [INFO] [CCL] Inserted 40 rows.
+2025-06-26 07:41:02,400 [INFO] [CBOE] Inserted 40 rows.
+2025-06-26 07:41:02,411 [INFO] [CAH] Inserted 40 rows.
+2025-06-26 07:41:02,420 [INFO] [CARR] Inserted 40 rows.
+2025-06-26 07:41:02,475 [INFO] [CAT] Inserted 40 rows.
+2025-06-26 07:41:02,488 [INFO] [CBRE] Inserted 40 rows.
+2025-06-26 07:41:02,560 [INFO] [COR] Inserted 40 rows.
+2025-06-26 07:41:02,562 [INFO] [CNC] Inserted 40 rows.
+2025-06-26 07:41:02,578 [INFO] [CDW] Inserted 40 rows.
+2025-06-26 07:41:02,778 [INFO] [CNP] Inserted 40 rows.
+2025-06-26 07:41:02,830 [INFO] [CHTR] Inserted 40 rows.
+2025-06-26 07:41:02,832 [INFO] [CRL] Inserted 40 rows.
+2025-06-26 07:41:02,847 [INFO] [CMG] Inserted 40 rows.
+2025-06-26 07:41:02,861 [INFO] [SCHW] Inserted 40 rows.
+2025-06-26 07:41:02,863 [INFO] [CF] Inserted 40 rows.
+2025-06-26 07:41:03,005 [INFO] [CHD] Inserted 40 rows.
+2025-06-26 07:41:03,047 [INFO] [CINF] Inserted 40 rows.
+2025-06-26 07:41:03,099 [INFO] [CVX] Inserted 40 rows.
+2025-06-26 07:41:03,121 [INFO] [CTAS] Inserted 40 rows.
+2025-06-26 07:41:03,158 [INFO] [CB] Inserted 40 rows.
+2025-06-26 07:41:03,160 [INFO] [CI] Inserted 40 rows.
+2025-06-26 07:41:03,303 [INFO] [CFG] Inserted 40 rows.
+2025-06-26 07:41:03,305 [INFO] [C] Inserted 40 rows.
+2025-06-26 07:41:03,345 [INFO] [CME] Inserted 40 rows.
+2025-06-26 07:41:03,385 [INFO] [CSCO] Inserted 40 rows.
+2025-06-26 07:41:03,387 [INFO] [CLX] Inserted 40 rows.
+2025-06-26 07:41:03,453 [INFO] [CMS] Inserted 40 rows.
+2025-06-26 07:41:03,520 [INFO] [CTSH] Inserted 40 rows.
+2025-06-26 07:41:03,564 [INFO] [KO] Inserted 40 rows.
+2025-06-26 07:41:03,589 [INFO] [COIN] Inserted 40 rows.
+2025-06-26 07:41:03,700 [INFO] [CAG] Inserted 40 rows.
+2025-06-26 07:41:03,825 [INFO] [CMCSA] Inserted 40 rows.
+2025-06-26 07:41:03,858 [INFO] [COO] Inserted 40 rows.
+2025-06-26 07:41:03,860 [INFO] [STZ] Inserted 40 rows.
+2025-06-26 07:41:03,862 [INFO] [CEG] Inserted 40 rows.
+2025-06-26 07:41:03,866 [INFO] [ED] Inserted 40 rows.
+2025-06-26 07:41:03,904 [INFO] [COP] Inserted 40 rows.
+2025-06-26 07:41:03,945 [INFO] [CL] Inserted 40 rows.
+2025-06-26 07:41:03,970 [INFO] [CPRT] Inserted 40 rows.
+2025-06-26 07:41:04,044 [INFO] [CPAY] Inserted 40 rows.
+2025-06-26 07:41:04,074 [INFO] [GLW] Inserted 40 rows.
+2025-06-26 07:41:04,124 [INFO] [CTVA] Inserted 40 rows.
+2025-06-26 07:41:04,281 [INFO] [CSGP] Inserted 40 rows.
+2025-06-26 07:41:04,327 [INFO] [CCI] Inserted 40 rows.
+2025-06-26 07:41:04,350 [INFO] [CSX] Inserted 40 rows.
+2025-06-26 07:41:04,466 [INFO] [COST] Inserted 40 rows.
+2025-06-26 07:41:04,486 [INFO] [CTRA] Inserted 40 rows.
+2025-06-26 07:41:04,495 [INFO] [DVA] Inserted 40 rows.
+2025-06-26 07:41:04,502 [INFO] [CMI] Inserted 40 rows.
+2025-06-26 07:41:04,508 [INFO] [CVS] Inserted 40 rows.
+2025-06-26 07:41:04,548 [INFO] [DRI] Inserted 40 rows.
+2025-06-26 07:41:04,556 [INFO] [DHR] Inserted 40 rows.
+2025-06-26 07:41:04,569 [INFO] [CRWD] Inserted 40 rows.
+2025-06-26 07:41:04,623 [INFO] [DAY] Inserted 40 rows.
+2025-06-26 07:41:04,733 [INFO] [DECK] Inserted 40 rows.
+2025-06-26 07:41:04,784 [INFO] [DELL] Inserted 40 rows.
+2025-06-26 07:41:04,907 [INFO] [DE] Inserted 40 rows.
+2025-06-26 07:41:04,923 [INFO] [FANG] Inserted 40 rows.
+2025-06-26 07:41:04,936 [INFO] [DXCM] Inserted 40 rows.
+2025-06-26 07:41:04,967 [INFO] [DAL] Inserted 40 rows.
+2025-06-26 07:41:04,996 [INFO] [DLR] Inserted 40 rows.
+2025-06-26 07:41:05,044 [INFO] [DG] Inserted 40 rows.
+2025-06-26 07:41:05,046 [INFO] [DLTR] Inserted 40 rows.
+2025-06-26 07:41:05,054 [INFO] [D] Inserted 40 rows.
+2025-06-26 07:41:05,103 [INFO] [DVN] Inserted 40 rows.
+2025-06-26 07:41:05,114 [INFO] [DPZ] Inserted 40 rows.
+2025-06-26 07:41:05,221 [INFO] [DASH] Inserted 40 rows.
+2025-06-26 07:41:05,379 [INFO] [DOW] Inserted 40 rows.
+2025-06-26 07:41:05,465 [INFO] [DHI] Inserted 40 rows.
+2025-06-26 07:41:05,482 [INFO] [DUK] Inserted 40 rows.
+2025-06-26 07:41:05,568 [INFO] [DTE] Inserted 40 rows.
+2025-06-26 07:41:05,635 [INFO] [EW] Inserted 40 rows.
+2025-06-26 07:41:05,642 [INFO] [ETN] Inserted 40 rows.
+2025-06-26 07:41:05,651 [INFO] [EBAY] Inserted 40 rows.
+2025-06-26 07:41:05,665 [INFO] [EMN] Inserted 40 rows.
+2025-06-26 07:41:05,691 [INFO] [DOV] Inserted 40 rows.
+2025-06-26 07:41:05,712 [INFO] [ECL] Inserted 40 rows.
+2025-06-26 07:41:05,830 [INFO] [EA] Inserted 40 rows.
+2025-06-26 07:41:05,840 [INFO] [EIX] Inserted 40 rows.
+2025-06-26 07:41:05,869 [INFO] [DD] Inserted 40 rows.
+2025-06-26 07:41:05,980 [INFO] [EMR] Inserted 40 rows.
+2025-06-26 07:41:06,088 [INFO] [ELV] Inserted 40 rows.
+2025-06-26 07:41:06,097 [INFO] [ENPH] Inserted 40 rows.
+2025-06-26 07:41:06,112 [INFO] [EPAM] Inserted 40 rows.
+2025-06-26 07:41:06,156 [INFO] [ETR] Inserted 40 rows.
+2025-06-26 07:41:06,162 [INFO] [EOG] Inserted 40 rows.
+2025-06-26 07:41:06,210 [INFO] [EFX] Inserted 40 rows.
+2025-06-26 07:41:06,211 [INFO] [EQIX] Inserted 40 rows.
+2025-06-26 07:41:06,283 [INFO] [EQT] Inserted 40 rows.
+2025-06-26 07:41:06,346 [INFO] [EQR] Inserted 40 rows.
+2025-06-26 07:41:06,467 [INFO] [ERIE] Inserted 40 rows.
+2025-06-26 07:41:06,541 [INFO] [ESS] Inserted 40 rows.
+2025-06-26 07:41:06,597 [INFO] [EVRG] Inserted 40 rows.
+2025-06-26 07:41:06,623 [INFO] [EL] Inserted 40 rows.
+2025-06-26 07:41:06,651 [INFO] [EXPE] Inserted 40 rows.
+2025-06-26 07:41:06,697 [INFO] [EG] Inserted 40 rows.
+2025-06-26 07:41:06,791 [INFO] [EXR] Inserted 40 rows.
+2025-06-26 07:41:06,820 [INFO] [ES] Inserted 40 rows.
+2025-06-26 07:41:06,821 [INFO] [EXC] Inserted 40 rows.
+2025-06-26 07:41:06,869 [INFO] [EXPD] Inserted 40 rows.
+2025-06-26 07:41:06,948 [INFO] [XOM] Inserted 40 rows.
+2025-06-26 07:41:06,949 [INFO] [EXE] Inserted 40 rows.
+2025-06-26 07:41:07,077 [INFO] [FFIV] Inserted 40 rows.
+2025-06-26 07:41:07,196 [INFO] [FICO] Inserted 40 rows.
+2025-06-26 07:41:07,198 [INFO] [FDS] Inserted 40 rows.
+2025-06-26 07:41:07,423 [INFO] [FRT] Inserted 40 rows.
+2025-06-26 07:41:07,425 [INFO] [FIS] Inserted 40 rows.
+2025-06-26 07:41:07,572 [INFO] [FITB] Inserted 40 rows.
+2025-06-26 07:41:07,583 [INFO] [FDX] Inserted 40 rows.
+2025-06-26 07:41:07,585 [INFO] [FAST] Inserted 40 rows.
+2025-06-26 07:41:07,586 [INFO] [FSLR] Inserted 40 rows.
+2025-06-26 07:41:07,735 [INFO] [F] Inserted 40 rows.
+2025-06-26 07:41:07,737 [INFO] [FI] Inserted 40 rows.
+2025-06-26 07:41:07,931 [INFO] [FE] Inserted 40 rows.
+2025-06-26 07:41:08,084 [INFO] [FTV] Inserted 40 rows.
+2025-06-26 07:41:08,087 [INFO] [FOXA] Inserted 40 rows.
+2025-06-26 07:41:08,247 [INFO] [FTNT] Inserted 40 rows.
+2025-06-26 07:41:08,249 [INFO] [FCX] Inserted 40 rows.
+2025-06-26 07:41:08,433 [INFO] [GRMN] Inserted 40 rows.
+2025-06-26 07:41:08,435 [INFO] [BEN] Inserted 40 rows.
+2025-06-26 07:41:08,593 [INFO] [GEHC] Inserted 40 rows.
+2025-06-26 07:41:08,594 [INFO] [IT] Inserted 40 rows.
+2025-06-26 07:41:08,596 [INFO] [GEV] Inserted 40 rows.
+2025-06-26 07:41:08,739 [INFO] [GE] Inserted 40 rows.
+2025-06-26 07:41:08,741 [INFO] [FOX] Inserted 40 rows.
+2025-06-26 07:41:08,742 [INFO] [GEN] Inserted 40 rows.
+2025-06-26 07:41:09,085 [INFO] [GM] Inserted 40 rows.
+2025-06-26 07:41:09,246 [INFO] [GNRC] Inserted 40 rows.
+2025-06-26 07:41:09,256 [INFO] [GPC] Inserted 40 rows.
+2025-06-26 07:41:09,258 [INFO] [GIS] Inserted 40 rows.
+2025-06-26 07:41:09,259 [INFO] [GILD] Inserted 40 rows.
+2025-06-26 07:41:09,261 [INFO] [GD] Inserted 40 rows.
+2025-06-26 07:41:09,438 [INFO] [GPN] Inserted 40 rows.
+2025-06-26 07:41:09,451 [INFO] [HIG] Inserted 40 rows.
+2025-06-26 07:41:09,453 [INFO] [HAL] Inserted 40 rows.
+2025-06-26 07:41:09,454 [INFO] [GL] Inserted 40 rows.
+2025-06-26 07:41:09,455 [INFO] [GS] Inserted 40 rows.
+2025-06-26 07:41:09,610 [INFO] [GDDY] Inserted 40 rows.
+2025-06-26 07:41:09,941 [INFO] [HAS] Inserted 40 rows.
+2025-06-26 07:41:10,141 [INFO] [DOC] Inserted 40 rows.
+2025-06-26 07:41:10,145 [INFO] [HCA] Inserted 40 rows.
+2025-06-26 07:41:10,148 [INFO] [HSIC] Inserted 40 rows.
+2025-06-26 07:41:10,249 [INFO] [HD] Inserted 40 rows.
+2025-06-26 07:41:10,271 [INFO] [HLT] Inserted 40 rows.
+2025-06-26 07:41:10,490 [INFO] [HES] Inserted 40 rows.
+2025-06-26 07:41:10,492 [INFO] [HOLX] Inserted 40 rows.
+2025-06-26 07:41:10,494 [INFO] [HRL] Inserted 40 rows.
+2025-06-26 07:41:10,495 [INFO] [HPE] Inserted 40 rows.
+2025-06-26 07:41:10,651 [INFO] [HSY] Inserted 40 rows.
+2025-06-26 07:41:10,668 [INFO] [HON] Inserted 40 rows.
+2025-06-26 07:41:10,843 [INFO] [HST] Inserted 40 rows.
+2025-06-26 07:41:11,017 [INFO] [HBAN] Inserted 40 rows.
+2025-06-26 07:41:11,018 [INFO] [HUM] Inserted 40 rows.
+2025-06-26 07:41:11,019 [INFO] [HPQ] Inserted 40 rows.
+2025-06-26 07:41:11,188 [INFO] [HWM] Inserted 40 rows.
+2025-06-26 07:41:11,203 [INFO] [HUBB] Inserted 40 rows.
+2025-06-26 07:41:11,205 [INFO] [HII] Inserted 40 rows.
+2025-06-26 07:41:11,206 [INFO] [IEX] Inserted 40 rows.
+2025-06-26 07:41:11,378 [INFO] [ITW] Inserted 40 rows.
+2025-06-26 07:41:11,380 [INFO] [INCY] Inserted 40 rows.
+2025-06-26 07:41:11,382 [INFO] [IDXX] Inserted 40 rows.
+2025-06-26 07:41:11,383 [INFO] [IBM] Inserted 40 rows.
+2025-06-26 07:41:11,721 [INFO] [ICE] Inserted 40 rows.
+2025-06-26 07:41:11,729 [INFO] [PODD] Inserted 40 rows.
+2025-06-26 07:41:11,908 [INFO] [IPG] Inserted 40 rows.
+2025-06-26 07:41:11,910 [INFO] [IR] Inserted 40 rows.
+2025-06-26 07:41:11,911 [INFO] [INTU] Inserted 40 rows.
+2025-06-26 07:41:11,912 [INFO] [INTC] Inserted 40 rows.
+2025-06-26 07:41:12,078 [INFO] [IFF] Inserted 40 rows.
+2025-06-26 07:41:12,260 [INFO] [IVZ] Inserted 40 rows.
+2025-06-26 07:41:12,263 [INFO] [INVH] Inserted 40 rows.
+2025-06-26 07:41:12,264 [INFO] [IP] Inserted 40 rows.
+2025-06-26 07:41:12,265 [INFO] [IQV] Inserted 40 rows.
+2025-06-26 07:41:12,437 [INFO] [ISRG] Inserted 40 rows.
+2025-06-26 07:41:12,443 [INFO] [JBHT] Inserted 40 rows.
+2025-06-26 07:41:12,620 [INFO] [IRM] Inserted 40 rows.
+2025-06-26 07:41:12,633 [INFO] [JBL] Inserted 40 rows.
+2025-06-26 07:41:12,797 [INFO] [J] Inserted 40 rows.
+2025-06-26 07:41:12,799 [INFO] [JNJ] Inserted 40 rows.
+2025-06-26 07:41:12,800 [INFO] [JKHY] Inserted 40 rows.
+2025-06-26 07:41:12,982 [INFO] [JCI] Inserted 40 rows.
+2025-06-26 07:41:12,991 [INFO] [JNPR] Inserted 40 rows.
+2025-06-26 07:41:12,992 [INFO] [JPM] Inserted 40 rows.
+2025-06-26 07:41:12,994 [INFO] [KVUE] Inserted 40 rows.
+2025-06-26 07:41:13,174 [INFO] [K] Inserted 40 rows.
+2025-06-26 07:41:13,181 [INFO] [KEY] Inserted 40 rows.
+2025-06-26 07:41:13,314 [INFO] [KEYS] Inserted 40 rows.
+2025-06-26 07:41:13,399 [INFO] [KMI] Inserted 40 rows.
+2025-06-26 07:41:13,414 [INFO] [KDP] Inserted 40 rows.
+2025-06-26 07:41:13,416 [INFO] [KMB] Inserted 40 rows.
+2025-06-26 07:41:13,490 [INFO] [KIM] Inserted 40 rows.
+2025-06-26 07:41:13,502 [INFO] [LHX] Inserted 40 rows.
+2025-06-26 07:41:13,545 [INFO] [KHC] Inserted 40 rows.
+2025-06-26 07:41:13,558 [INFO] [KLAC] Inserted 40 rows.
+2025-06-26 07:41:13,564 [INFO] [KR] Inserted 40 rows.
+2025-06-26 07:41:13,577 [INFO] [KKR] Inserted 40 rows.
+2025-06-26 07:41:13,654 [INFO] [LRCX] Inserted 40 rows.
+2025-06-26 07:41:13,744 [INFO] [LW] Inserted 40 rows.
+2025-06-26 07:41:13,882 [INFO] [LH] Inserted 40 rows.
+2025-06-26 07:41:13,994 [INFO] [LVS] Inserted 40 rows.
+2025-06-26 07:41:13,996 [INFO] [LEN] Inserted 40 rows.
+2025-06-26 07:41:14,006 [INFO] [LDOS] Inserted 40 rows.
+2025-06-26 07:41:14,079 [INFO] [LYV] Inserted 40 rows.
+2025-06-26 07:41:14,083 [INFO] [LLY] Inserted 40 rows.
+2025-06-26 07:41:14,088 [INFO] [LKQ] Inserted 40 rows.
+2025-06-26 07:41:14,116 [INFO] [LIN] Inserted 40 rows.
+2025-06-26 07:41:14,193 [INFO] [L] Inserted 40 rows.
+2025-06-26 07:41:14,234 [INFO] [LII] Inserted 40 rows.
+2025-06-26 07:41:14,251 [INFO] [LOW] Inserted 40 rows.
+2025-06-26 07:41:14,356 [INFO] [LULU] Inserted 40 rows.
+2025-06-26 07:41:14,406 [INFO] [LMT] Inserted 40 rows.
+2025-06-26 07:41:14,462 [INFO] [LYB] Inserted 40 rows.
+2025-06-26 07:41:14,510 [INFO] [MTB] Inserted 40 rows.
+2025-06-26 07:41:14,521 [INFO] [MPC] Inserted 40 rows.
+2025-06-26 07:41:14,667 [INFO] [MLM] Inserted 40 rows.
+2025-06-26 07:41:14,668 [INFO] [MAR] Inserted 40 rows.
+2025-06-26 07:41:14,709 [INFO] [MTCH] Inserted 40 rows.
+2025-06-26 07:41:14,711 [INFO] [MAS] Inserted 40 rows.
+2025-06-26 07:41:14,837 [INFO] [MMC] Inserted 40 rows.
+2025-06-26 07:41:14,838 [INFO] [MKTX] Inserted 40 rows.
+2025-06-26 07:41:14,866 [INFO] [MKC] Inserted 40 rows.
+2025-06-26 07:41:14,932 [INFO] [MA] Inserted 40 rows.
+2025-06-26 07:41:14,950 [INFO] [MCK] Inserted 40 rows.
+2025-06-26 07:41:15,029 [INFO] [MDT] Inserted 40 rows.
+2025-06-26 07:41:15,103 [INFO] [MCD] Inserted 40 rows.
+2025-06-26 07:41:15,128 [INFO] [MRK] Inserted 40 rows.
+2025-06-26 07:41:15,177 [INFO] [MET] Inserted 40 rows.
+2025-06-26 07:41:15,179 [INFO] [MGM] Inserted 40 rows.
+2025-06-26 07:41:15,188 [INFO] [MTD] Inserted 40 rows.
+2025-06-26 07:41:15,224 [INFO] [META] Inserted 40 rows.
+2025-06-26 07:41:15,323 [INFO] [MU] Inserted 40 rows.
+2025-06-26 07:41:15,422 [INFO] [MCHP] Inserted 40 rows.
+2025-06-26 07:41:15,463 [INFO] [MAA] Inserted 40 rows.
+2025-06-26 07:41:15,516 [INFO] [MSFT] Inserted 40 rows.
+2025-06-26 07:41:15,594 [INFO] [MNST] Inserted 40 rows.
+2025-06-26 07:41:15,621 [INFO] [MHK] Inserted 40 rows.
+2025-06-26 07:41:15,622 [INFO] [MPWR] Inserted 40 rows.
+2025-06-26 07:41:15,652 [INFO] [MDLZ] Inserted 40 rows.
+2025-06-26 07:41:15,671 [INFO] [TAP] Inserted 40 rows.
+2025-06-26 07:41:15,691 [INFO] [MRNA] Inserted 40 rows.
+2025-06-26 07:41:15,693 [INFO] [MOH] Inserted 40 rows.
+2025-06-26 07:41:15,869 [INFO] [MS] Inserted 40 rows.
+2025-06-26 07:41:15,881 [INFO] [MCO] Inserted 40 rows.
+2025-06-26 07:41:15,994 [INFO] [MSCI] Inserted 40 rows.
+2025-06-26 07:41:16,011 [INFO] [MSI] Inserted 40 rows.
+2025-06-26 07:41:16,082 [INFO] [MOS] Inserted 40 rows.
+2025-06-26 07:41:16,101 [INFO] [NTAP] Inserted 40 rows.
+2025-06-26 07:41:16,158 [INFO] [NDAQ] Inserted 40 rows.
+2025-06-26 07:41:16,193 [INFO] [NWSA] Inserted 40 rows.
+2025-06-26 07:41:16,227 [INFO] [NFLX] Inserted 40 rows.
+2025-06-26 07:41:16,255 [INFO] [NWS] Inserted 40 rows.
+2025-06-26 07:41:16,257 [INFO] [NEE] Inserted 40 rows.
+2025-06-26 07:41:16,322 [INFO] [NEM] Inserted 40 rows.
+2025-06-26 07:41:16,509 [INFO] [NKE] Inserted 40 rows.
+2025-06-26 07:41:16,588 [INFO] [NSC] Inserted 40 rows.
+2025-06-26 07:41:16,642 [INFO] [NOC] Inserted 40 rows.
+2025-06-26 07:41:16,646 [INFO] [NDSN] Inserted 40 rows.
+2025-06-26 07:41:16,672 [INFO] [NTRS] Inserted 40 rows.
+2025-06-26 07:41:16,674 [INFO] [NRG] Inserted 40 rows.
+2025-06-26 07:41:16,675 [INFO] [NI] Inserted 40 rows.
+2025-06-26 07:41:16,716 [INFO] [NVDA] Inserted 40 rows.
+2025-06-26 07:41:16,721 [INFO] [NCLH] Inserted 40 rows.
+2025-06-26 07:41:16,843 [INFO] [NVR] Inserted 40 rows.
+2025-06-26 07:41:16,892 [INFO] [NXPI] Inserted 40 rows.
+2025-06-26 07:41:16,930 [INFO] [ORLY] Inserted 40 rows.
+2025-06-26 07:41:16,969 [INFO] [NUE] Inserted 40 rows.
+2025-06-26 07:41:17,124 [INFO] [ODFL] Inserted 40 rows.
+2025-06-26 07:41:17,126 [INFO] [ON] Inserted 40 rows.
+2025-06-26 07:41:17,152 [INFO] [OTIS] Inserted 40 rows.
+2025-06-26 07:41:17,163 [INFO] [OXY] Inserted 40 rows.
+2025-06-26 07:41:17,184 [INFO] [OKE] Inserted 40 rows.
+2025-06-26 07:41:17,338 [INFO] [ORCL] Inserted 40 rows.
+2025-06-26 07:41:17,369 [INFO] [PLTR] Inserted 40 rows.
+2025-06-26 07:41:17,373 [INFO] [PKG] Inserted 40 rows.
+2025-06-26 07:41:17,375 [INFO] [OMC] Inserted 40 rows.
+2025-06-26 07:41:17,376 [INFO] [PANW] Inserted 40 rows.
+2025-06-26 07:41:17,558 [INFO] [PCAR] Inserted 40 rows.
+2025-06-26 07:41:17,578 [INFO] [PARA] Inserted 40 rows.
+2025-06-26 07:41:17,616 [INFO] [PAYX] Inserted 40 rows.
+2025-06-26 07:41:17,768 [INFO] [PAYC] Inserted 40 rows.
+2025-06-26 07:41:17,779 [INFO] [PYPL] Inserted 40 rows.
+2025-06-26 07:41:17,786 [INFO] [PH] Inserted 40 rows.
+2025-06-26 07:41:17,815 [INFO] [PNR] Inserted 40 rows.
+2025-06-26 07:41:17,817 [INFO] [PSX] Inserted 40 rows.
+2025-06-26 07:41:17,891 [INFO] [PCG] Inserted 40 rows.
+2025-06-26 07:41:17,905 [INFO] [PEP] Inserted 40 rows.
+2025-06-26 07:41:17,930 [INFO] [PFE] Inserted 40 rows.
+2025-06-26 07:41:17,986 [INFO] [PM] Inserted 40 rows.
+2025-06-26 07:41:18,052 [INFO] [PNC] Inserted 40 rows.
+2025-06-26 07:41:18,231 [INFO] [POOL] Inserted 40 rows.
+2025-06-26 07:41:18,235 [INFO] [PNW] Inserted 40 rows.
+2025-06-26 07:41:18,290 [INFO] [PPL] Inserted 40 rows.
+2025-06-26 07:41:18,336 [INFO] [PGR] Inserted 40 rows.
+2025-06-26 07:41:18,352 [INFO] [PG] Inserted 40 rows.
+2025-06-26 07:41:18,360 [INFO] [PFG] Inserted 40 rows.
+2025-06-26 07:41:18,366 [INFO] [PLD] Inserted 40 rows.
+2025-06-26 07:41:18,436 [INFO] [PRU] Inserted 40 rows.
+2025-06-26 07:41:18,438 [INFO] [PPG] Inserted 40 rows.
+2025-06-26 07:41:18,481 [INFO] [PTC] Inserted 40 rows.
+2025-06-26 07:41:18,556 [INFO] [PSA] Inserted 40 rows.
+2025-06-26 07:41:18,639 [INFO] [PEG] Inserted 40 rows.
+2025-06-26 07:41:18,704 [INFO] [PWR] Inserted 40 rows.
+2025-06-26 07:41:18,809 [INFO] [QCOM] Inserted 40 rows.
+2025-06-26 07:41:18,819 [INFO] [DGX] Inserted 40 rows.
+2025-06-26 07:41:18,835 [INFO] [RL] Inserted 40 rows.
+2025-06-26 07:41:18,886 [INFO] [RTX] Inserted 40 rows.
+2025-06-26 07:41:18,973 [INFO] [PHM] Inserted 40 rows.
+2025-06-26 07:41:18,975 [INFO] [O] Inserted 40 rows.
+2025-06-26 07:41:19,062 [INFO] [REG] Inserted 40 rows.
+2025-06-26 07:41:19,077 [INFO] [REGN] Inserted 40 rows.
+2025-06-26 07:41:19,108 [INFO] [RJF] Inserted 40 rows.
+2025-06-26 07:41:19,118 [INFO] [RSG] Inserted 40 rows.
+2025-06-26 07:41:19,144 [INFO] [RMD] Inserted 40 rows.
+2025-06-26 07:41:19,164 [INFO] [RF] Inserted 40 rows.
+2025-06-26 07:41:19,336 [INFO] [RVTY] Inserted 40 rows.
+2025-06-26 07:41:19,362 [INFO] [ROL] Inserted 40 rows.
+2025-06-26 07:41:19,408 [INFO] [ROP] Inserted 40 rows.
+2025-06-26 07:41:19,424 [INFO] [ROK] Inserted 40 rows.
+2025-06-26 07:41:19,574 [INFO] [RCL] Inserted 40 rows.
+2025-06-26 07:41:19,576 [INFO] [ROST] Inserted 40 rows.
+2025-06-26 07:41:19,683 [INFO] [SPGI] Inserted 40 rows.
+2025-06-26 07:41:19,685 [INFO] [CRM] Inserted 40 rows.
+2025-06-26 07:41:19,703 [INFO] [SBAC] Inserted 40 rows.
+2025-06-26 07:41:19,707 [INFO] [SLB] Inserted 40 rows.
+2025-06-26 07:41:19,709 [INFO] [STX] Inserted 40 rows.
+2025-06-26 07:41:19,774 [INFO] [SRE] Inserted 40 rows.
+2025-06-26 07:41:19,899 [INFO] [SWKS] Inserted 40 rows.
+2025-06-26 07:41:19,912 [INFO] [SHW] Inserted 40 rows.
+2025-06-26 07:41:19,914 [INFO] [NOW] Inserted 40 rows.
+2025-06-26 07:41:19,995 [INFO] [SPG] Inserted 40 rows.
+2025-06-26 07:41:20,131 [INFO] [SJM] Inserted 40 rows.
+2025-06-26 07:41:20,215 [INFO] [SBUX] Inserted 40 rows.
+2025-06-26 07:41:20,258 [INFO] [SOLV] Inserted 40 rows.
+2025-06-26 07:41:20,298 [INFO] [SWK] Inserted 40 rows.
+2025-06-26 07:41:20,300 [INFO] [SO] Inserted 40 rows.
+2025-06-26 07:41:20,301 [INFO] [SNA] Inserted 40 rows.
+2025-06-26 07:41:20,331 [INFO] [LUV] Inserted 40 rows.
+2025-06-26 07:41:20,343 [INFO] [STT] Inserted 40 rows.
+2025-06-26 07:41:20,430 [INFO] [STLD] Inserted 40 rows.
+2025-06-26 07:41:20,432 [INFO] [SMCI] Inserted 40 rows.
+2025-06-26 07:41:20,486 [INFO] [SYK] Inserted 40 rows.
+2025-06-26 07:41:20,541 [INFO] [STE] Inserted 40 rows.
+2025-06-26 07:41:20,612 [INFO] [SYF] Inserted 40 rows.
+2025-06-26 07:41:20,721 [INFO] [SNPS] Inserted 40 rows.
+2025-06-26 07:41:20,777 [INFO] [SYY] Inserted 40 rows.
+2025-06-26 07:41:20,854 [INFO] [TROW] Inserted 40 rows.
+2025-06-26 07:41:20,884 [INFO] [TGT] Inserted 40 rows.
+2025-06-26 07:41:20,893 [INFO] [TTWO] Inserted 40 rows.
+2025-06-26 07:41:20,911 [INFO] [TRGP] Inserted 40 rows.
+2025-06-26 07:41:20,932 [INFO] [TPR] Inserted 40 rows.
+2025-06-26 07:41:20,934 [INFO] [TEL] Inserted 40 rows.
+2025-06-26 07:41:20,945 [INFO] [TDY] Inserted 40 rows.
+2025-06-26 07:41:20,979 [INFO] [TMUS] Inserted 40 rows.
+2025-06-26 07:41:21,022 [INFO] [TER] Inserted 40 rows.
+2025-06-26 07:41:21,089 [INFO] [TSLA] Inserted 40 rows.
+2025-06-26 07:41:21,249 [INFO] [TXN] Inserted 40 rows.
+2025-06-26 07:41:21,369 [INFO] [TJX] Inserted 40 rows.
+2025-06-26 07:41:21,387 [INFO] [TMO] Inserted 40 rows.
+2025-06-26 07:41:21,404 [INFO] [TXT] Inserted 40 rows.
+2025-06-26 07:41:21,412 [INFO] [TSCO] Inserted 40 rows.
+2025-06-26 07:41:21,460 [INFO] [TRV] Inserted 40 rows.
+2025-06-26 07:41:21,462 [INFO] [TT] Inserted 40 rows.
+2025-06-26 07:41:21,478 [INFO] [TKO] Inserted 40 rows.
+2025-06-26 07:41:21,480 [INFO] [TDG] Inserted 40 rows.
+2025-06-26 07:41:21,481 [INFO] [TRMB] Inserted 40 rows.
+2025-06-26 07:41:21,566 [INFO] [TPL] Inserted 40 rows.
+2025-06-26 07:41:21,622 [INFO] [TFC] Inserted 40 rows.
+2025-06-26 07:41:21,825 [INFO] [TYL] Inserted 40 rows.
+2025-06-26 07:41:21,872 [INFO] [UBER] Inserted 40 rows.
+2025-06-26 07:41:21,888 [INFO] [TSN] Inserted 40 rows.
+2025-06-26 07:41:21,908 [INFO] [UAL] Inserted 40 rows.
+2025-06-26 07:41:21,935 [INFO] [URI] Inserted 40 rows.
+2025-06-26 07:41:22,009 [INFO] [USB] Inserted 40 rows.
+2025-06-26 07:41:22,013 [INFO] [UPS] Inserted 40 rows.
+2025-06-26 07:41:22,024 [INFO] [ULTA] Inserted 40 rows.
+2025-06-26 07:41:22,047 [INFO] [UDR] Inserted 40 rows.
+2025-06-26 07:41:22,057 [INFO] [UNP] Inserted 40 rows.
+2025-06-26 07:41:22,088 [INFO] [UNH] Inserted 40 rows.
+2025-06-26 07:41:22,131 [INFO] [UHS] Inserted 40 rows.
+2025-06-26 07:41:22,338 [INFO] [VTR] Inserted 40 rows.
+2025-06-26 07:41:22,410 [INFO] [VRSK] Inserted 40 rows.
+2025-06-26 07:41:22,450 [INFO] [VLO] Inserted 40 rows.
+2025-06-26 07:41:22,479 [INFO] [VRSN] Inserted 40 rows.
+2025-06-26 07:41:22,488 [INFO] [VZ] Inserted 40 rows.
+2025-06-26 07:41:22,523 [INFO] [VTRS] Inserted 40 rows.
+2025-06-26 07:41:22,525 [INFO] [V] Inserted 40 rows.
+2025-06-26 07:41:22,576 [INFO] [VRTX] Inserted 40 rows.
+2025-06-26 07:41:22,604 [INFO] [VST] Inserted 40 rows.
+2025-06-26 07:41:22,666 [INFO] [VICI] Inserted 40 rows.
+2025-06-26 07:41:22,676 [INFO] [VMC] Inserted 40 rows.
+2025-06-26 07:41:22,894 [INFO] [WRB] Inserted 40 rows.
+2025-06-26 07:41:22,949 [INFO] [GWW] Inserted 40 rows.
+2025-06-26 07:41:22,973 [INFO] [WBA] Inserted 40 rows.
+2025-06-26 07:41:22,995 [INFO] [WMT] Inserted 40 rows.
+2025-06-26 07:41:23,001 [INFO] [WBD] Inserted 40 rows.
+2025-06-26 07:41:23,003 [INFO] [WAB] Inserted 40 rows.
+2025-06-26 07:41:23,033 [INFO] [DIS] Inserted 40 rows.
+2025-06-26 07:41:23,059 [INFO] [WM] Inserted 40 rows.
+2025-06-26 07:41:23,152 [INFO] [WEC] Inserted 40 rows.
+2025-06-26 07:41:23,196 [INFO] [WAT] Inserted 40 rows.
+2025-06-26 07:41:23,226 [INFO] [WFC] Inserted 40 rows.
+2025-06-26 07:41:23,388 [INFO] [WELL] Inserted 40 rows.
+2025-06-26 07:41:23,431 [INFO] [WDC] Inserted 40 rows.
+2025-06-26 07:41:23,488 [INFO] [WSM] Inserted 40 rows.
+2025-06-26 07:41:23,504 [INFO] [WMB] Inserted 40 rows.
+2025-06-26 07:41:23,550 [INFO] [WDAY] Inserted 40 rows.
+2025-06-26 07:41:23,572 [INFO] [WST] Inserted 40 rows.
+2025-06-26 07:41:23,633 [INFO] [WTW] Inserted 40 rows.
+2025-06-26 07:41:23,712 [INFO] [WY] Inserted 40 rows.
+2025-06-26 07:41:23,728 [INFO] [XYL] Inserted 40 rows.
+2025-06-26 07:41:23,736 [INFO] [XEL] Inserted 40 rows.
+2025-06-26 07:41:23,827 [INFO] [WYNN] Inserted 40 rows.
+2025-06-26 07:41:23,856 [INFO] [ZBRA] Inserted 40 rows.
+2025-06-26 07:41:23,875 [INFO] [YUM] Inserted 40 rows.
+2025-06-26 07:41:23,979 [INFO] [ZTS] Inserted 40 rows.
+2025-06-26 07:41:24,236 [INFO] [ZBH] Inserted 40 rows.
+2025-06-26 07:41:25,825 [INFO] [VLTO] Inserted 40 rows.
+2025-06-26 07:41:26,029 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:26,138 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:26,247 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:26,371 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:26,499 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:26,635 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:26,785 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:26,906 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:27,013 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:27,141 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:27,262 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:27,406 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:27,528 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:27,656 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:27,785 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:27,894 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:28,003 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:28,128 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:28,253 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:28,387 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:28,509 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:28,631 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:28,740 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:28,851 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:28,974 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:29,205 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:29,326 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:29,447 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:29,564 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:29,678 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:29,783 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:29,892 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:30,007 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:30,123 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:30,235 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:30,370 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:30,479 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:30,593 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:30,741 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:30,859 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:31,010 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:31,132 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:31,268 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:31,375 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:31,495 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:31,645 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:31,787 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:32,044 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:32,180 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:32,318 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:32,433 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:32,550 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:32,683 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:32,807 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:33,033 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:33,158 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:33,286 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:33,517 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:33,632 [WARNING] Failed to fetch SPY data: SPY data is empty
+2025-06-26 07:41:33,764 [INFO] SPY index data inserted successfully.
+2025-06-26 07:41:33,767 [WARNING] Saved failed tickers to: /Users/shailyjaloree/eqx-index-project/failed_tickers.csv
+2025-06-26 07:41:33,767 [INFO] Ingestion complete: 20080 rows inserted.
+2025-06-26 07:41:35,151 [INFO] Full pipeline completed for all dates.
+2025-06-26 07:47:54,332 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
+2025-06-26 07:47:54,828 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/ingestion.log
+2025-06-26 07:47:54,828 [INFO] Ingesting data for: 2024-06-25
+2025-06-26 07:47:54,835 [INFO] Ensuring DuckDB schema is ready.
+2025-06-26 07:47:54,835 [INFO] Tables created.
+2025-06-26 07:47:57,742 [INFO] Fetched 0 live tickers from Finnhub.
+2025-06-26 07:47:57,747 [WARNING] Finnhub failed. Falling back to S&P 500 tickers.
+2025-06-26 07:47:58,351 [INFO] Fetched 503 tickers from Wikipedia S&P 500 list.
+2025-06-26 07:47:59,140 [INFO] [ADBE] Inserted 1 rows.
+2025-06-26 07:47:59,201 [INFO] [AMD] Inserted 1 rows.
+2025-06-26 07:47:59,204 [INFO] [ACN] Inserted 1 rows.
+2025-06-26 07:47:59,206 [INFO] [ABBV] Inserted 1 rows.
+2025-06-26 07:47:59,235 [INFO] [AOS] Inserted 1 rows.
+2025-06-26 07:47:59,237 [INFO] [AES] Inserted 1 rows.
+2025-06-26 07:47:59,245 [INFO] [MMM] Inserted 1 rows.
+2025-06-26 07:47:59,509 [INFO] [ABT] Inserted 1 rows.
+2025-06-26 07:47:59,667 [INFO] [ABNB] Inserted 1 rows.
+2025-06-26 07:47:59,685 [INFO] [AFL] Inserted 1 rows.
+2025-06-26 07:47:59,723 [INFO] [AKAM] Inserted 1 rows.
+2025-06-26 07:47:59,726 [INFO] [APD] Inserted 1 rows.
+2025-06-26 07:47:59,727 [INFO] [ARE] Inserted 1 rows.
+2025-06-26 07:47:59,813 [INFO] [A] Inserted 1 rows.
+2025-06-26 07:47:59,872 [INFO] [ALB] Inserted 1 rows.
+2025-06-26 07:47:59,996 [INFO] [ALGN] Inserted 1 rows.
+2025-06-26 07:48:00,170 [INFO] [ALLE] Inserted 1 rows.
+2025-06-26 07:48:00,173 [INFO] [LNT] Inserted 1 rows.
+2025-06-26 07:48:00,191 [INFO] [GOOGL] Inserted 1 rows.
+2025-06-26 07:48:00,228 [INFO] [GOOG] Inserted 1 rows.
+2025-06-26 07:48:00,230 [INFO] [ALL] Inserted 1 rows.
+2025-06-26 07:48:00,294 [INFO] [AMZN] Inserted 1 rows.
+2025-06-26 07:48:00,450 [INFO] [MO] Inserted 1 rows.
+2025-06-26 07:48:00,579 [INFO] [AMCR] Inserted 1 rows.
+2025-06-26 07:48:00,733 [INFO] [AMT] Inserted 1 rows.
+2025-06-26 07:48:00,738 [INFO] [AEP] Inserted 1 rows.
+2025-06-26 07:48:00,748 [INFO] [AEE] Inserted 1 rows.
+2025-06-26 07:48:00,750 [INFO] [AXP] Inserted 1 rows.
+2025-06-26 07:48:00,751 [INFO] [AIG] Inserted 1 rows.
+2025-06-26 07:48:00,924 [INFO] [AMP] Inserted 1 rows.
+2025-06-26 07:48:00,943 [INFO] [AWK] Inserted 1 rows.
+2025-06-26 07:48:01,233 [INFO] [AME] Inserted 1 rows.
+2025-06-26 07:48:01,236 [INFO] [ANSS] Inserted 1 rows.
+2025-06-26 07:48:01,238 [INFO] [APH] Inserted 1 rows.
+2025-06-26 07:48:01,265 [INFO] [AMGN] Inserted 1 rows.
+2025-06-26 07:48:01,402 [INFO] [ADI] Inserted 1 rows.
+2025-06-26 07:48:01,404 [INFO] [APO] Inserted 1 rows.
+2025-06-26 07:48:01,433 [INFO] [APA] Inserted 1 rows.
+2025-06-26 07:48:01,443 [INFO] [AON] Inserted 1 rows.
+2025-06-26 07:48:01,744 [INFO] [AAPL] Inserted 1 rows.
+2025-06-26 07:48:01,762 [INFO] [APTV] Inserted 1 rows.
+2025-06-26 07:48:01,837 [INFO] [AMAT] Inserted 1 rows.
+2025-06-26 07:48:01,846 [INFO] [ACGL] Inserted 1 rows.
+2025-06-26 07:48:01,945 [INFO] [ADM] Inserted 1 rows.
+2025-06-26 07:48:01,964 [INFO] [ANET] Inserted 1 rows.
+2025-06-26 07:48:02,038 [INFO] [AJG] Inserted 1 rows.
+2025-06-26 07:48:02,125 [INFO] [AIZ] Inserted 1 rows.
+2025-06-26 07:48:02,272 [INFO] [ATO] Inserted 1 rows.
+2025-06-26 07:48:02,274 [INFO] [T] Inserted 1 rows.
+2025-06-26 07:48:02,331 [INFO] [ADSK] Inserted 1 rows.
+2025-06-26 07:48:02,403 [INFO] [ADP] Inserted 1 rows.
+2025-06-26 07:48:02,481 [INFO] [AZO] Inserted 1 rows.
+2025-06-26 07:48:02,601 [INFO] [AXON] Inserted 1 rows.
+2025-06-26 07:48:02,604 [INFO] [AVB] Inserted 1 rows.
+2025-06-26 07:48:02,651 [INFO] [AVY] Inserted 1 rows.
+2025-06-26 07:48:02,820 [INFO] [BKR] Inserted 1 rows.
+2025-06-26 07:48:02,861 [INFO] [BALL] Inserted 1 rows.
+2025-06-26 07:48:02,968 [INFO] [BAC] Inserted 1 rows.
+2025-06-26 07:48:03,027 [INFO] [BAX] Inserted 1 rows.
+2025-06-26 07:48:03,117 [INFO] [BDX] Inserted 1 rows.
+2025-06-26 07:48:03,187 [INFO] [BRK-B] Inserted 1 rows.
+2025-06-26 07:48:03,199 [INFO] [TECH] Inserted 1 rows.
+2025-06-26 07:48:03,226 [INFO] [BBY] Inserted 1 rows.
+2025-06-26 07:48:03,308 [INFO] [BIIB] Inserted 1 rows.
+2025-06-26 07:48:03,446 [INFO] [BX] Inserted 1 rows.
+2025-06-26 07:48:03,531 [INFO] [BLK] Inserted 1 rows.
+2025-06-26 07:48:03,612 [INFO] [BK] Inserted 1 rows.
+2025-06-26 07:48:03,652 [INFO] [BSX] Inserted 1 rows.
+2025-06-26 07:48:03,655 [INFO] [BA] Inserted 1 rows.
+2025-06-26 07:48:03,745 [INFO] [BMY] Inserted 1 rows.
+2025-06-26 07:48:03,892 [INFO] [BKNG] Inserted 1 rows.
+2025-06-26 07:48:04,002 [INFO] [AVGO] Inserted 1 rows.
+2025-06-26 07:48:04,115 [INFO] [BR] Inserted 1 rows.
+2025-06-26 07:48:04,241 [INFO] [BG] Inserted 1 rows.
+2025-06-26 07:48:04,250 [INFO] [BF-B] Inserted 1 rows.
+2025-06-26 07:48:04,348 [INFO] [BXP] Inserted 1 rows.
+2025-06-26 07:48:04,351 [INFO] [BLDR] Inserted 1 rows.
+2025-06-26 07:48:04,372 [INFO] [BRO] Inserted 1 rows.
+2025-06-26 07:48:04,464 [INFO] [CDNS] Inserted 1 rows.
+2025-06-26 07:48:04,495 [INFO] [CHRW] Inserted 1 rows.
+2025-06-26 07:48:04,570 [INFO] [CZR] Inserted 1 rows.
+2025-06-26 07:48:04,847 [INFO] [COF] Inserted 1 rows.
+2025-06-26 07:48:04,859 [INFO] [CAH] Inserted 1 rows.
+2025-06-26 07:48:04,876 [INFO] [CPT] Inserted 1 rows.
+2025-06-26 07:48:04,878 [INFO] [KMX] Inserted 1 rows.
+2025-06-26 07:48:04,901 [INFO] [CPB] Inserted 1 rows.
+2025-06-26 07:48:04,956 [INFO] [CARR] Inserted 1 rows.
+2025-06-26 07:48:05,064 [INFO] [CCL] Inserted 1 rows.
+2025-06-26 07:48:05,183 [INFO] [CAT] Inserted 1 rows.
+2025-06-26 07:48:05,370 [INFO] [CBRE] Inserted 1 rows.
+2025-06-26 07:48:05,376 [INFO] [CNC] Inserted 1 rows.
+2025-06-26 07:48:05,378 [INFO] [CDW] Inserted 1 rows.
+2025-06-26 07:48:05,380 [INFO] [CBOE] Inserted 1 rows.
+2025-06-26 07:48:05,526 [INFO] [CNP] Inserted 1 rows.
+2025-06-26 07:48:05,528 [INFO] [COR] Inserted 1 rows.
+2025-06-26 07:48:05,750 [INFO] [CF] Inserted 1 rows.
+2025-06-26 07:48:05,766 [INFO] [CRL] Inserted 1 rows.
+2025-06-26 07:48:05,949 [INFO] [CMG] Inserted 1 rows.
+2025-06-26 07:48:05,951 [INFO] [CHTR] Inserted 1 rows.
+2025-06-26 07:48:05,982 [INFO] [SCHW] Inserted 1 rows.
+2025-06-26 07:48:06,009 [INFO] [CB] Inserted 1 rows.
+2025-06-26 07:48:06,010 [INFO] [CVX] Inserted 1 rows.
+2025-06-26 07:48:06,243 [INFO] [CHD] Inserted 1 rows.
+2025-06-26 07:48:06,252 [INFO] [CI] Inserted 1 rows.
+2025-06-26 07:48:06,269 [INFO] [CINF] Inserted 1 rows.
+2025-06-26 07:48:06,481 [INFO] [C] Inserted 1 rows.
+2025-06-26 07:48:06,509 [INFO] [CFG] Inserted 1 rows.
+2025-06-26 07:48:06,518 [INFO] [CTAS] Inserted 1 rows.
+2025-06-26 07:48:06,525 [INFO] [CLX] Inserted 1 rows.
+2025-06-26 07:48:06,631 [INFO] [CSCO] Inserted 1 rows.
+2025-06-26 07:48:06,772 [INFO] [CME] Inserted 1 rows.
+2025-06-26 07:48:06,835 [INFO] [CMS] Inserted 1 rows.
+2025-06-26 07:48:06,869 [INFO] [KO] Inserted 1 rows.
+2025-06-26 07:48:06,955 [INFO] [COIN] Inserted 1 rows.
+2025-06-26 07:48:07,088 [INFO] [CL] Inserted 1 rows.
+2025-06-26 07:48:07,090 [INFO] [CMCSA] Inserted 1 rows.
+2025-06-26 07:48:07,092 [INFO] [CTSH] Inserted 1 rows.
+2025-06-26 07:48:07,150 [INFO] [CAG] Inserted 1 rows.
+2025-06-26 07:48:07,333 [INFO] [STZ] Inserted 1 rows.
+2025-06-26 07:48:07,354 [INFO] [COP] Inserted 1 rows.
+2025-06-26 07:48:07,419 [INFO] [CEG] Inserted 1 rows.
+2025-06-26 07:48:07,511 [INFO] [ED] Inserted 1 rows.
+2025-06-26 07:48:07,607 [INFO] [COO] Inserted 1 rows.
+2025-06-26 07:48:07,610 [INFO] [GLW] Inserted 1 rows.
+2025-06-26 07:48:07,622 [INFO] [CPAY] Inserted 1 rows.
+2025-06-26 07:48:07,700 [INFO] [CPRT] Inserted 1 rows.
+2025-06-26 07:48:07,774 [INFO] [CTVA] Inserted 1 rows.
+2025-06-26 07:48:07,830 [INFO] [CSGP] Inserted 1 rows.
+2025-06-26 07:48:07,906 [INFO] [COST] Inserted 1 rows.
+2025-06-26 07:48:08,122 [INFO] [CCI] Inserted 1 rows.
+2025-06-26 07:48:08,170 [INFO] [CTRA] Inserted 1 rows.
+2025-06-26 07:48:08,182 [INFO] [CRWD] Inserted 1 rows.
+2025-06-26 07:48:08,185 [INFO] [CSX] Inserted 1 rows.
+2025-06-26 07:48:08,250 [INFO] [CMI] Inserted 1 rows.
+2025-06-26 07:48:08,393 [INFO] [CVS] Inserted 1 rows.
+2025-06-26 07:48:08,554 [INFO] [DRI] Inserted 1 rows.
+2025-06-26 07:48:08,556 [INFO] [DHR] Inserted 1 rows.
+2025-06-26 07:48:08,611 [INFO] [DECK] Inserted 1 rows.
+2025-06-26 07:48:08,612 [INFO] [DVA] Inserted 1 rows.
+2025-06-26 07:48:08,670 [INFO] [DAY] Inserted 1 rows.
+2025-06-26 07:48:08,704 [INFO] [DE] Inserted 1 rows.
+2025-06-26 07:48:08,737 [INFO] [DELL] Inserted 1 rows.
+2025-06-26 07:48:08,993 [INFO] [DAL] Inserted 1 rows.
+2025-06-26 07:48:09,052 [INFO] [DVN] Inserted 1 rows.
+2025-06-26 07:48:09,058 [INFO] [DXCM] Inserted 1 rows.
+2025-06-26 07:48:09,072 [INFO] [FANG] Inserted 1 rows.
+2025-06-26 07:48:09,195 [INFO] [DG] Inserted 1 rows.
+2025-06-26 07:48:09,227 [INFO] [DLR] Inserted 1 rows.
+2025-06-26 07:48:09,278 [INFO] [D] Inserted 1 rows.
+2025-06-26 07:48:09,284 [INFO] [DLTR] Inserted 1 rows.
+2025-06-26 07:48:09,547 [INFO] [DASH] Inserted 1 rows.
+2025-06-26 07:48:09,550 [INFO] [DPZ] Inserted 1 rows.
+2025-06-26 07:48:09,558 [INFO] [DOW] Inserted 1 rows.
+2025-06-26 07:48:09,744 [INFO] [DOV] Inserted 1 rows.
+2025-06-26 07:48:09,856 [INFO] [DHI] Inserted 1 rows.
+2025-06-26 07:48:09,933 [INFO] [DTE] Inserted 1 rows.
+2025-06-26 07:48:09,958 [INFO] [DD] Inserted 1 rows.
+2025-06-26 07:48:09,960 [INFO] [DUK] Inserted 1 rows.
+2025-06-26 07:48:10,060 [INFO] [ETN] Inserted 1 rows.
+2025-06-26 07:48:10,071 [INFO] [EBAY] Inserted 1 rows.
+2025-06-26 07:48:10,286 [INFO] [ECL] Inserted 1 rows.
+2025-06-26 07:48:10,320 [INFO] [EMN] Inserted 1 rows.
+2025-06-26 07:48:10,374 [INFO] [EIX] Inserted 1 rows.
+2025-06-26 07:48:10,376 [INFO] [EW] Inserted 1 rows.
+2025-06-26 07:48:10,491 [INFO] [ELV] Inserted 1 rows.
+2025-06-26 07:48:10,532 [INFO] [ENPH] Inserted 1 rows.
+2025-06-26 07:48:10,552 [INFO] [EA] Inserted 1 rows.
+2025-06-26 07:48:10,841 [INFO] [EOG] Inserted 1 rows.
+2025-06-26 07:48:10,843 [INFO] [EPAM] Inserted 1 rows.
+2025-06-26 07:48:10,852 [INFO] [EMR] Inserted 1 rows.
+2025-06-26 07:48:10,879 [INFO] [EQT] Inserted 1 rows.
+2025-06-26 07:48:10,939 [INFO] [ETR] Inserted 1 rows.
+2025-06-26 07:48:11,012 [INFO] [EQIX] Inserted 1 rows.
+2025-06-26 07:48:11,065 [INFO] [EQR] Inserted 1 rows.
+2025-06-26 07:48:11,142 [INFO] [EFX] Inserted 1 rows.
+2025-06-26 07:48:11,328 [INFO] [EL] Inserted 1 rows.
+2025-06-26 07:48:11,418 [INFO] [EG] Inserted 1 rows.
+2025-06-26 07:48:11,420 [INFO] [ERIE] Inserted 1 rows.
+2025-06-26 07:48:11,462 [INFO] [ESS] Inserted 1 rows.
+2025-06-26 07:48:11,599 [INFO] [EXC] Inserted 1 rows.
+2025-06-26 07:48:11,626 [INFO] [EVRG] Inserted 1 rows.
+2025-06-26 07:48:11,631 [INFO] [EXE] Inserted 1 rows.
+2025-06-26 07:48:11,669 [INFO] [ES] Inserted 1 rows.
+2025-06-26 07:48:11,833 [INFO] [EXPE] Inserted 1 rows.
+2025-06-26 07:48:11,934 [INFO] [EXR] Inserted 1 rows.
+2025-06-26 07:48:12,089 [INFO] [FFIV] Inserted 1 rows.
+2025-06-26 07:48:12,091 [INFO] [EXPD] Inserted 1 rows.
+2025-06-26 07:48:12,116 [INFO] [XOM] Inserted 1 rows.
+2025-06-26 07:48:12,135 [INFO] [FDS] Inserted 1 rows.
+2025-06-26 07:48:12,137 [INFO] [FICO] Inserted 1 rows.
+2025-06-26 07:48:12,166 [INFO] [FAST] Inserted 1 rows.
+2025-06-26 07:48:12,374 [INFO] [FRT] Inserted 1 rows.
+2025-06-26 07:48:12,429 [INFO] [FDX] Inserted 1 rows.
+2025-06-26 07:48:12,600 [INFO] [FSLR] Inserted 1 rows.
+2025-06-26 07:48:12,606 [INFO] [FIS] Inserted 1 rows.
+2025-06-26 07:48:12,608 [INFO] [FITB] Inserted 1 rows.
+2025-06-26 07:48:12,622 [INFO] [FE] Inserted 1 rows.
+2025-06-26 07:48:12,732 [INFO] [FI] Inserted 1 rows.
+2025-06-26 07:48:12,741 [INFO] [F] Inserted 1 rows.
+2025-06-26 07:48:12,865 [INFO] [FTNT] Inserted 1 rows.
+2025-06-26 07:48:13,054 [INFO] [FTV] Inserted 1 rows.
+2025-06-26 07:48:13,098 [INFO] [FOX] Inserted 1 rows.
+2025-06-26 07:48:13,104 [INFO] [FOXA] Inserted 1 rows.
+2025-06-26 07:48:13,155 [INFO] [BEN] Inserted 1 rows.
+2025-06-26 07:48:13,223 [INFO] [GRMN] Inserted 1 rows.
+2025-06-26 07:48:13,280 [INFO] [FCX] Inserted 1 rows.
+2025-06-26 07:48:13,332 [INFO] [IT] Inserted 1 rows.
+2025-06-26 07:48:13,576 [INFO] [GEN] Inserted 1 rows.
+2025-06-26 07:48:13,595 [INFO] [GNRC] Inserted 1 rows.
+2025-06-26 07:48:13,700 [INFO] [GEV] Inserted 1 rows.
+2025-06-26 07:48:13,708 [INFO] [GE] Inserted 1 rows.
+2025-06-26 07:48:13,711 [INFO] [GEHC] Inserted 1 rows.
+2025-06-26 07:48:13,814 [INFO] [GD] Inserted 1 rows.
+2025-06-26 07:48:13,829 [INFO] [GM] Inserted 1 rows.
+2025-06-26 07:48:13,853 [INFO] [GIS] Inserted 1 rows.
+2025-06-26 07:48:14,047 [INFO] [GILD] Inserted 1 rows.
+2025-06-26 07:48:14,112 [INFO] [GPC] Inserted 1 rows.
+2025-06-26 07:48:14,179 [INFO] [GPN] Inserted 1 rows.
+2025-06-26 07:48:14,247 [INFO] [GL] Inserted 1 rows.
+2025-06-26 07:48:14,333 [INFO] [GDDY] Inserted 1 rows.
+2025-06-26 07:48:14,365 [INFO] [HIG] Inserted 1 rows.
+2025-06-26 07:48:14,367 [INFO] [GS] Inserted 1 rows.
+2025-06-26 07:48:14,385 [INFO] [HAL] Inserted 1 rows.
+2025-06-26 07:48:14,554 [INFO] [HAS] Inserted 1 rows.
+2025-06-26 07:48:14,709 [INFO] [HCA] Inserted 1 rows.
+2025-06-26 07:48:14,853 [INFO] [HSIC] Inserted 1 rows.
+2025-06-26 07:48:14,863 [INFO] [HLT] Inserted 1 rows.
+2025-06-26 07:48:14,888 [INFO] [HSY] Inserted 1 rows.
+2025-06-26 07:48:14,889 [INFO] [HPE] Inserted 1 rows.
+2025-06-26 07:48:14,913 [INFO] [DOC] Inserted 1 rows.
+2025-06-26 07:48:14,915 [INFO] [HES] Inserted 1 rows.
+2025-06-26 07:48:15,023 [INFO] [HOLX] Inserted 1 rows.
+2025-06-26 07:48:15,246 [INFO] [HD] Inserted 1 rows.
+2025-06-26 07:48:15,387 [INFO] [HRL] Inserted 1 rows.
+2025-06-26 07:48:15,432 [INFO] [HST] Inserted 1 rows.
+2025-06-26 07:48:15,479 [INFO] [HUBB] Inserted 1 rows.
+2025-06-26 07:48:15,517 [INFO] [HPQ] Inserted 1 rows.
+2025-06-26 07:48:15,561 [INFO] [HWM] Inserted 1 rows.
+2025-06-26 07:48:15,612 [INFO] [HUM] Inserted 1 rows.
+2025-06-26 07:48:15,650 [INFO] [HON] Inserted 1 rows.
+2025-06-26 07:48:15,899 [INFO] [HBAN] Inserted 1 rows.
+2025-06-26 07:48:15,962 [INFO] [IBM] Inserted 1 rows.
+2025-06-26 07:48:15,999 [INFO] [HII] Inserted 1 rows.
+2025-06-26 07:48:16,006 [INFO] [IDXX] Inserted 1 rows.
+2025-06-26 07:48:16,074 [INFO] [IEX] Inserted 1 rows.
+2025-06-26 07:48:16,077 [INFO] [INCY] Inserted 1 rows.
+2025-06-26 07:48:16,084 [INFO] [ITW] Inserted 1 rows.
+2025-06-26 07:48:16,149 [INFO] [IR] Inserted 1 rows.
+2025-06-26 07:48:16,480 [INFO] [ICE] Inserted 1 rows.
+2025-06-26 07:48:16,560 [INFO] [IPG] Inserted 1 rows.
+2025-06-26 07:48:16,571 [INFO] [INTC] Inserted 1 rows.
+2025-06-26 07:48:16,591 [INFO] [IFF] Inserted 1 rows.
+2025-06-26 07:48:16,593 [INFO] [PODD] Inserted 1 rows.
+2025-06-26 07:48:16,601 [INFO] [INTU] Inserted 1 rows.
+2025-06-26 07:48:16,603 [INFO] [ISRG] Inserted 1 rows.
+2025-06-26 07:48:16,744 [INFO] [IP] Inserted 1 rows.
+2025-06-26 07:48:17,040 [INFO] [IQV] Inserted 1 rows.
+2025-06-26 07:48:17,080 [INFO] [JBL] Inserted 1 rows.
+2025-06-26 07:48:17,105 [INFO] [IRM] Inserted 1 rows.
+2025-06-26 07:48:17,109 [INFO] [IVZ] Inserted 1 rows.
+2025-06-26 07:48:17,149 [INFO] [INVH] Inserted 1 rows.
+2025-06-26 07:48:17,228 [INFO] [JKHY] Inserted 1 rows.
+2025-06-26 07:48:17,274 [INFO] [JBHT] Inserted 1 rows.
+2025-06-26 07:48:17,276 [INFO] [J] Inserted 1 rows.
+2025-06-26 07:48:17,587 [INFO] [JNPR] Inserted 1 rows.
+2025-06-26 07:48:17,590 [INFO] [JNJ] Inserted 1 rows.
+2025-06-26 07:48:17,611 [INFO] [JPM] Inserted 1 rows.
+2025-06-26 07:48:17,618 [INFO] [JCI] Inserted 1 rows.
+2025-06-26 07:48:17,695 [INFO] [K] Inserted 1 rows.
+2025-06-26 07:48:17,779 [INFO] [KVUE] Inserted 1 rows.
+2025-06-26 07:48:17,836 [INFO] [KEY] Inserted 1 rows.
+2025-06-26 07:48:17,861 [INFO] [KDP] Inserted 1 rows.
+2025-06-26 07:48:18,054 [INFO] [KEYS] Inserted 1 rows.
+2025-06-26 07:48:18,109 [INFO] [KMB] Inserted 1 rows.
+2025-06-26 07:48:18,201 [INFO] [KMI] Inserted 1 rows.
+2025-06-26 07:48:18,213 [INFO] [KKR] Inserted 1 rows.
+2025-06-26 07:48:18,364 [INFO] [KIM] Inserted 1 rows.
+2025-06-26 07:48:18,446 [INFO] [KR] Inserted 1 rows.
+2025-06-26 07:48:18,503 [INFO] [KHC] Inserted 1 rows.
+2025-06-26 07:48:18,505 [INFO] [KLAC] Inserted 1 rows.
+2025-06-26 07:48:18,682 [INFO] [LH] Inserted 1 rows.
+2025-06-26 07:48:18,700 [INFO] [LW] Inserted 1 rows.
+2025-06-26 07:48:18,741 [INFO] [LHX] Inserted 1 rows.
+2025-06-26 07:48:18,840 [INFO] [LVS] Inserted 1 rows.
+2025-06-26 07:48:18,864 [INFO] [LRCX] Inserted 1 rows.
+2025-06-26 07:48:18,930 [INFO] [LDOS] Inserted 1 rows.
+2025-06-26 07:48:19,022 [INFO] [LII] Inserted 1 rows.
+2025-06-26 07:48:19,024 [INFO] [LEN] Inserted 1 rows.
+2025-06-26 07:48:19,201 [INFO] [LLY] Inserted 1 rows.
+2025-06-26 07:48:19,224 [INFO] [LIN] Inserted 1 rows.
+2025-06-26 07:48:19,315 [INFO] [LYV] Inserted 1 rows.
+2025-06-26 07:48:19,452 [INFO] [L] Inserted 1 rows.
+2025-06-26 07:48:19,455 [INFO] [LMT] Inserted 1 rows.
+2025-06-26 07:48:19,536 [INFO] [LOW] Inserted 1 rows.
+2025-06-26 07:48:19,639 [INFO] [LKQ] Inserted 1 rows.
+2025-06-26 07:48:19,700 [INFO] [LULU] Inserted 1 rows.
+2025-06-26 07:48:19,857 [INFO] [LYB] Inserted 1 rows.
+2025-06-26 07:48:19,859 [INFO] [MTB] Inserted 1 rows.
+2025-06-26 07:48:19,919 [INFO] [MPC] Inserted 1 rows.
+2025-06-26 07:48:19,978 [INFO] [MKTX] Inserted 1 rows.
+2025-06-26 07:48:20,038 [INFO] [MAR] Inserted 1 rows.
+2025-06-26 07:48:20,104 [INFO] [MMC] Inserted 1 rows.
+2025-06-26 07:48:20,163 [INFO] [MLM] Inserted 1 rows.
+2025-06-26 07:48:20,270 [INFO] [MAS] Inserted 1 rows.
+2025-06-26 07:48:20,357 [INFO] [MA] Inserted 1 rows.
+2025-06-26 07:48:20,416 [INFO] [MKC] Inserted 1 rows.
+2025-06-26 07:48:20,486 [INFO] [MTCH] Inserted 1 rows.
+2025-06-26 07:48:20,544 [INFO] [MCK] Inserted 1 rows.
+2025-06-26 07:48:20,632 [INFO] [MCD] Inserted 1 rows.
+2025-06-26 07:48:20,700 [INFO] [MDT] Inserted 1 rows.
+2025-06-26 07:48:20,752 [INFO] [MRK] Inserted 1 rows.
+2025-06-26 07:48:20,861 [INFO] [META] Inserted 1 rows.
+2025-06-26 07:48:20,869 [INFO] [MTD] Inserted 1 rows.
+2025-06-26 07:48:20,921 [INFO] [MET] Inserted 1 rows.
+2025-06-26 07:48:20,938 [INFO] [MGM] Inserted 1 rows.
+2025-06-26 07:48:21,151 [INFO] [MCHP] Inserted 1 rows.
+2025-06-26 07:48:21,165 [INFO] [MSFT] Inserted 1 rows.
+2025-06-26 07:48:21,207 [INFO] [MU] Inserted 1 rows.
+2025-06-26 07:48:21,269 [INFO] [MAA] Inserted 1 rows.
+2025-06-26 07:48:21,354 [INFO] [MOH] Inserted 1 rows.
+2025-06-26 07:48:21,414 [INFO] [TAP] Inserted 1 rows.
+2025-06-26 07:48:21,553 [INFO] [MRNA] Inserted 1 rows.
+2025-06-26 07:48:21,572 [INFO] [MHK] Inserted 1 rows.
+2025-06-26 07:48:21,656 [INFO] [MPWR] Inserted 1 rows.
+2025-06-26 07:48:21,772 [INFO] [MDLZ] Inserted 1 rows.
+2025-06-26 07:48:21,798 [INFO] [MCO] Inserted 1 rows.
+2025-06-26 07:48:21,841 [INFO] [MNST] Inserted 1 rows.
+2025-06-26 07:48:21,843 [INFO] [MS] Inserted 1 rows.
+2025-06-26 07:48:21,909 [INFO] [MOS] Inserted 1 rows.
+2025-06-26 07:48:22,167 [INFO] [MSI] Inserted 1 rows.
+2025-06-26 07:48:22,170 [INFO] [NDAQ] Inserted 1 rows.
+2025-06-26 07:48:22,173 [INFO] [MSCI] Inserted 1 rows.
+2025-06-26 07:48:22,291 [INFO] [NWSA] Inserted 1 rows.
+2025-06-26 07:48:22,310 [INFO] [NFLX] Inserted 1 rows.
+2025-06-26 07:48:22,393 [INFO] [NTAP] Inserted 1 rows.
+2025-06-26 07:48:22,395 [INFO] [NWS] Inserted 1 rows.
+2025-06-26 07:48:22,397 [INFO] [NEM] Inserted 1 rows.
+2025-06-26 07:48:22,736 [INFO] [NI] Inserted 1 rows.
+2025-06-26 07:48:22,739 [INFO] [NEE] Inserted 1 rows.
+2025-06-26 07:48:22,855 [INFO] [NDSN] Inserted 1 rows.
+2025-06-26 07:48:22,858 [INFO] [NCLH] Inserted 1 rows.
+2025-06-26 07:48:22,861 [INFO] [NSC] Inserted 1 rows.
+2025-06-26 07:48:22,964 [INFO] [NKE] Inserted 1 rows.
+2025-06-26 07:48:23,042 [INFO] [NTRS] Inserted 1 rows.
+2025-06-26 07:48:23,050 [INFO] [NOC] Inserted 1 rows.
+2025-06-26 07:48:23,279 [INFO] [NUE] Inserted 1 rows.
+2025-06-26 07:48:23,347 [INFO] [NRG] Inserted 1 rows.
+2025-06-26 07:48:23,361 [INFO] [NVR] Inserted 1 rows.
+2025-06-26 07:48:23,364 [INFO] [NVDA] Inserted 1 rows.
+2025-06-26 07:48:23,410 [INFO] [NXPI] Inserted 1 rows.
+2025-06-26 07:48:23,482 [INFO] [ORLY] Inserted 1 rows.
+2025-06-26 07:48:23,554 [INFO] [OXY] Inserted 1 rows.
+2025-06-26 07:48:23,661 [INFO] [ODFL] Inserted 1 rows.
+2025-06-26 07:48:23,802 [INFO] [ON] Inserted 1 rows.
+2025-06-26 07:48:23,846 [INFO] [ORCL] Inserted 1 rows.
+2025-06-26 07:48:23,890 [INFO] [OKE] Inserted 1 rows.
+2025-06-26 07:48:23,940 [INFO] [OMC] Inserted 1 rows.
+2025-06-26 07:48:23,995 [INFO] [PCAR] Inserted 1 rows.
+2025-06-26 07:48:24,006 [INFO] [OTIS] Inserted 1 rows.
+2025-06-26 07:48:24,081 [INFO] [PKG] Inserted 1 rows.
+2025-06-26 07:48:24,212 [INFO] [PLTR] Inserted 1 rows.
+2025-06-26 07:48:24,257 [INFO] [PANW] Inserted 1 rows.
+2025-06-26 07:48:24,326 [INFO] [PARA] Inserted 1 rows.
+2025-06-26 07:48:24,409 [INFO] [PH] Inserted 1 rows.
+2025-06-26 07:48:24,501 [INFO] [PYPL] Inserted 1 rows.
+2025-06-26 07:48:24,530 [INFO] [PAYX] Inserted 1 rows.
+2025-06-26 07:48:24,620 [INFO] [PAYC] Inserted 1 rows.
+2025-06-26 07:48:24,638 [INFO] [PNR] Inserted 1 rows.
+2025-06-26 07:48:24,797 [INFO] [PEP] Inserted 1 rows.
+2025-06-26 07:48:24,917 [INFO] [PFE] Inserted 1 rows.
+2025-06-26 07:48:25,000 [INFO] [PM] Inserted 1 rows.
+2025-06-26 07:48:25,008 [INFO] [PCG] Inserted 1 rows.
+2025-06-26 07:48:25,049 [INFO] [PSX] Inserted 1 rows.
+2025-06-26 07:48:25,092 [INFO] [PNW] Inserted 1 rows.
+2025-06-26 07:48:25,135 [INFO] [PNC] Inserted 1 rows.
+2025-06-26 07:48:25,220 [INFO] [POOL] Inserted 1 rows.
+2025-06-26 07:48:25,469 [INFO] [PPG] Inserted 1 rows.
+2025-06-26 07:48:25,497 [INFO] [PFG] Inserted 1 rows.
+2025-06-26 07:48:25,534 [INFO] [PPL] Inserted 1 rows.
+2025-06-26 07:48:25,610 [INFO] [PGR] Inserted 1 rows.
+2025-06-26 07:48:25,622 [INFO] [PG] Inserted 1 rows.
+2025-06-26 07:48:25,624 [INFO] [PRU] Inserted 1 rows.
+2025-06-26 07:48:25,669 [INFO] [PLD] Inserted 1 rows.
+2025-06-26 07:48:25,825 [INFO] [PEG] Inserted 1 rows.
+2025-06-26 07:48:26,077 [INFO] [PHM] Inserted 1 rows.
+2025-06-26 07:48:26,080 [INFO] [PTC] Inserted 1 rows.
+2025-06-26 07:48:26,102 [INFO] [PSA] Inserted 1 rows.
+2025-06-26 07:48:26,108 [INFO] [DGX] Inserted 1 rows.
+2025-06-26 07:48:26,139 [INFO] [QCOM] Inserted 1 rows.
+2025-06-26 07:48:26,188 [INFO] [PWR] Inserted 1 rows.
+2025-06-26 07:48:26,190 [INFO] [RL] Inserted 1 rows.
+2025-06-26 07:48:26,349 [INFO] [RJF] Inserted 1 rows.
+2025-06-26 07:48:26,621 [INFO] [RTX] Inserted 1 rows.
+2025-06-26 07:48:26,696 [INFO] [RSG] Inserted 1 rows.
+2025-06-26 07:48:26,700 [INFO] [RF] Inserted 1 rows.
+2025-06-26 07:48:26,719 [INFO] [REGN] Inserted 1 rows.
+2025-06-26 07:48:26,721 [INFO] [REG] Inserted 1 rows.
+2025-06-26 07:48:26,787 [INFO] [RMD] Inserted 1 rows.
+2025-06-26 07:48:26,905 [INFO] [O] Inserted 1 rows.
+2025-06-26 07:48:26,908 [INFO] [RVTY] Inserted 1 rows.
+2025-06-26 07:48:27,115 [INFO] [ROK] Inserted 1 rows.
+2025-06-26 07:48:27,231 [INFO] [ROP] Inserted 1 rows.
+2025-06-26 07:48:27,242 [INFO] [RCL] Inserted 1 rows.
+2025-06-26 07:48:27,252 [INFO] [ROL] Inserted 1 rows.
+2025-06-26 07:48:27,316 [INFO] [ROST] Inserted 1 rows.
+2025-06-26 07:48:27,380 [INFO] [CRM] Inserted 1 rows.
+2025-06-26 07:48:27,382 [INFO] [SBAC] Inserted 1 rows.
+2025-06-26 07:48:27,440 [INFO] [SPGI] Inserted 1 rows.
+2025-06-26 07:48:27,753 [INFO] [STX] Inserted 1 rows.
+2025-06-26 07:48:27,756 [INFO] [SLB] Inserted 1 rows.
+2025-06-26 07:48:27,820 [INFO] [SRE] Inserted 1 rows.
+2025-06-26 07:48:27,871 [INFO] [SHW] Inserted 1 rows.
+2025-06-26 07:48:27,901 [INFO] [NOW] Inserted 1 rows.
+2025-06-26 07:48:27,911 [INFO] [SPG] Inserted 1 rows.
+2025-06-26 07:48:28,069 [WARNING] [SW] Fetch error: No data found
+2025-06-26 07:48:28,088 [INFO] [SJM] Inserted 1 rows.
+2025-06-26 07:48:28,112 [INFO] [SWKS] Inserted 1 rows.
+2025-06-26 07:48:28,315 [INFO] [SNA] Inserted 1 rows.
+2025-06-26 07:48:28,476 [INFO] [SOLV] Inserted 1 rows.
+2025-06-26 07:48:28,573 [INFO] [SBUX] Inserted 1 rows.
+2025-06-26 07:48:28,601 [INFO] [SO] Inserted 1 rows.
+2025-06-26 07:48:28,620 [INFO] [LUV] Inserted 1 rows.
+2025-06-26 07:48:28,627 [INFO] [STT] Inserted 1 rows.
+2025-06-26 07:48:28,653 [INFO] [STLD] Inserted 1 rows.
+2025-06-26 07:48:28,655 [INFO] [SWK] Inserted 1 rows.
+2025-06-26 07:48:28,845 [INFO] [STE] Inserted 1 rows.
+2025-06-26 07:48:29,079 [INFO] [SNPS] Inserted 1 rows.
+2025-06-26 07:48:29,097 [INFO] [SYF] Inserted 1 rows.
+2025-06-26 07:48:29,171 [INFO] [SMCI] Inserted 1 rows.
+2025-06-26 07:48:29,174 [INFO] [SYK] Inserted 1 rows.
+2025-06-26 07:48:29,188 [INFO] [TROW] Inserted 1 rows.
+2025-06-26 07:48:29,275 [INFO] [TMUS] Inserted 1 rows.
+2025-06-26 07:48:29,326 [INFO] [TTWO] Inserted 1 rows.
+2025-06-26 07:48:29,432 [INFO] [SYY] Inserted 1 rows.
+2025-06-26 07:48:29,580 [INFO] [TPR] Inserted 1 rows.
+2025-06-26 07:48:29,669 [INFO] [TEL] Inserted 1 rows.
+2025-06-26 07:48:29,746 [INFO] [TRGP] Inserted 1 rows.
+2025-06-26 07:48:29,761 [INFO] [TER] Inserted 1 rows.
+2025-06-26 07:48:29,769 [INFO] [TDY] Inserted 1 rows.
+2025-06-26 07:48:29,792 [INFO] [TGT] Inserted 1 rows.
+2025-06-26 07:48:29,867 [INFO] [TSLA] Inserted 1 rows.
+2025-06-26 07:48:30,021 [INFO] [TXN] Inserted 1 rows.
+2025-06-26 07:48:30,099 [INFO] [TPL] Inserted 1 rows.
+2025-06-26 07:48:30,199 [INFO] [TXT] Inserted 1 rows.
+2025-06-26 07:48:30,214 [INFO] [TMO] Inserted 1 rows.
+2025-06-26 07:48:30,276 [INFO] [TSCO] Inserted 1 rows.
+2025-06-26 07:48:30,302 [INFO] [TJX] Inserted 1 rows.
+2025-06-26 07:48:30,388 [INFO] [TKO] Inserted 1 rows.
+2025-06-26 07:48:30,548 [INFO] [TDG] Inserted 1 rows.
+2025-06-26 07:48:30,615 [INFO] [TT] Inserted 1 rows.
+2025-06-26 07:48:30,710 [INFO] [TRV] Inserted 1 rows.
+2025-06-26 07:48:30,744 [INFO] [TRMB] Inserted 1 rows.
+2025-06-26 07:48:30,766 [INFO] [TYL] Inserted 1 rows.
+2025-06-26 07:48:30,878 [INFO] [TFC] Inserted 1 rows.
+2025-06-26 07:48:30,891 [INFO] [TSN] Inserted 1 rows.
+2025-06-26 07:48:30,911 [INFO] [USB] Inserted 1 rows.
+2025-06-26 07:48:31,083 [INFO] [UBER] Inserted 1 rows.
+2025-06-26 07:48:31,126 [INFO] [UDR] Inserted 1 rows.
+2025-06-26 07:48:31,190 [INFO] [ULTA] Inserted 1 rows.
+2025-06-26 07:48:31,265 [INFO] [UAL] Inserted 1 rows.
+2025-06-26 07:48:31,370 [INFO] [URI] Inserted 1 rows.
+2025-06-26 07:48:31,372 [INFO] [UPS] Inserted 1 rows.
+2025-06-26 07:48:31,532 [INFO] [UNP] Inserted 1 rows.
+2025-06-26 07:48:31,654 [INFO] [UHS] Inserted 1 rows.
+2025-06-26 07:48:31,657 [INFO] [VLO] Inserted 1 rows.
+2025-06-26 07:48:31,711 [INFO] [UNH] Inserted 1 rows.
+2025-06-26 07:48:31,807 [INFO] [VLTO] Inserted 1 rows.
+2025-06-26 07:48:31,814 [INFO] [VTR] Inserted 1 rows.
+2025-06-26 07:48:31,822 [INFO] [VRSN] Inserted 1 rows.
+2025-06-26 07:48:31,834 [INFO] [VRSK] Inserted 1 rows.
+2025-06-26 07:48:32,044 [INFO] [VZ] Inserted 1 rows.
+2025-06-26 07:48:32,222 [INFO] [VRTX] Inserted 1 rows.
+2025-06-26 07:48:32,277 [INFO] [VICI] Inserted 1 rows.
+2025-06-26 07:48:32,286 [INFO] [VTRS] Inserted 1 rows.
+2025-06-26 07:48:32,307 [INFO] [VST] Inserted 1 rows.
+2025-06-26 07:48:32,338 [INFO] [VMC] Inserted 1 rows.
+2025-06-26 07:48:32,341 [INFO] [V] Inserted 1 rows.
+2025-06-26 07:48:32,381 [INFO] [WRB] Inserted 1 rows.
+2025-06-26 07:48:32,577 [INFO] [GWW] Inserted 1 rows.
+2025-06-26 07:48:32,766 [INFO] [WBA] Inserted 1 rows.
+2025-06-26 07:48:32,831 [INFO] [WBD] Inserted 1 rows.
+2025-06-26 07:48:32,834 [INFO] [WAB] Inserted 1 rows.
+2025-06-26 07:48:32,837 [INFO] [WAT] Inserted 1 rows.
+2025-06-26 07:48:32,849 [INFO] [WM] Inserted 1 rows.
+2025-06-26 07:48:33,030 [INFO] [WMT] Inserted 1 rows.
+2025-06-26 07:48:33,108 [INFO] [WEC] Inserted 1 rows.
+2025-06-26 07:48:33,110 [INFO] [DIS] Inserted 1 rows.
+2025-06-26 07:48:33,328 [INFO] [WDC] Inserted 1 rows.
+2025-06-26 07:48:33,362 [INFO] [WY] Inserted 1 rows.
+2025-06-26 07:48:33,382 [INFO] [WELL] Inserted 1 rows.
+2025-06-26 07:48:33,398 [INFO] [WST] Inserted 1 rows.
+2025-06-26 07:48:33,414 [INFO] [WFC] Inserted 1 rows.
+2025-06-26 07:48:33,498 [INFO] [WSM] Inserted 1 rows.
+2025-06-26 07:48:33,638 [INFO] [WTW] Inserted 1 rows.
+2025-06-26 07:48:33,654 [INFO] [WMB] Inserted 1 rows.
+2025-06-26 07:48:33,877 [INFO] [WYNN] Inserted 1 rows.
+2025-06-26 07:48:33,885 [INFO] [WDAY] Inserted 1 rows.
+2025-06-26 07:48:33,921 [INFO] [XYL] Inserted 1 rows.
+2025-06-26 07:48:33,929 [INFO] [XEL] Inserted 1 rows.
+2025-06-26 07:48:33,935 [INFO] [ZBRA] Inserted 1 rows.
+2025-06-26 07:48:34,048 [INFO] [YUM] Inserted 1 rows.
+2025-06-26 07:48:34,126 [INFO] [ZBH] Inserted 1 rows.
+2025-06-26 07:48:34,136 [INFO] [ZTS] Inserted 1 rows.
+2025-06-26 07:48:34,140 [WARNING] Failed tickers saved to /Users/shailyjaloree/eqx-index-project/failed_tickers.csv
+2025-06-26 07:48:34,140 [INFO] Total rows inserted: 502
+2025-06-26 07:48:34,328 [INFO] SPY index data inserted successfully.

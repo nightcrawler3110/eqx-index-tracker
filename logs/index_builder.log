@@ -1,209 +1,205 @@
-2025-06-25 23:08:44,582 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
-2025-06-25 23:09:15,699 [INFO] Starting index build for date: 2024-04-26
-2025-06-25 23:09:15,707 [INFO] index_values updated with data for 2024-04-26.
-2025-06-25 23:09:15,710 [INFO] Index build process completed.
-2025-06-25 23:09:15,725 [INFO] Starting index build for date: 2024-04-27
-2025-06-25 23:09:15,732 [WARNING] [2024-04-27] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:15,732 [WARNING] No index calculated for 2024-04-27.
-2025-06-25 23:09:15,733 [INFO] Index build process completed.
-2025-06-25 23:09:15,742 [INFO] Starting index build for date: 2024-04-28
-2025-06-25 23:09:15,748 [WARNING] [2024-04-28] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:15,748 [WARNING] No index calculated for 2024-04-28.
-2025-06-25 23:09:15,749 [INFO] Index build process completed.
-2025-06-25 23:09:15,758 [INFO] Starting index build for date: 2024-04-29
-2025-06-25 23:09:15,767 [INFO] index_values updated with data for 2024-04-29.
-2025-06-25 23:09:15,770 [INFO] Index build process completed.
-2025-06-25 23:09:15,787 [INFO] Starting index build for date: 2024-04-30
-2025-06-25 23:09:15,795 [INFO] index_values updated with data for 2024-04-30.
-2025-06-25 23:09:15,799 [INFO] Index build process completed.
-2025-06-25 23:09:15,816 [INFO] Starting index build for date: 2024-05-01
-2025-06-25 23:09:15,825 [INFO] index_values updated with data for 2024-05-01.
-2025-06-25 23:09:15,828 [INFO] Index build process completed.
-2025-06-25 23:09:15,844 [INFO] Starting index build for date: 2024-05-02
-2025-06-25 23:09:15,853 [INFO] index_values updated with data for 2024-05-02.
-2025-06-25 23:09:15,856 [INFO] Index build process completed.
-2025-06-25 23:09:15,874 [INFO] Starting index build for date: 2024-05-03
-2025-06-25 23:09:15,884 [INFO] index_values updated with data for 2024-05-03.
-2025-06-25 23:09:15,887 [INFO] Index build process completed.
-2025-06-25 23:09:15,906 [INFO] Starting index build for date: 2024-05-04
-2025-06-25 23:09:15,912 [WARNING] [2024-05-04] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:15,912 [WARNING] No index calculated for 2024-05-04.
-2025-06-25 23:09:15,913 [INFO] Index build process completed.
-2025-06-25 23:09:15,923 [INFO] Starting index build for date: 2024-05-05
-2025-06-25 23:09:15,929 [WARNING] [2024-05-05] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:15,929 [WARNING] No index calculated for 2024-05-05.
-2025-06-25 23:09:15,930 [INFO] Index build process completed.
-2025-06-25 23:09:15,938 [INFO] Starting index build for date: 2024-05-06
-2025-06-25 23:09:15,948 [INFO] index_values updated with data for 2024-05-06.
-2025-06-25 23:09:15,951 [INFO] Index build process completed.
-2025-06-25 23:09:15,970 [INFO] Starting index build for date: 2024-05-07
-2025-06-25 23:09:15,979 [INFO] index_values updated with data for 2024-05-07.
-2025-06-25 23:09:15,983 [INFO] Index build process completed.
-2025-06-25 23:09:16,002 [INFO] Starting index build for date: 2024-05-08
-2025-06-25 23:09:16,011 [INFO] index_values updated with data for 2024-05-08.
-2025-06-25 23:09:16,015 [INFO] Index build process completed.
-2025-06-25 23:09:16,032 [INFO] Starting index build for date: 2024-05-09
-2025-06-25 23:09:16,040 [INFO] index_values updated with data for 2024-05-09.
-2025-06-25 23:09:16,044 [INFO] Index build process completed.
-2025-06-25 23:09:16,061 [INFO] Starting index build for date: 2024-05-10
-2025-06-25 23:09:16,070 [INFO] index_values updated with data for 2024-05-10.
-2025-06-25 23:09:16,073 [INFO] Index build process completed.
-2025-06-25 23:09:16,091 [INFO] Starting index build for date: 2024-05-11
-2025-06-25 23:09:16,097 [WARNING] [2024-05-11] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,097 [WARNING] No index calculated for 2024-05-11.
-2025-06-25 23:09:16,098 [INFO] Index build process completed.
-2025-06-25 23:09:16,107 [INFO] Starting index build for date: 2024-05-12
-2025-06-25 23:09:16,114 [WARNING] [2024-05-12] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,114 [WARNING] No index calculated for 2024-05-12.
-2025-06-25 23:09:16,115 [INFO] Index build process completed.
-2025-06-25 23:09:16,126 [INFO] Starting index build for date: 2024-05-13
-2025-06-25 23:09:16,136 [INFO] index_values updated with data for 2024-05-13.
-2025-06-25 23:09:16,140 [INFO] Index build process completed.
-2025-06-25 23:09:16,158 [INFO] Starting index build for date: 2024-05-14
-2025-06-25 23:09:16,167 [INFO] index_values updated with data for 2024-05-14.
-2025-06-25 23:09:16,170 [INFO] Index build process completed.
-2025-06-25 23:09:16,187 [INFO] Starting index build for date: 2024-05-15
-2025-06-25 23:09:16,195 [INFO] index_values updated with data for 2024-05-15.
-2025-06-25 23:09:16,199 [INFO] Index build process completed.
-2025-06-25 23:09:16,217 [INFO] Starting index build for date: 2024-05-16
-2025-06-25 23:09:16,225 [INFO] index_values updated with data for 2024-05-16.
-2025-06-25 23:09:16,229 [INFO] Index build process completed.
-2025-06-25 23:09:16,246 [INFO] Starting index build for date: 2024-05-17
-2025-06-25 23:09:16,255 [INFO] index_values updated with data for 2024-05-17.
-2025-06-25 23:09:16,259 [INFO] Index build process completed.
-2025-06-25 23:09:16,276 [INFO] Starting index build for date: 2024-05-18
-2025-06-25 23:09:16,282 [WARNING] [2024-05-18] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,282 [WARNING] No index calculated for 2024-05-18.
-2025-06-25 23:09:16,283 [INFO] Index build process completed.
-2025-06-25 23:09:16,292 [INFO] Starting index build for date: 2024-05-19
-2025-06-25 23:09:16,299 [WARNING] [2024-05-19] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,299 [WARNING] No index calculated for 2024-05-19.
-2025-06-25 23:09:16,299 [INFO] Index build process completed.
-2025-06-25 23:09:16,308 [INFO] Starting index build for date: 2024-05-20
-2025-06-25 23:09:16,317 [INFO] index_values updated with data for 2024-05-20.
-2025-06-25 23:09:16,320 [INFO] Index build process completed.
-2025-06-25 23:09:16,338 [INFO] Starting index build for date: 2024-05-21
-2025-06-25 23:09:16,346 [INFO] index_values updated with data for 2024-05-21.
-2025-06-25 23:09:16,350 [INFO] Index build process completed.
-2025-06-25 23:09:16,368 [INFO] Starting index build for date: 2024-05-22
-2025-06-25 23:09:16,376 [INFO] index_values updated with data for 2024-05-22.
-2025-06-25 23:09:16,380 [INFO] Index build process completed.
-2025-06-25 23:09:16,398 [INFO] Starting index build for date: 2024-05-23
-2025-06-25 23:09:16,408 [INFO] index_values updated with data for 2024-05-23.
-2025-06-25 23:09:16,412 [INFO] Index build process completed.
-2025-06-25 23:09:16,431 [INFO] Starting index build for date: 2024-05-24
-2025-06-25 23:09:16,440 [INFO] index_values updated with data for 2024-05-24.
-2025-06-25 23:09:16,444 [INFO] Index build process completed.
-2025-06-25 23:09:16,464 [INFO] Starting index build for date: 2024-05-25
-2025-06-25 23:09:16,470 [WARNING] [2024-05-25] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,470 [WARNING] No index calculated for 2024-05-25.
-2025-06-25 23:09:16,471 [INFO] Index build process completed.
-2025-06-25 23:09:16,481 [INFO] Starting index build for date: 2024-05-26
-2025-06-25 23:09:16,488 [WARNING] [2024-05-26] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,488 [WARNING] No index calculated for 2024-05-26.
-2025-06-25 23:09:16,489 [INFO] Index build process completed.
-2025-06-25 23:09:16,499 [INFO] Starting index build for date: 2024-05-27
-2025-06-25 23:09:16,505 [WARNING] [2024-05-27] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,505 [WARNING] No index calculated for 2024-05-27.
-2025-06-25 23:09:16,506 [INFO] Index build process completed.
-2025-06-25 23:09:16,517 [INFO] Starting index build for date: 2024-05-28
-2025-06-25 23:09:16,526 [INFO] index_values updated with data for 2024-05-28.
-2025-06-25 23:09:16,531 [INFO] Index build process completed.
-2025-06-25 23:09:16,550 [INFO] Starting index build for date: 2024-05-29
-2025-06-25 23:09:16,559 [INFO] index_values updated with data for 2024-05-29.
-2025-06-25 23:09:16,564 [INFO] Index build process completed.
-2025-06-25 23:09:16,598 [INFO] Starting index build for date: 2024-05-30
-2025-06-25 23:09:16,607 [INFO] index_values updated with data for 2024-05-30.
-2025-06-25 23:09:16,613 [INFO] Index build process completed.
-2025-06-25 23:09:16,633 [INFO] Starting index build for date: 2024-05-31
-2025-06-25 23:09:16,642 [INFO] index_values updated with data for 2024-05-31.
-2025-06-25 23:09:16,647 [INFO] Index build process completed.
-2025-06-25 23:09:16,667 [INFO] Starting index build for date: 2024-06-01
-2025-06-25 23:09:16,673 [WARNING] [2024-06-01] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,673 [WARNING] No index calculated for 2024-06-01.
-2025-06-25 23:09:16,674 [INFO] Index build process completed.
-2025-06-25 23:09:16,685 [INFO] Starting index build for date: 2024-06-02
-2025-06-25 23:09:16,691 [WARNING] [2024-06-02] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,691 [WARNING] No index calculated for 2024-06-02.
-2025-06-25 23:09:16,692 [INFO] Index build process completed.
-2025-06-25 23:09:16,702 [INFO] Starting index build for date: 2024-06-03
-2025-06-25 23:09:16,711 [INFO] index_values updated with data for 2024-06-03.
-2025-06-25 23:09:16,716 [INFO] Index build process completed.
-2025-06-25 23:09:16,736 [INFO] Starting index build for date: 2024-06-04
-2025-06-25 23:09:16,745 [INFO] index_values updated with data for 2024-06-04.
-2025-06-25 23:09:16,751 [INFO] Index build process completed.
-2025-06-25 23:09:16,772 [INFO] Starting index build for date: 2024-06-05
-2025-06-25 23:09:16,782 [INFO] index_values updated with data for 2024-06-05.
-2025-06-25 23:09:16,787 [INFO] Index build process completed.
-2025-06-25 23:09:16,807 [INFO] Starting index build for date: 2024-06-06
-2025-06-25 23:09:16,817 [INFO] index_values updated with data for 2024-06-06.
-2025-06-25 23:09:16,822 [INFO] Index build process completed.
-2025-06-25 23:09:16,842 [INFO] Starting index build for date: 2024-06-07
-2025-06-25 23:09:16,852 [INFO] index_values updated with data for 2024-06-07.
-2025-06-25 23:09:16,857 [INFO] Index build process completed.
-2025-06-25 23:09:16,877 [INFO] Starting index build for date: 2024-06-08
-2025-06-25 23:09:16,884 [WARNING] [2024-06-08] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,884 [WARNING] No index calculated for 2024-06-08.
-2025-06-25 23:09:16,885 [INFO] Index build process completed.
-2025-06-25 23:09:16,894 [INFO] Starting index build for date: 2024-06-09
-2025-06-25 23:09:16,901 [WARNING] [2024-06-09] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:16,902 [WARNING] No index calculated for 2024-06-09.
-2025-06-25 23:09:16,902 [INFO] Index build process completed.
-2025-06-25 23:09:16,911 [INFO] Starting index build for date: 2024-06-10
-2025-06-25 23:09:16,921 [INFO] index_values updated with data for 2024-06-10.
-2025-06-25 23:09:16,926 [INFO] Index build process completed.
-2025-06-25 23:09:16,947 [INFO] Starting index build for date: 2024-06-11
-2025-06-25 23:09:16,956 [INFO] index_values updated with data for 2024-06-11.
-2025-06-25 23:09:16,961 [INFO] Index build process completed.
-2025-06-25 23:09:16,981 [INFO] Starting index build for date: 2024-06-12
-2025-06-25 23:09:16,990 [INFO] index_values updated with data for 2024-06-12.
-2025-06-25 23:09:16,996 [INFO] Index build process completed.
-2025-06-25 23:09:17,017 [INFO] Starting index build for date: 2024-06-13
-2025-06-25 23:09:17,025 [INFO] index_values updated with data for 2024-06-13.
-2025-06-25 23:09:17,031 [INFO] Index build process completed.
-2025-06-25 23:09:17,051 [INFO] Starting index build for date: 2024-06-14
-2025-06-25 23:09:17,060 [INFO] index_values updated with data for 2024-06-14.
-2025-06-25 23:09:17,067 [INFO] Index build process completed.
-2025-06-25 23:09:17,087 [INFO] Starting index build for date: 2024-06-15
-2025-06-25 23:09:17,093 [WARNING] [2024-06-15] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:17,094 [WARNING] No index calculated for 2024-06-15.
-2025-06-25 23:09:17,095 [INFO] Index build process completed.
-2025-06-25 23:09:17,104 [INFO] Starting index build for date: 2024-06-16
-2025-06-25 23:09:17,111 [WARNING] [2024-06-16] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:17,111 [WARNING] No index calculated for 2024-06-16.
-2025-06-25 23:09:17,113 [INFO] Index build process completed.
-2025-06-25 23:09:17,122 [INFO] Starting index build for date: 2024-06-17
-2025-06-25 23:09:17,132 [INFO] index_values updated with data for 2024-06-17.
-2025-06-25 23:09:17,138 [INFO] Index build process completed.
-2025-06-25 23:09:17,158 [INFO] Starting index build for date: 2024-06-18
-2025-06-25 23:09:17,168 [INFO] index_values updated with data for 2024-06-18.
-2025-06-25 23:09:17,173 [INFO] Index build process completed.
-2025-06-25 23:09:17,193 [INFO] Starting index build for date: 2024-06-19
-2025-06-25 23:09:17,201 [WARNING] [2024-06-19] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:17,201 [WARNING] No index calculated for 2024-06-19.
-2025-06-25 23:09:17,202 [INFO] Index build process completed.
-2025-06-25 23:09:17,211 [INFO] Starting index build for date: 2024-06-20
-2025-06-25 23:09:17,221 [INFO] index_values updated with data for 2024-06-20.
-2025-06-25 23:09:17,226 [INFO] Index build process completed.
-2025-06-25 23:09:17,247 [INFO] Starting index build for date: 2024-06-21
-2025-06-25 23:09:17,256 [INFO] index_values updated with data for 2024-06-21.
-2025-06-25 23:09:17,261 [INFO] Index build process completed.
-2025-06-25 23:09:17,282 [INFO] Starting index build for date: 2024-06-22
-2025-06-25 23:09:17,288 [WARNING] [2024-06-22] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:17,288 [WARNING] No index calculated for 2024-06-22.
-2025-06-25 23:09:17,289 [INFO] Index build process completed.
-2025-06-25 23:09:17,299 [INFO] Starting index build for date: 2024-06-23
-2025-06-25 23:09:17,305 [WARNING] [2024-06-23] Less than 100 stocks available. Skipping.
-2025-06-25 23:09:17,305 [WARNING] No index calculated for 2024-06-23.
-2025-06-25 23:09:17,306 [INFO] Index build process completed.
-2025-06-25 23:09:17,315 [INFO] Starting index build for date: 2024-06-24
-2025-06-25 23:09:17,323 [INFO] index_values updated with data for 2024-06-24.
-2025-06-25 23:09:17,328 [INFO] Index build process completed.
-2025-06-25 23:09:34,094 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
-2025-06-25 23:10:11,470 [INFO] Starting index build for date: 2024-06-25
-2025-06-25 23:10:11,481 [INFO] index_values updated with data for 2024-06-25.
-2025-06-25 23:10:11,486 [INFO] Index build process completed.
-2025-06-25 23:10:59,031 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
-2025-06-25 23:11:41,202 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
-2025-06-25 23:11:49,621 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
-2025-06-25 23:11:53,741 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
+2025-06-26 07:40:50,717 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
+2025-06-26 07:41:33,783 [INFO] Starting index build for date: 2024-04-26
+2025-06-26 07:41:33,795 [INFO] index_values updated with data for 2024-04-26.
+2025-06-26 07:41:33,798 [INFO] Index build process completed.
+2025-06-26 07:41:33,815 [INFO] Starting index build for date: 2024-04-27
+2025-06-26 07:41:33,822 [WARNING] [2024-04-27] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:33,822 [WARNING] No index calculated for 2024-04-27.
+2025-06-26 07:41:33,823 [INFO] Index build process completed.
+2025-06-26 07:41:33,831 [INFO] Starting index build for date: 2024-04-28
+2025-06-26 07:41:33,837 [WARNING] [2024-04-28] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:33,837 [WARNING] No index calculated for 2024-04-28.
+2025-06-26 07:41:33,837 [INFO] Index build process completed.
+2025-06-26 07:41:33,845 [INFO] Starting index build for date: 2024-04-29
+2025-06-26 07:41:33,853 [INFO] index_values updated with data for 2024-04-29.
+2025-06-26 07:41:33,855 [INFO] Index build process completed.
+2025-06-26 07:41:33,870 [INFO] Starting index build for date: 2024-04-30
+2025-06-26 07:41:33,878 [INFO] index_values updated with data for 2024-04-30.
+2025-06-26 07:41:33,881 [INFO] Index build process completed.
+2025-06-26 07:41:33,896 [INFO] Starting index build for date: 2024-05-01
+2025-06-26 07:41:33,904 [INFO] index_values updated with data for 2024-05-01.
+2025-06-26 07:41:33,907 [INFO] Index build process completed.
+2025-06-26 07:41:33,923 [INFO] Starting index build for date: 2024-05-02
+2025-06-26 07:41:33,930 [INFO] index_values updated with data for 2024-05-02.
+2025-06-26 07:41:33,933 [INFO] Index build process completed.
+2025-06-26 07:41:33,949 [INFO] Starting index build for date: 2024-05-03
+2025-06-26 07:41:33,957 [INFO] index_values updated with data for 2024-05-03.
+2025-06-26 07:41:33,960 [INFO] Index build process completed.
+2025-06-26 07:41:33,977 [INFO] Starting index build for date: 2024-05-04
+2025-06-26 07:41:33,983 [WARNING] [2024-05-04] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:33,983 [WARNING] No index calculated for 2024-05-04.
+2025-06-26 07:41:33,984 [INFO] Index build process completed.
+2025-06-26 07:41:33,992 [INFO] Starting index build for date: 2024-05-05
+2025-06-26 07:41:33,998 [WARNING] [2024-05-05] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:33,998 [WARNING] No index calculated for 2024-05-05.
+2025-06-26 07:41:33,999 [INFO] Index build process completed.
+2025-06-26 07:41:34,006 [INFO] Starting index build for date: 2024-05-06
+2025-06-26 07:41:34,014 [INFO] index_values updated with data for 2024-05-06.
+2025-06-26 07:41:34,017 [INFO] Index build process completed.
+2025-06-26 07:41:34,031 [INFO] Starting index build for date: 2024-05-07
+2025-06-26 07:41:34,039 [INFO] index_values updated with data for 2024-05-07.
+2025-06-26 07:41:34,042 [INFO] Index build process completed.
+2025-06-26 07:41:34,056 [INFO] Starting index build for date: 2024-05-08
+2025-06-26 07:41:34,063 [INFO] index_values updated with data for 2024-05-08.
+2025-06-26 07:41:34,066 [INFO] Index build process completed.
+2025-06-26 07:41:34,081 [INFO] Starting index build for date: 2024-05-09
+2025-06-26 07:41:34,088 [INFO] index_values updated with data for 2024-05-09.
+2025-06-26 07:41:34,091 [INFO] Index build process completed.
+2025-06-26 07:41:34,105 [INFO] Starting index build for date: 2024-05-10
+2025-06-26 07:41:34,115 [INFO] index_values updated with data for 2024-05-10.
+2025-06-26 07:41:34,118 [INFO] Index build process completed.
+2025-06-26 07:41:34,134 [INFO] Starting index build for date: 2024-05-11
+2025-06-26 07:41:34,140 [WARNING] [2024-05-11] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,140 [WARNING] No index calculated for 2024-05-11.
+2025-06-26 07:41:34,140 [INFO] Index build process completed.
+2025-06-26 07:41:34,148 [INFO] Starting index build for date: 2024-05-12
+2025-06-26 07:41:34,154 [WARNING] [2024-05-12] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,154 [WARNING] No index calculated for 2024-05-12.
+2025-06-26 07:41:34,154 [INFO] Index build process completed.
+2025-06-26 07:41:34,162 [INFO] Starting index build for date: 2024-05-13
+2025-06-26 07:41:34,169 [INFO] index_values updated with data for 2024-05-13.
+2025-06-26 07:41:34,172 [INFO] Index build process completed.
+2025-06-26 07:41:34,187 [INFO] Starting index build for date: 2024-05-14
+2025-06-26 07:41:34,194 [INFO] index_values updated with data for 2024-05-14.
+2025-06-26 07:41:34,197 [INFO] Index build process completed.
+2025-06-26 07:41:34,212 [INFO] Starting index build for date: 2024-05-15
+2025-06-26 07:41:34,219 [INFO] index_values updated with data for 2024-05-15.
+2025-06-26 07:41:34,222 [INFO] Index build process completed.
+2025-06-26 07:41:34,237 [INFO] Starting index build for date: 2024-05-16
+2025-06-26 07:41:34,245 [INFO] index_values updated with data for 2024-05-16.
+2025-06-26 07:41:34,248 [INFO] Index build process completed.
+2025-06-26 07:41:34,262 [INFO] Starting index build for date: 2024-05-17
+2025-06-26 07:41:34,270 [INFO] index_values updated with data for 2024-05-17.
+2025-06-26 07:41:34,273 [INFO] Index build process completed.
+2025-06-26 07:41:34,287 [INFO] Starting index build for date: 2024-05-18
+2025-06-26 07:41:34,292 [WARNING] [2024-05-18] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,292 [WARNING] No index calculated for 2024-05-18.
+2025-06-26 07:41:34,293 [INFO] Index build process completed.
+2025-06-26 07:41:34,301 [INFO] Starting index build for date: 2024-05-19
+2025-06-26 07:41:34,306 [WARNING] [2024-05-19] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,306 [WARNING] No index calculated for 2024-05-19.
+2025-06-26 07:41:34,307 [INFO] Index build process completed.
+2025-06-26 07:41:34,314 [INFO] Starting index build for date: 2024-05-20
+2025-06-26 07:41:34,321 [INFO] index_values updated with data for 2024-05-20.
+2025-06-26 07:41:34,325 [INFO] Index build process completed.
+2025-06-26 07:41:34,339 [INFO] Starting index build for date: 2024-05-21
+2025-06-26 07:41:34,347 [INFO] index_values updated with data for 2024-05-21.
+2025-06-26 07:41:34,350 [INFO] Index build process completed.
+2025-06-26 07:41:34,365 [INFO] Starting index build for date: 2024-05-22
+2025-06-26 07:41:34,372 [INFO] index_values updated with data for 2024-05-22.
+2025-06-26 07:41:34,375 [INFO] Index build process completed.
+2025-06-26 07:41:34,390 [INFO] Starting index build for date: 2024-05-23
+2025-06-26 07:41:34,397 [INFO] index_values updated with data for 2024-05-23.
+2025-06-26 07:41:34,400 [INFO] Index build process completed.
+2025-06-26 07:41:34,415 [INFO] Starting index build for date: 2024-05-24
+2025-06-26 07:41:34,422 [INFO] index_values updated with data for 2024-05-24.
+2025-06-26 07:41:34,426 [INFO] Index build process completed.
+2025-06-26 07:41:34,441 [INFO] Starting index build for date: 2024-05-25
+2025-06-26 07:41:34,446 [WARNING] [2024-05-25] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,447 [WARNING] No index calculated for 2024-05-25.
+2025-06-26 07:41:34,447 [INFO] Index build process completed.
+2025-06-26 07:41:34,455 [INFO] Starting index build for date: 2024-05-26
+2025-06-26 07:41:34,460 [WARNING] [2024-05-26] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,460 [WARNING] No index calculated for 2024-05-26.
+2025-06-26 07:41:34,461 [INFO] Index build process completed.
+2025-06-26 07:41:34,468 [INFO] Starting index build for date: 2024-05-27
+2025-06-26 07:41:34,473 [WARNING] [2024-05-27] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,473 [WARNING] No index calculated for 2024-05-27.
+2025-06-26 07:41:34,474 [INFO] Index build process completed.
+2025-06-26 07:41:34,482 [INFO] Starting index build for date: 2024-05-28
+2025-06-26 07:41:34,490 [INFO] index_values updated with data for 2024-05-28.
+2025-06-26 07:41:34,494 [INFO] Index build process completed.
+2025-06-26 07:41:34,510 [INFO] Starting index build for date: 2024-05-29
+2025-06-26 07:41:34,517 [INFO] index_values updated with data for 2024-05-29.
+2025-06-26 07:41:34,521 [INFO] Index build process completed.
+2025-06-26 07:41:34,537 [INFO] Starting index build for date: 2024-05-30
+2025-06-26 07:41:34,545 [INFO] index_values updated with data for 2024-05-30.
+2025-06-26 07:41:34,550 [INFO] Index build process completed.
+2025-06-26 07:41:34,565 [INFO] Starting index build for date: 2024-05-31
+2025-06-26 07:41:34,573 [INFO] index_values updated with data for 2024-05-31.
+2025-06-26 07:41:34,577 [INFO] Index build process completed.
+2025-06-26 07:41:34,593 [INFO] Starting index build for date: 2024-06-01
+2025-06-26 07:41:34,598 [WARNING] [2024-06-01] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,598 [WARNING] No index calculated for 2024-06-01.
+2025-06-26 07:41:34,599 [INFO] Index build process completed.
+2025-06-26 07:41:34,606 [INFO] Starting index build for date: 2024-06-02
+2025-06-26 07:41:34,612 [WARNING] [2024-06-02] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,612 [WARNING] No index calculated for 2024-06-02.
+2025-06-26 07:41:34,612 [INFO] Index build process completed.
+2025-06-26 07:41:34,620 [INFO] Starting index build for date: 2024-06-03
+2025-06-26 07:41:34,627 [INFO] index_values updated with data for 2024-06-03.
+2025-06-26 07:41:34,631 [INFO] Index build process completed.
+2025-06-26 07:41:34,647 [INFO] Starting index build for date: 2024-06-04
+2025-06-26 07:41:34,655 [INFO] index_values updated with data for 2024-06-04.
+2025-06-26 07:41:34,659 [INFO] Index build process completed.
+2025-06-26 07:41:34,675 [INFO] Starting index build for date: 2024-06-05
+2025-06-26 07:41:34,692 [INFO] index_values updated with data for 2024-06-05.
+2025-06-26 07:41:34,697 [INFO] Index build process completed.
+2025-06-26 07:41:34,715 [INFO] Starting index build for date: 2024-06-06
+2025-06-26 07:41:34,723 [INFO] index_values updated with data for 2024-06-06.
+2025-06-26 07:41:34,727 [INFO] Index build process completed.
+2025-06-26 07:41:34,743 [INFO] Starting index build for date: 2024-06-07
+2025-06-26 07:41:34,750 [INFO] index_values updated with data for 2024-06-07.
+2025-06-26 07:41:34,755 [INFO] Index build process completed.
+2025-06-26 07:41:34,771 [INFO] Starting index build for date: 2024-06-08
+2025-06-26 07:41:34,776 [WARNING] [2024-06-08] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,776 [WARNING] No index calculated for 2024-06-08.
+2025-06-26 07:41:34,777 [INFO] Index build process completed.
+2025-06-26 07:41:34,785 [INFO] Starting index build for date: 2024-06-09
+2025-06-26 07:41:34,790 [WARNING] [2024-06-09] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,790 [WARNING] No index calculated for 2024-06-09.
+2025-06-26 07:41:34,791 [INFO] Index build process completed.
+2025-06-26 07:41:34,798 [INFO] Starting index build for date: 2024-06-10
+2025-06-26 07:41:34,806 [INFO] index_values updated with data for 2024-06-10.
+2025-06-26 07:41:34,810 [INFO] Index build process completed.
+2025-06-26 07:41:34,826 [INFO] Starting index build for date: 2024-06-11
+2025-06-26 07:41:34,834 [INFO] index_values updated with data for 2024-06-11.
+2025-06-26 07:41:34,839 [INFO] Index build process completed.
+2025-06-26 07:41:34,857 [INFO] Starting index build for date: 2024-06-12
+2025-06-26 07:41:34,865 [INFO] index_values updated with data for 2024-06-12.
+2025-06-26 07:41:34,869 [INFO] Index build process completed.
+2025-06-26 07:41:34,885 [INFO] Starting index build for date: 2024-06-13
+2025-06-26 07:41:34,893 [INFO] index_values updated with data for 2024-06-13.
+2025-06-26 07:41:34,897 [INFO] Index build process completed.
+2025-06-26 07:41:34,913 [INFO] Starting index build for date: 2024-06-14
+2025-06-26 07:41:34,921 [INFO] index_values updated with data for 2024-06-14.
+2025-06-26 07:41:34,925 [INFO] Index build process completed.
+2025-06-26 07:41:34,941 [INFO] Starting index build for date: 2024-06-15
+2025-06-26 07:41:34,946 [WARNING] [2024-06-15] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,946 [WARNING] No index calculated for 2024-06-15.
+2025-06-26 07:41:34,947 [INFO] Index build process completed.
+2025-06-26 07:41:34,955 [INFO] Starting index build for date: 2024-06-16
+2025-06-26 07:41:34,960 [WARNING] [2024-06-16] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:34,960 [WARNING] No index calculated for 2024-06-16.
+2025-06-26 07:41:34,961 [INFO] Index build process completed.
+2025-06-26 07:41:34,968 [INFO] Starting index build for date: 2024-06-17
+2025-06-26 07:41:34,976 [INFO] index_values updated with data for 2024-06-17.
+2025-06-26 07:41:34,980 [INFO] Index build process completed.
+2025-06-26 07:41:34,996 [INFO] Starting index build for date: 2024-06-18
+2025-06-26 07:41:35,003 [INFO] index_values updated with data for 2024-06-18.
+2025-06-26 07:41:35,008 [INFO] Index build process completed.
+2025-06-26 07:41:35,024 [INFO] Starting index build for date: 2024-06-19
+2025-06-26 07:41:35,030 [WARNING] [2024-06-19] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:35,030 [WARNING] No index calculated for 2024-06-19.
+2025-06-26 07:41:35,031 [INFO] Index build process completed.
+2025-06-26 07:41:35,038 [INFO] Starting index build for date: 2024-06-20
+2025-06-26 07:41:35,045 [INFO] index_values updated with data for 2024-06-20.
+2025-06-26 07:41:35,050 [INFO] Index build process completed.
+2025-06-26 07:41:35,067 [INFO] Starting index build for date: 2024-06-21
+2025-06-26 07:41:35,074 [INFO] index_values updated with data for 2024-06-21.
+2025-06-26 07:41:35,079 [INFO] Index build process completed.
+2025-06-26 07:41:35,096 [INFO] Starting index build for date: 2024-06-22
+2025-06-26 07:41:35,101 [WARNING] [2024-06-22] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:35,101 [WARNING] No index calculated for 2024-06-22.
+2025-06-26 07:41:35,102 [INFO] Index build process completed.
+2025-06-26 07:41:35,109 [INFO] Starting index build for date: 2024-06-23
+2025-06-26 07:41:35,115 [WARNING] [2024-06-23] Less than 100 stocks available. Skipping.
+2025-06-26 07:41:35,115 [WARNING] No index calculated for 2024-06-23.
+2025-06-26 07:41:35,115 [INFO] Index build process completed.
+2025-06-26 07:41:35,123 [INFO] Starting index build for date: 2024-06-24
+2025-06-26 07:41:35,130 [INFO] index_values updated with data for 2024-06-24.
+2025-06-26 07:41:35,134 [INFO] Index build process completed.
+2025-06-26 07:47:54,332 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/index_builder.log
+2025-06-26 07:48:34,346 [INFO] Starting index build for date: 2024-06-25
+2025-06-26 07:48:34,360 [INFO] index_values updated with data for 2024-06-25.
+2025-06-26 07:48:34,366 [INFO] Index build process completed.

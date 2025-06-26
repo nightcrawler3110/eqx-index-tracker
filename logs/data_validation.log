@@ -1,16 +1,12 @@
-2025-06-25 23:09:34,609 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
-2025-06-25 23:10:11,528 [INFO] Running validations for date: 2024-06-25
-2025-06-25 23:10:11,535 [INFO] Validating table: stock_prices
-2025-06-25 23:10:11,543 [INFO] Loaded `stock_prices` — 918 rows
-2025-06-25 23:10:11,545 [INFO] Validating table: market_index
-2025-06-25 23:10:11,548 [INFO] Loaded `market_index` — 1 rows
-2025-06-25 23:10:11,548 [INFO] Validating table: index_values
-2025-06-25 23:10:11,550 [INFO] Loaded `index_values` — 1 rows
-2025-06-25 23:10:11,550 [INFO] Validating table: index_metrics
-2025-06-25 23:10:11,553 [INFO] Loaded `index_metrics` — 1 rows
-2025-06-25 23:10:11,553 [INFO] All data passed validation checks. No issues found.
-2025-06-25 23:10:11,554 [INFO] Validation script completed.
-2025-06-25 23:10:59,557 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
-2025-06-25 23:11:41,835 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
-2025-06-25 23:11:49,980 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
-2025-06-25 23:11:54,087 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
+2025-06-26 07:47:54,827 [INFO] Logging initialized. Output -> /Users/shailyjaloree/eqx-index-project/logs/data_validation.log
+2025-06-26 07:48:34,407 [INFO] Running validations for date: 2024-06-25
+2025-06-26 07:48:34,413 [INFO] Validating table: stock_prices
+2025-06-26 07:48:34,420 [INFO] Loaded `stock_prices` — 1004 rows
+2025-06-26 07:48:34,421 [INFO] Validating table: market_index
+2025-06-26 07:48:34,423 [INFO] Loaded `market_index` — 1 rows
+2025-06-26 07:48:34,423 [INFO] Validating table: index_values
+2025-06-26 07:48:34,425 [INFO] Loaded `index_values` — 1 rows
+2025-06-26 07:48:34,425 [INFO] Validating table: index_metrics
+2025-06-26 07:48:34,427 [INFO] Loaded `index_metrics` — 1 rows
+2025-06-26 07:48:34,428 [INFO] All data passed validation checks. No issues found.
+2025-06-26 07:48:34,429 [INFO] Validation script completed.
